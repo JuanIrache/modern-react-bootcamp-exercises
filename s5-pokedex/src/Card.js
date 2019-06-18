@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Card.css';
 
 const icons = {
   fire: '🔥',
@@ -17,11 +18,15 @@ class Card extends Component {
     const { id, name, type, exp } = this.props;
     return (
       <div className="Card">
-        <h1>
+        <h2 className="Card-title">
           {name} {icons[type]}
-        </h1>
-        <img src={baseImgUrl + id.toString().padStart(3, '0') + '.png'} alt="" />
-        <p>EXP: {exp}</p>
+        </h2>
+        <div className="Card-img">
+          <img src={baseImgUrl + id.toString().padStart(3, '0') + '.png'} alt="" />
+        </div>
+        <p className="Card-exp">
+          EXP: <strong>{exp}</strong>
+        </p>
       </div>
     );
   }

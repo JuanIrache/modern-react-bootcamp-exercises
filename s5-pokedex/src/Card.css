@@ -1,0 +1,32 @@
+.Card {
+  background-color: white;
+  box-shadow: 12px 12px 26px -13px rgba(0, 0, 0, 0.48);
+}
+
+.Card-title {
+  text-align: center;
+}
+
+.Card-img {
+  border: 0.1px solid rgba(0, 0, 0, 0.03);
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f8f4ff;
+}
+
+.Card-exp {
+  font-size: 0.8rem;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.Card img {
+  max-height: 190px;
+  width: auto;
+  transition: all ease 500ms;
+}
+
+.Card img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}

@@ -4,10 +4,12 @@ import './Hand.css';
 
 class Hand extends Component {
   render() {
+    let result = <p className="Hand-p Hand-loser">Loser...</p>;
+    if (this.props.winner) result = <p className="Hand-p Hand-winner">Winner!</p>;
     return (
       <div className="Hand">
-        <p>Hand exp: {this.props.exp}</p>
-        <p>{this.props.winner ? 'Winner!' : 'Loser...'}</p>
+        {result}
+        <p className="Hand-p">Total Experience: {this.props.exp}</p>
         <div className="Hand-cards">
           {this.props.pokemons.map(pokemon => (
             <Card id={pokemon.id} name={pokemon.name} type={pokemon.type} exp={pokemon.base_experience} />
