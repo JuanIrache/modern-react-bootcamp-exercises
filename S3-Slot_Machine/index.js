@@ -1,6 +1,6 @@
 class App extends React.Component {
   render() {
-    const options = ['🌶', '🍒', '🍑'];
+    const options = ['🍎', '🍒', '🍑'];
     const pick = () => options[Math.floor(Math.random() * options.length)];
     return (
       <div>
