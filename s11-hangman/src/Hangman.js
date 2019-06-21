@@ -65,7 +65,7 @@ class Hangman extends Component {
         {this.state.nWrong < this.props.maxWrong && !this.won() ? (
           <AlphaButtons buttons={'abcdefghijklmnopqrstuvwxyz'} handler={this.handleGuess} guessed={this.state.guessed} />
         ) : (
-          <p>{this.won() ? 'You win!' : 'You lose...'}</p>
+          <p>{this.won() ? 'You win!' : `You lose... ${this.state.answer}`}</p>
         )}
         <div>
           <button id="Hangman-reset" onClick={this.restart}>
