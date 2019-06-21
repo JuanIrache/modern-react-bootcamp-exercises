@@ -3,23 +3,25 @@ import Box from './Box';
 import { pickRandom } from './helpers';
 import './Grid.css';
 
-const colors = ['B28BBE', '22130F', '3F0E0C', '955F47', 'A38AD0'];
-
 export default class Grid extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     let boxes = [];
     for (let i = 0; i < 25; i++) {
-      boxes.push(pickRandom(colors));
+      boxes.push(pickRandom(this.props.colors));
     }
     this.state = { boxes };
     this.changeOne = this.changeOne.bind(this);
   }
 
+  static defaultProps = {
+    colors: ['B28BBE', '22130F', '3F0E0C', '955F47', 'A38AD0']
+  };
+
   changeOne(idx) {
     return function() {
-      let newColor = pickRandom(colors);
-      while (newColor === this.state.boxes[idx]) newColor = pickRandom(colors);
+      let newColor = pickRandom(this.props.colors);
+      while (newColor === this.state.boxes[idx]) newColor = pickRandom(this.props.colors);
       this.setState({
         boxes: this.state.boxes.map((c, i) => {
           if (i === idx) return newColor;
