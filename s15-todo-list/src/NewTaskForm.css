@@ -1,0 +1,23 @@
+.NewTaskForm input {
+  margin: 0;
+  height: 50px;
+  width: 82%;
+  border: none;
+  text-align: center;
+}
+
+.NewTaskForm button {
+  margin: 0;
+  height: 50px;
+  width: 18%;
+  background-color: steelblue;
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+}
+
+.NewTaskForm button:hover {
+  cursor: pointer;
+  background-color: rgb(101, 175, 236);
+}

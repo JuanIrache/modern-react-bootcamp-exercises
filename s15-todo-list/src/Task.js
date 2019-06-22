@@ -41,27 +41,22 @@ export default class Box extends Component {
       </span>
     );
 
-    let editA = (
-      <a href="#!" onClick={this.handleEdit}>
-        Edit
-      </a>
-    );
+    let editA = <i className="fas fa-edit" onClick={this.handleEdit} />;
+
+    const deleteA = <i className="fas fa-trash-alt" onClick={this.handleDelete} />;
 
     if (this.props.editing) {
       textSpan = <input type="text" name="text" value={this.state.text} onChange={this.handleChange} />;
-      editA = (
-        <a href="#!" onClick={this.handleSave}>
-          Save
-        </a>
-      );
+      editA = <i className="fas fa-save" onClick={this.handleSave} />;
     }
 
     return (
       <div className="Task">
-        {textSpan} {editA}{' '}
-        <a href="#!" onClick={this.handleDelete}>
-          Delete
-        </a>
+        <div className="Task-text">{textSpan}</div>
+        <div className="Task-icons">
+          <div className="Task-icon">{editA}</div>
+          <div className="Task-icon">{deleteA}</div>
+        </div>
       </div>
     );
   }

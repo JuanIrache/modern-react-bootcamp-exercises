@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import uuid from 'uuid';
 import Task from './Task';
 import NewTaskForm from './NewTaskForm';
+import './TaskList.css';
 
 export default class BoxList extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ export default class BoxList extends Component {
   render() {
     return (
       <div className="TaskList">
+        <h1 className="TaskList-title">To-Do List</h1>
         <div className="TaskList-boxes">
           {this.state.tasks.map(t => (
             <Task key={t.id} {...t} delete={this.deleteTask} cross={this.crossTask} edit={this.editTask} save={this.updateTask} />

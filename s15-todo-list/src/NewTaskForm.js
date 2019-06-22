@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './NewTaskForm.css';
 
 export default class NewTaskForm extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class NewTaskForm extends Component {
   render() {
     return (
       <form className="NewTaskForm" onSubmit={this.handleSubmit}>
-        <input type="text" name="text" value={this.state.text} onChange={this.handleChange} />
+        <input type="text" name="text" placeholder="What do you want to do?" value={this.state.text} onChange={this.handleChange} />
         <button>Add</button>
       </form>
     );

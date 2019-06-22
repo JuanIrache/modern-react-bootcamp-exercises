@@ -1,0 +1,15 @@
+.TaskList {
+  text-align: center;
+  background-color: teal;
+  width: 500px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.TaskList-title {
+  color: white;
+  background-color: darkcyan;
+  font-size: 2rem;
+  margin: 20px 0 0 0;
+  padding: 10px;
+  border-bottom: 1px solid darkslategray;
+}
