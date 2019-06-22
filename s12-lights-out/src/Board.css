@@ -1,3 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+
 .Board {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Board-table {
   margin: 0 auto;
+  box-shadow: 0px 0px 50px #fff;
+}
+
+.Board-title {
+  text-align: center;
+  font-size: 2.2em;
+  color: #fff;
+  padding: 0 20px 0 20px;
+  font-family: Monoton;
+}
+
+.Board-red {
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+.Board-blue {
+  animation: neon2 1.3s ease-in-out infinite alternate;
+}
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177,
+      0 0 150px #ff1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177, 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177,
+      0 0 75px #ff1177;
+  }
+}
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px hsl(199, 100%, 53%), 0 0 70px hsl(199, 100%, 53%),
+      0 0 80px hsl(199, 100%, 53%), 0 0 100px hsl(199, 100%, 53%), 0 0 150px hsl(199, 100%, 53%);
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px hsl(199, 100%, 53%), 0 0 35px hsl(199, 100%, 53%),
+      0 0 40px hsl(199, 100%, 53%), 0 0 50px hsl(199, 100%, 53%), 0 0 75px hsl(199, 100%, 53%);
+  }
 }
