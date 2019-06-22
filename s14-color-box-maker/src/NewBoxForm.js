@@ -10,12 +10,12 @@ export default class NewBoxForm extends Component {
       backgroundColor: ''
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
-  handleClick(e) {
+  handleSubmit(e) {
     e.preventDefault();
     this.props.submit(this.state);
     this.setState({
@@ -27,20 +27,20 @@ export default class NewBoxForm extends Component {
   render() {
     const { width, height, backgroundColor } = this.state;
     return (
-      <form className="NewBoxForm">
+      <form className="NewBoxForm" onSubmit={this.handleSubmit}>
         <label>
-          Width
+          Width&nbsp;
           <input type="text" placeholder="px" name="width" value={width} onChange={this.handleChange} />
         </label>
         <label>
-          Height
+          Height&nbsp;
           <input type="text" placeholder="px" name="height" value={height} onChange={this.handleChange} />
         </label>
         <label>
-          Background color
+          Background color&nbsp;
           <input type="text" name="backgroundColor" value={backgroundColor} onChange={this.handleChange} />
         </label>
-        <button onClick={this.handleClick}>Add</button>
+        <button>Add</button>
       </form>
     );
   }

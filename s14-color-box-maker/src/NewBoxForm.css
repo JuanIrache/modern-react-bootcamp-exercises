@@ -1,3 +1,8 @@
+.NewBoxForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .NewBoxForm label {
-  display: block;
+  margin: 20px;
 }
