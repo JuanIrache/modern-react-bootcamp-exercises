@@ -39,7 +39,7 @@ class Board extends Component {
   static defaultProps = {
     nrows: 5,
     ncols: 5,
-    chanceLightStartsOn: 0.5
+    chanceLightStartsOn: 0.25
   };
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
@@ -81,7 +81,7 @@ class Board extends Component {
 
     this.setState(st => {
       //Reduce each row to true or false, and use them to reduce the board to true or false
-      const hasWon = st.board.reduce((acc, row) => row.reduce((acc, cell) => !cell && acc, true) && acc, true);
+      const hasWon = st.board.every(row => row.every(cell => !cell));
       return { board, hasWon };
     });
   }
@@ -92,9 +92,9 @@ class Board extends Component {
     return (
       <div className="Board">
         {this.state.hasWon ? (
-          'You Win!'
+          <h2>You win!</h2>
         ) : (
-          <table>
+          <table className="Board">
             <tbody>
               {this.state.board.map((row, y) => (
                 <tr key={'row' + y}>
