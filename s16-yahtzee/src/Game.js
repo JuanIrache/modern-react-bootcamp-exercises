@@ -96,7 +96,13 @@ class Game extends Component {
 
   render() {
     let gameOver = true;
-    for (const key in this.state.scores) if (this.state.scores[key] == null) gameOver = false;
+    const { scores, locked, dice, rolling, rollsLeft } = this.state;
+    for (const key in scores) if (scores[key] == null) gameOver = false;
+    if (gameOver) {
+      let total = 0;
+      for (const key in scores) total += scores[key] || 0;
+      localStorage.setItem('hiscore', total);
+    }
 
     return (
       <div className="Game">
@@ -104,15 +110,15 @@ class Game extends Component {
           <h1 className="App-title">Yahtzee!</h1>
 
           <section className="Game-dice-section">
-            <Dice dice={this.state.dice} locked={this.state.locked} handleClick={this.toggleLocked} rolling={this.state.rolling} />
+            <Dice dice={dice} locked={locked} handleClick={this.toggleLocked} rolling={rolling} />
             <div className="Game-button-wrapper">
-              <button className="Game-reroll" disabled={this.state.locked.every(x => x)} onClick={gameOver ? this.reset : this.roll}>
-                {gameOver ? 'Play Again' : `${this.state.rollsLeft} Rolls Left`}
+              <button className="Game-reroll" disabled={locked.every(x => x)} onClick={gameOver ? this.reset : this.roll}>
+                {gameOver ? 'Play Again' : `${rollsLeft} Rolls Left`}
               </button>
             </div>
           </section>
         </header>
-        <ScoreTable doScore={this.doScore} scores={this.state.scores} descs={this.props.descs} />
+        <ScoreTable doScore={this.doScore} scores={scores} descs={this.props.descs} />
       </div>
     );
   }

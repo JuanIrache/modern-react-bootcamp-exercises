@@ -89,6 +89,10 @@ class ScoreTable extends Component {
                 <td className="RuleRow-name">TOTAL</td>
                 <td className="RuleRow-score">{total}</td>
               </tr>
+              <tr className="RuleRow RuleRow-total">
+                <td className="RuleRow-name">Hi-Score</td>
+                <td className="RuleRow-score">{localStorage.getItem('hiscore')}</td>
+              </tr>
             </tbody>
           </table>
         </section>
