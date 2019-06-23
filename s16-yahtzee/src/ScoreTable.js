@@ -21,6 +21,9 @@ class ScoreTable extends Component {
   render() {
     const { scores, doScore, descs } = this.props;
 
+    let total = 0;
+    for (const key in scores) total += scores[key] || 0;
+
     return (
       <div className="ScoreTable">
         <section className="ScoreTable-section">
@@ -72,6 +75,20 @@ class ScoreTable extends Component {
               />
               <RuleRow name="Yahtzee" score={scores.yahtzee} doScore={evt => doScore('yahtzee', yahtzee.evalRoll)} desc={descs.yahtzee} />
               <RuleRow name="Chance" score={scores.chance} doScore={evt => doScore('chance', chance.evalRoll)} desc={descs.chance} />
+            </tbody>
+          </table>
+        </section>
+        <section className="ScoreTable-section ScoreTable-section-total">
+          <table cellSpacing="0">
+            <tbody>
+              <tr className="RuleRow RuleRow-total">
+                <td className="RuleRow-name" />
+                <td className="RuleRow-score" />
+              </tr>
+              <tr className="RuleRow RuleRow-total">
+                <td className="RuleRow-name">TOTAL</td>
+                <td className="RuleRow-score">{total}</td>
+              </tr>
             </tbody>
           </table>
         </section>
