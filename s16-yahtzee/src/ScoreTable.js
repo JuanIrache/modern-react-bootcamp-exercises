@@ -81,7 +81,7 @@ class ScoreTable extends Component {
         <section className="ScoreTable-section ScoreTable-section-total">
           <table cellSpacing="0">
             <tbody>
-              <tr className="RuleRow RuleRow-total">
+              <tr className="RuleRow">
                 <td className="RuleRow-name" />
                 <td className="RuleRow-score" />
               </tr>
@@ -89,7 +89,7 @@ class ScoreTable extends Component {
                 <td className="RuleRow-name">TOTAL</td>
                 <td className="RuleRow-score">{total}</td>
               </tr>
-              <tr className="RuleRow RuleRow-total">
+              <tr className="RuleRow">
                 <td className="RuleRow-name">Hi-Score</td>
                 <td className="RuleRow-score">{localStorage.getItem('hiscore')}</td>
               </tr>

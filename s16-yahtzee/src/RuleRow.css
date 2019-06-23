@@ -48,3 +48,7 @@
   width: 50%;
   text-align: right;
 }
+
+.RuleRow-total {
+  font-weight: bold;
+}
