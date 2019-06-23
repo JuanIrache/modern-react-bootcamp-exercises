@@ -103,7 +103,7 @@ class Game extends Component {
     if (gameOver) {
       let total = 0;
       for (const key in scores) total += scores[key] || 0;
-      localStorage.setItem('hiscore', total);
+      localStorage.setItem('hiscore', Math.max(localStorage.getItem('hiscore'), total));
     }
 
     return (
