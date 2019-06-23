@@ -22,8 +22,8 @@ class Die extends Component {
     this.props.handleClick(this.props.idx);
   }
   render() {
-    const { icons, val, locked, rolling } = this.props;
-    return <i className={`Die ${icons[val || 0]}${locked ? ' Die-locked' : ''}${rolling ? ' Die-rolling' : ''}`} onClick={this.click} />;
+    const { disabled, icons, val, locked, rolling } = this.props;
+    return <i className={`Die ${icons[val || 0]}${locked ? ' Die-locked' : ''}${rolling ? ' Die-rolling' : ''}`} onClick={this.click} disabled={disabled} />;
   }
 }
 
