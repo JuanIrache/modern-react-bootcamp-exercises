@@ -81,7 +81,7 @@ class Game extends Component {
   }
 
   doScore(rulename, ruleFn) {
-    if (this.state.dice.some(d => d != null)) {
+    if (this.state.dice.some(d => d != null) && !this.state.dice.rolling) {
       if (this.state.scores[rulename] == null) {
         // evaluate this ruleFn with the dice and score this rulename
         this.setState(st => ({
