@@ -1,5 +1,6 @@
 .Game {
   width: 30%;
+  min-width: 500px;
   background: white;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
   margin: 0 30%;
@@ -34,12 +35,7 @@ h2 {
   transition: 0.5s;
   background-size: 200% auto;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(
-    to right,
-    #91eae4 0%,
-    #7f7fd5 51%,
-    #91eae4 100%
-  );
+  background-image: linear-gradient(to right, #91eae4 0%, #7f7fd5 51%, #91eae4 100%);
   border-radius: 0.5rem;
   border: none;
   width: 50%;
