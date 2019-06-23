@@ -67,12 +67,16 @@ class FullHouse extends Rule {
 class SmallStraight extends Rule {
   // 4 values in a row
   evalRoll = dice => {
+    //Loop through each frequency
     const maxRow = this.freq(dice).reduce(
       (acc, val) => {
+        //If current position is present, add to current row length, otherwise start over
         const curr = val ? acc.curr + 1 : 0;
+        //Replace the max row length if greater
         const max = Math.max(curr, acc.max);
         return { max, curr };
       },
+      //Start with a 0-length row
       { max: 0, curr: 0 }
     );
     return maxRow.max >= 4 ? this.score : 0;
