@@ -76,14 +76,16 @@ class Game extends Component {
   }
 
   doScore(rulename, ruleFn) {
-    if (this.state.scores[rulename] == null) {
-      // evaluate this ruleFn with the dice and score this rulename
-      this.setState(st => ({
-        scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
-        rollsLeft: NUM_ROLLS,
-        locked: Array(NUM_DICE).fill(false),
-        dice: Array.from({ length: NUM_DICE })
-      }));
+    if (this.state.dice.some(d => d != null)) {
+      if (this.state.scores[rulename] == null) {
+        // evaluate this ruleFn with the dice and score this rulename
+        this.setState(st => ({
+          scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
+          rollsLeft: NUM_ROLLS,
+          locked: Array(NUM_DICE).fill(false),
+          dice: Array.from({ length: NUM_DICE })
+        }));
+      }
     }
   }
 
@@ -97,7 +99,7 @@ class Game extends Component {
             <Dice dice={this.state.dice} locked={this.state.locked} handleClick={this.toggleLocked} rolling={this.state.rolling} />
             <div className="Game-button-wrapper">
               <button className="Game-reroll" disabled={this.state.locked.every(x => x)} onClick={this.roll}>
-                {this.state.rollsLeft} Rerolls Left
+                {this.state.rollsLeft} Rolls Left
               </button>
             </div>
           </section>
