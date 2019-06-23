@@ -1,0 +1,46 @@
+/* Original Styles For Numbers, before icons added in */
+.Die {
+  font-size: 25px;
+  display: inline-block;
+  padding: 0.5em 0.8em;
+  font-family: monospace;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  margin-right: 1em;
+}
+
+/* THE NICER STYLES MADE FOR THE FONT-AWESOME ICONS... */
+
+/* .Die {
+  color: white;
+  text-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.Die-locked {
+  opacity: 0.5;
+  text-shadow: none;
+}
+
+.Die:not(.Die-locked):hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.Die-rolling {
+  animation: spin 1s ease-out;
+}
+
+.Die-rolling:hover,
+.Die[disabled] {
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
