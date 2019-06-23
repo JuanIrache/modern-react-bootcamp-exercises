@@ -58,12 +58,8 @@ class SumDistro extends Rule {
 /** Check if full house (3-of-kind and 2-of-kind) */
 
 class FullHouse extends Rule {
-  evalRoll = dice => {
-    //3 of one value and 2 of another
-    const twoOrMore = this.freq(dice).filter(f => f >= 2).length;
-    const threeOrMore = this.freq(dice).filter(f => f >= 3).length;
-    return twoOrMore >= 2 && threeOrMore >= 1 ? this.score : 0;
-  };
+  //3 of one value and 2 of another
+  evalRoll = dice => (this.freq(dice).includes(2) && this.freq(dice).includes(3) ? this.score : 0);
 }
 
 /** Check for small straights. */
