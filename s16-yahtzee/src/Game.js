@@ -6,10 +6,32 @@ import './Game.css';
 const NUM_DICE = 5;
 const NUM_ROLLS = 3;
 
+const initialState = {
+  dice: Array.from({ length: NUM_DICE }),
+  locked: Array(NUM_DICE).fill(false),
+  rollsLeft: NUM_ROLLS,
+  scores: {
+    ones: undefined,
+    twos: undefined,
+    threes: undefined,
+    fours: undefined,
+    fives: undefined,
+    sixes: undefined,
+    threeOfKind: undefined,
+    fourOfKind: undefined,
+    fullHouse: undefined,
+    smallStraight: undefined,
+    largeStraight: undefined,
+    yahtzee: undefined,
+    chance: undefined
+  },
+  rolling: false
+};
+
 class Game extends Component {
   constructor(props) {
     super(props);
-    this.reset();
+    this.state = initialState;
     this.reset = this.reset.bind(this);
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
@@ -35,27 +57,7 @@ class Game extends Component {
   };
 
   reset() {
-    this.state = {
-      dice: Array.from({ length: NUM_DICE }),
-      locked: Array(NUM_DICE).fill(false),
-      rollsLeft: NUM_ROLLS,
-      scores: {
-        ones: undefined,
-        twos: undefined,
-        threes: undefined,
-        fours: undefined,
-        fives: undefined,
-        sixes: undefined,
-        threeOfKind: undefined,
-        fourOfKind: undefined,
-        fullHouse: undefined,
-        smallStraight: undefined,
-        largeStraight: undefined,
-        yahtzee: undefined,
-        chance: undefined
-      },
-      rolling: false
-    };
+    this.setState(initialState);
   }
 
   roll(evt) {
