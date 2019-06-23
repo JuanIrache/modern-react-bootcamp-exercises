@@ -68,13 +68,13 @@ class SmallStraight extends Rule {
   // 4 values in a row
   evalRoll = dice => {
     const maxRow = this.freq(dice).reduce(
-      (acc, val) => ({ max: Math.max(acc.curr + (val ? 1 : 0), acc.max), curr: val ? acc.curr + 1 : 0 }),
-      {
-        max: 0,
-        curr: 0
-      }
+      (acc, val) => {
+        const curr = val ? acc.curr + 1 : 0;
+        const max = Math.max(curr, acc.max);
+        return { max, curr };
+      },
+      { max: 0, curr: 0 }
     );
-
     return maxRow.max >= 4 ? this.score : 0;
   };
 }
