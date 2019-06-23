@@ -38,24 +38,6 @@ class Game extends Component {
     this.toggleLocked = this.toggleLocked.bind(this);
   }
 
-  static defaultProps = {
-    descs: {
-      ones: 'Score 1 for every 1',
-      twos: 'Score 2 for every 2',
-      threes: 'Score 3 for every 3',
-      fours: 'Score 4 for every 4',
-      fives: 'Score 5 for every 5',
-      sixes: 'Score 6 for every 6',
-      threeOfKind: 'If 3+ of one, score sum of all',
-      fourOfKind: 'If 4+ of one, score sum of all',
-      fullHouse: 'If 3 and 2 of each, score 25',
-      smallStraight: 'If 4+ in a row, score 30',
-      largeStraight: 'If 5+ in a row, score 40',
-      yahtzee: 'If all values match, score 50',
-      chance: 'Score sum of all dice'
-    }
-  };
-
   reset() {
     this.setState(initialState);
   }
@@ -120,7 +102,7 @@ class Game extends Component {
             </div>
           </section>
         </header>
-        <ScoreTable doScore={this.doScore} scores={scores} descs={this.props.descs} />
+        <ScoreTable doScore={this.doScore} scores={scores} />
       </div>
     );
   }

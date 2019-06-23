@@ -104,28 +104,28 @@ class Yahtzee extends Rule {
 }
 
 // ones, twos, etc score as sum of that value
-const ones = new TotalOneNumber({ val: 1 });
-const twos = new TotalOneNumber({ val: 2 });
-const threes = new TotalOneNumber({ val: 3 });
-const fours = new TotalOneNumber({ val: 4 });
-const fives = new TotalOneNumber({ val: 5 });
-const sixes = new TotalOneNumber({ val: 6 });
+const ones = new TotalOneNumber({ val: 1, desc: 'Score 1 for every 1' });
+const twos = new TotalOneNumber({ val: 2, desc: 'Score 2 for every 2' });
+const threes = new TotalOneNumber({ val: 3, desc: 'Score 3 for every 3' });
+const fours = new TotalOneNumber({ val: 4, desc: 'Score 4 for every 4' });
+const fives = new TotalOneNumber({ val: 5, desc: 'Score 5 for every 5' });
+const sixes = new TotalOneNumber({ val: 6, desc: 'Score 6 for every 6' });
 
 // three/four of kind score as sum of all dice
-const threeOfKind = new SumDistro({ count: 3 });
-const fourOfKind = new SumDistro({ count: 4 });
+const threeOfKind = new SumDistro({ count: 3, desc: 'If 3+ of one, score sum of all' });
+const fourOfKind = new SumDistro({ count: 4, desc: 'If 4+ of one, score sum of all' });
 
 // full house scores as flat 25
-const fullHouse = new FullHouse({ score: 25 });
+const fullHouse = new FullHouse({ score: 25, desc: 'If 3 and 2 of each, score 25' });
 
 // small/large straights score as 30/40
-const smallStraight = new SmallStraight({ score: 30 });
-const largeStraight = new LargeStraight({ score: 40 });
+const smallStraight = new SmallStraight({ score: 30, desc: 'If 4+ in a row, score 30' });
+const largeStraight = new LargeStraight({ score: 40, desc: 'If 5+ in a row, score 40' });
 
 // yahtzee scores as 50
-const yahtzee = new Yahtzee({ score: 50 });
+const yahtzee = new Yahtzee({ score: 50, desc: 'If all values match, score 50' });
 
 // for chance, can view as some of all dice, requiring at least 0 of a kind
-const chance = new SumDistro({ count: 0 });
+const chance = new SumDistro({ count: 0, desc: 'Score sum of all dice' });
 
 export { ones, twos, threes, fours, fives, sixes, threeOfKind, fourOfKind, fullHouse, smallStraight, largeStraight, yahtzee, chance };
