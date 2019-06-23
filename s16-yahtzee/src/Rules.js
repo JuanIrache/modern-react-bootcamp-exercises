@@ -21,9 +21,9 @@ class Rule {
 
   freq(dice) {
     // frequencies of dice values
-    const freqs = new Map();
-    for (let d of dice) freqs.set(d, (freqs.get(d) || 0) + 1);
-    return Array.from(freqs.values());
+    const freqs = [0, 0, 0, 0, 0, 0, 0];
+    for (let d of dice) freqs[d] = (freqs[d] || 0) + 1;
+    return freqs.slice(1);
   }
 
   count(dice, val) {
@@ -57,14 +57,30 @@ class SumDistro extends Rule {
 
 /** Check if full house (3-of-kind and 2-of-kind) */
 
-class FullHouse {
-  // TODO
+class FullHouse extends Rule {
+  evalRoll = dice => {
+    //3 of one value and 2 of another
+    const twoOrMore = this.freq(dice).filter(f => f >= 2).length;
+    const threeOrMore = this.freq(dice).filter(f => f >= 3).length;
+    return twoOrMore >= 2 && threeOrMore >= 1 ? this.score : 0;
+  };
 }
 
 /** Check for small straights. */
 
-class SmallStraight {
-  // TODO
+class SmallStraight extends Rule {
+  // 4 values in a row
+  evalRoll = dice => {
+    const maxRow = this.freq(dice).reduce(
+      (acc, val) => ({ max: Math.max(acc.curr + (val ? 1 : 0), acc.max), curr: val ? acc.curr + 1 : 0 }),
+      {
+        max: 0,
+        curr: 0
+      }
+    );
+
+    return maxRow.max >= 4 ? this.score : 0;
+  };
 }
 
 /** Check for large straights. */
@@ -100,10 +116,10 @@ const threeOfKind = new SumDistro({ count: 3 });
 const fourOfKind = new SumDistro({ count: 4 });
 
 // full house scores as flat 25
-const fullHouse = "TODO";
+const fullHouse = new FullHouse({ score: 25 });
 
 // small/large straights score as 30/40
-const smallStraight = "TODO";
+const smallStraight = new SmallStraight({ score: 30 });
 const largeStraight = new LargeStraight({ score: 40 });
 
 // yahtzee scores as 50
@@ -112,18 +128,4 @@ const yahtzee = new Yahtzee({ score: 50 });
 // for chance, can view as some of all dice, requiring at least 0 of a kind
 const chance = new SumDistro({ count: 0 });
 
-export {
-  ones,
-  twos,
-  threes,
-  fours,
-  fives,
-  sixes,
-  threeOfKind,
-  fourOfKind,
-  fullHouse,
-  smallStraight,
-  largeStraight,
-  yahtzee,
-  chance
-};
+export { ones, twos, threes, fours, fives, sixes, threeOfKind, fourOfKind, fullHouse, smallStraight, largeStraight, yahtzee, chance };
