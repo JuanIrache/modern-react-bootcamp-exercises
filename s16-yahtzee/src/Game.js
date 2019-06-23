@@ -81,9 +81,9 @@ class Game extends Component {
       this.setState(st => ({
         scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
         rollsLeft: NUM_ROLLS,
-        locked: Array(NUM_DICE).fill(false)
+        locked: Array(NUM_DICE).fill(false),
+        dice: Array.from({ length: NUM_DICE })
       }));
-      this.roll();
     }
   }
 
