@@ -27,7 +27,8 @@ class Game extends Component {
         largeStraight: undefined,
         yahtzee: undefined,
         chance: undefined
-      }
+      },
+      rolling: false
     };
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
@@ -54,11 +55,15 @@ class Game extends Component {
 
   roll(evt) {
     // roll dice whose indexes are in reroll
-    this.setState(st => ({
-      dice: st.dice.map((d, i) => (st.locked[i] ? d : Math.ceil(Math.random() * 6))),
-      locked: st.rollsLeft > 1 ? st.locked : Array(NUM_DICE).fill(true),
-      rollsLeft: st.rollsLeft - 1
-    }));
+    this.setState({ rolling: true });
+    setTimeout(() => {
+      this.setState(st => ({
+        rolling: false,
+        dice: st.dice.map((d, i) => (st.locked[i] ? d : Math.ceil(Math.random() * 6))),
+        locked: st.rollsLeft > 1 ? st.locked : Array(NUM_DICE).fill(true),
+        rollsLeft: st.rollsLeft - 1
+      }));
+    }, 1000);
   }
 
   toggleLocked(idx) {
@@ -89,7 +94,7 @@ class Game extends Component {
           <h1 className="App-title">Yahtzee!</h1>
 
           <section className="Game-dice-section">
-            <Dice dice={this.state.dice} locked={this.state.locked} handleClick={this.toggleLocked} />
+            <Dice dice={this.state.dice} locked={this.state.locked} handleClick={this.toggleLocked} rolling={this.state.rolling} />
             <div className="Game-button-wrapper">
               <button className="Game-reroll" disabled={this.state.locked.every(x => x)} onClick={this.roll}>
                 {this.state.rollsLeft} Rerolls Left
