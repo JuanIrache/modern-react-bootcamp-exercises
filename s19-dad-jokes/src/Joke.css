@@ -1,6 +1,6 @@
 .Joke {
   margin: 1em;
-  /* display: flex; */
+  display: flex;
 }
 
 .Joke-arrow {
@@ -24,4 +24,9 @@
   border: 2px solid yellow;
   border-radius: 50%;
   text-align: center;
+}
+
+.Joke-emoji {
+  font-size: 2em;
+  justify-self: flex-end;
 }
