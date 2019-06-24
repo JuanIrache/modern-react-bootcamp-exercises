@@ -21,7 +21,8 @@ export default class DadJokes extends Component {
   }
 
   rate(idx, diff) {
-    const jokes = this.state.jokes.map(j => (j.id === idx ? { ...j, rating: j.rating + diff } : j));
+    let jokes = this.state.jokes.map(j => (j.id === idx ? { ...j, rating: j.rating + diff } : j));
+    jokes = jokes.sort((a, b) => b.rating - a.rating);
     this.setState({ jokes });
     localStorage.setItem('DadJokes', JSON.stringify(jokes));
   }
@@ -36,6 +37,7 @@ export default class DadJokes extends Component {
         if (status === 200) {
           if (!jokes.some(j => j.id === id)) jokes.push({ joke, id, rating: 0 });
           if (jokes.length >= 10) {
+            jokes = jokes.sort((a, b) => b.rating - a.rating);
             this.setState({ jokes });
             localStorage.setItem('DadJokes', JSON.stringify(jokes));
           } else retrieveRecursive();
