@@ -44,11 +44,10 @@ class Game extends Component {
 
   roll(evt) {
     // roll dice whose indexes are in reroll
-    this.setState({ rolling: true }, () => {
+    this.setState({ rolling: true, dice: this.state.dice.map((d, i) => (this.state.locked[i] ? d : Math.ceil(Math.random() * 6))) }, () => {
       setTimeout(() => {
         this.setState(st => ({
           rolling: false,
-          dice: st.dice.map((d, i) => (st.locked[i] ? d : Math.ceil(Math.random() * 6))),
           locked: st.rollsLeft > 1 ? st.locked : Array(NUM_DICE).fill(true),
           rollsLeft: st.rollsLeft - 1
         }));
