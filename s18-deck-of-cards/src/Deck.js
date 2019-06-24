@@ -34,6 +34,7 @@ export default class Deck extends Component {
     const { id, empty, cards } = this.state;
     return (
       <div className="Deck">
+        <h1 className="Deck-title">◆ Card dealer ◆</h1>
         <button className="Deck-button" onClick={this.draw} disabled={!id.length && !empty}>
           {empty ? 'No more cards' : id.length ? 'Draw a card' : 'Loading'}
         </button>

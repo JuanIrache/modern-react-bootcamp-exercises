@@ -4,19 +4,32 @@
   height: 100vh;
 }
 
+.Deck-title {
+  padding-top: 2em;
+  font-size: 1.4em;
+  margin: 0;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
 .Deck-button {
-  margin-top: 2.5em;
+  margin-top: 2em;
   padding: 2em;
-  background-color: brown;
-  font-size: 1em;
+  background-color: transparent;
+  border: 1px solid white;
+  font-size: 1.1em;
   font-weight: bold;
   color: white;
   text-transform: uppercase;
-  border: none;
+  font-family: 'Slabo 27px', serif;
+  transition: all 0.25s;
 }
 
 .Deck-button:not([disabled]):hover {
-  background-color: rgb(70, 70, 70);
+  background-color: white;
+  color: teal;
+  border: 1px solid transparent;
 }
 
 .Deck-cards {
