@@ -36,10 +36,10 @@ export default class DadJokes extends Component {
         if (jokes.length >= 10) {
           this.setState({ jokes });
           localStorage.setItem('DadJokes', JSON.stringify(jokes));
-        } else retrieveRecursive.call(this);
+        } else retrieveRecursive();
       } else console.error('Failed to retrieve joke');
     };
-    retrieveRecursive.call(this);
+    retrieveRecursive();
   }
 
   render() {
