@@ -34,5 +34,5 @@
 .Header-icon {
   border-radius: 50%;
   font-size: 5em;
-  text-shadow: 0 0 0.2em black;
+  /* text-shadow: 0 0 0.2em black; */
 }

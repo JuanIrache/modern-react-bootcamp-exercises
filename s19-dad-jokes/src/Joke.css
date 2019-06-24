@@ -1,6 +1,11 @@
 .Joke {
   margin: 1em;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Joke-left {
 }
 
 .Joke-arrow {
@@ -26,7 +31,13 @@
   text-align: center;
 }
 
+.Joke-text {
+  vertical-align: middle;
+}
+
 .Joke-emoji {
   font-size: 2em;
+  vertical-align: middle;
+
   justify-self: flex-end;
 }

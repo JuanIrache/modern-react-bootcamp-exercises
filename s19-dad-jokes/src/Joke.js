@@ -21,8 +21,8 @@ export default class Joke extends Component {
       '-2': '😒',
       '-1': '🙁',
       '0': '🙄',
-      '1': '😌',
-      '2': '😑',
+      '1': '😑',
+      '2': '😌',
       '3': '🙃',
       '4': '😏',
       '5': '😜',
@@ -44,7 +44,7 @@ export default class Joke extends Component {
   render() {
     return (
       <div className="Joke">
-        <div>
+        <div className="Joke-left">
           <button onClick={this.rateDown} className="Joke-arrow">
             ⬇
           </button>
@@ -53,9 +53,7 @@ export default class Joke extends Component {
             ⬆
           </button>
         </div>
-        <div>
-          <span className="Joke-text">{this.props.joke}</span>
-        </div>
+        <div className="Joke-text">{this.props.joke}</div>
         <div className="Joke-emoji">
           <span role="img" aria-label="">
             {this.props.smileys[Math.min(Math.max(this.props.rating, -11), 12).toString()]}
