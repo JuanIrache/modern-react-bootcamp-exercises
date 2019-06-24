@@ -28,18 +28,25 @@ export default class DadJokes extends Component {
   generate() {
     const instance = axios.create({ timeout: 1000, headers: { Accept: 'application/json' } });
     let jokes = [];
-    const retrieveRecursive = async () => {
-      const { data } = await instance.get('https://icanhazdadjoke.com/').catch(console.error);
-      const { status, joke, id } = data;
-      if (status === 200) {
-        if (!jokes.some(j => j.id === id)) jokes.push({ joke, id, rating: 0 });
-        if (jokes.length >= 10) {
-          this.setState({ jokes });
-          localStorage.setItem('DadJokes', JSON.stringify(jokes));
-        } else retrieveRecursive();
-      } else console.error('Failed to retrieve joke');
-    };
-    retrieveRecursive();
+    this.setState(
+      {
+        jokes: []
+      },
+      () => {
+        const retrieveRecursive = async () => {
+          const { data } = await instance.get('https://icanhazdadjoke.com/').catch(console.error);
+          const { status, joke, id } = data;
+          if (status === 200) {
+            if (!jokes.some(j => j.id === id)) jokes.push({ joke, id, rating: 0 });
+            if (jokes.length >= 10) {
+              this.setState({ jokes });
+              localStorage.setItem('DadJokes', JSON.stringify(jokes));
+            } else retrieveRecursive();
+          } else console.error('Failed to retrieve joke');
+        };
+        retrieveRecursive();
+      }
+    );
   }
 
   render() {
