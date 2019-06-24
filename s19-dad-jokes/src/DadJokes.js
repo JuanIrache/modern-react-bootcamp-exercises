@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import JokeList from './JokeList';
 import Header from './Header';
+import './DadJokes.css';
 
 export default class DadJokes extends Component {
   constructor(props) {

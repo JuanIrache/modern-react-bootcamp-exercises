@@ -1,0 +1,7 @@
+.DadJokes {
+  max-width: 1000px;
+  max-height: 600px;
+  margin: auto;
+  background-color: pink;
+  display: flex;
+}

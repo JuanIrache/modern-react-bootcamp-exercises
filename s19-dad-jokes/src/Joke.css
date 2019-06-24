@@ -1,0 +1,27 @@
+.Joke {
+  margin: 1em;
+  /* display: flex; */
+}
+
+.Joke-arrow {
+  font-size: 1.5em;
+  color: grey;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.Joke-arrow:hover {
+  transform: translate(-1px, -1px);
+  cursor: pointer;
+}
+
+.Joke-rating {
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  display: inline-block;
+  border: 2px solid yellow;
+  border-radius: 50%;
+  text-align: center;
+}

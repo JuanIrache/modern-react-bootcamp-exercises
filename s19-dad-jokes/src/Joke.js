@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Joke.css';
 
 export default class Joke extends Component {
   constructor(props) {
@@ -15,10 +16,14 @@ export default class Joke extends Component {
   render() {
     return (
       <div className="Joke">
-        <button onClick={this.rateDown}>Down</button>
-        {this.props.rating}
-        <button onClick={this.rateUp}>Up</button>
-        {this.props.joke}
+        <button onClick={this.rateDown} className="Joke-arrow">
+          ⬇
+        </button>
+        <span className="Joke-rating">{this.props.rating}</span>
+        <button onClick={this.rateUp} className="Joke-arrow">
+          ⬆
+        </button>
+        <span className="Joke-text">{this.props.joke}</span>
       </div>
     );
   }
