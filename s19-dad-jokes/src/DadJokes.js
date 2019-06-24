@@ -15,7 +15,7 @@ export default class DadJokes extends Component {
 
   componentDidMount() {
     const local = localStorage.getItem('DadJokes');
-    if (local) this.setState({ jokes: JSON.parse(local) });
+    if (false && local) this.setState({ jokes: JSON.parse(local) });
     else this.generate();
   }
 
@@ -26,25 +26,20 @@ export default class DadJokes extends Component {
   }
 
   generate() {
-    const instance = axios.create({ baseURL: 'https://icanhazdadjoke.com/', timeout: 1000, headers: { Accept: 'application/json' } });
+    const instance = axios.create({ timeout: 1000, headers: { Accept: 'application/json' } });
     let jokes = [];
-    const retrieveRecursive = function() {
-      instance
-        .get('https://icanhazdadjoke.com/')
-        .then(({ data: { status, joke, id } }) => {
-          if (status === 200) {
-            if (!jokes.some(j => j.id === id)) jokes.push({ joke, id, rating: 0 });
-            if (jokes.length >= 10) {
-              this.setState({ jokes });
-              localStorage.setItem('DadJokes', JSON.stringify(jokes));
-            } else {
-              retrieveRecursive.call(this);
-            }
-          } else throw new Error('Failed to retrieve joke');
-        })
-        .catch(console.error);
+    const retrieveRecursive = async () => {
+      const { data } = await instance.get('https://icanhazdadjoke.com/').catch(console.error);
+      const { status, joke, id } = data;
+      if (status === 200) {
+        if (!jokes.some(j => j.id === id)) jokes.push({ joke, id, rating: 0 });
+        if (jokes.length >= 10) {
+          this.setState({ jokes });
+          localStorage.setItem('DadJokes', JSON.stringify(jokes));
+        } else retrieveRecursive.call(this);
+      } else console.error('Failed to retrieve joke');
     };
-    retrieveRecursive.call(this);
+    retrieveRecursive();
   }
 
   render() {
