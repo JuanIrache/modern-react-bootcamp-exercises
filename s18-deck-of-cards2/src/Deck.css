@@ -1,0 +1,26 @@
+.Deck {
+  background-color: teal;
+  text-align: center;
+  height: 100vh;
+}
+
+.Deck-button {
+  margin-top: 2.5em;
+  padding: 2em;
+  background-color: brown;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+}
+
+.Deck-button:not([disabled]):hover {
+  background-color: rgb(70, 70, 70);
+}
+
+.Deck-cards {
+  position: relative;
+  text-align: center;
+  margin: 4em;
+}
