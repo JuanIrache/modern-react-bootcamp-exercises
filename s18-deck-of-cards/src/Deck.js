@@ -22,7 +22,7 @@ export default class Deck extends Component {
     axios
       .get(`https://deckofcardsapi.com/api/deck/${this.state.id}/draw/`)
       .then(({ data }) => {
-        if (data.cards.length) {
+        if (data.remaining) {
           const newCard = { ...data.cards[0], angle: Math.random() - 0.5, pos: { x: Math.random() - 0.5, y: Math.random() - 0.5 } };
           this.setState({ cards: [...this.state.cards, newCard] });
         } else {
