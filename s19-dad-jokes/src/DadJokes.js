@@ -9,13 +9,13 @@ export default class DadJokes extends Component {
     this.state = {
       jokes: []
     };
-    this.retrieve = this.generate.bind(this);
+    this.generate = this.generate.bind(this);
     this.rate = this.rate.bind(this);
   }
 
   componentDidMount() {
     const local = localStorage.getItem('DadJokes');
-    if (false && local) this.setState({ jokes: JSON.parse(local) });
+    if (local) this.setState({ jokes: JSON.parse(local) });
     else this.generate();
   }
 
@@ -39,7 +39,7 @@ export default class DadJokes extends Component {
         } else retrieveRecursive.call(this);
       } else console.error('Failed to retrieve joke');
     };
-    retrieveRecursive();
+    retrieveRecursive.call(this);
   }
 
   render() {
