@@ -24,6 +24,7 @@
   text-transform: uppercase;
   font-family: 'Slabo 27px', serif;
   transition: all 0.25s;
+  outline: none;
 }
 
 .Deck-button:not([disabled]):hover {
