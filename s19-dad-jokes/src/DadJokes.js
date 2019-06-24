@@ -12,12 +12,17 @@ export default class DadJokes extends Component {
     this.retrieve = this.generate.bind(this);
     this.rate = this.rate.bind(this);
   }
+
   componentDidMount() {
-    this.generate();
+    const local = localStorage.getItem('DadJokes');
+    if (local) this.setState({ jokes: JSON.parse(local) });
+    else this.generate();
   }
 
-  rate(idx, plus) {
-    this.setState({ jokes: this.state.jokes.map(j => (j.id === idx ? { ...j, rating: plus ? j.rating + 1 : j.rating - 1 } : j)) });
+  rate(idx, diff) {
+    const jokes = this.state.jokes.map(j => (j.id === idx ? { ...j, rating: j.rating + diff } : j));
+    this.setState({ jokes });
+    localStorage.setItem('DadJokes', JSON.stringify(jokes));
   }
 
   generate() {
@@ -28,9 +33,10 @@ export default class DadJokes extends Component {
         .get('https://icanhazdadjoke.com/')
         .then(({ data: { status, joke, id } }) => {
           if (status === 200) {
-            if (!this.state.jokes.some(j => j.id === id)) jokes.push({ joke, id, rating: 0 });
+            if (!jokes.some(j => j.id === id)) jokes.push({ joke, id, rating: 0 });
             if (jokes.length >= 10) {
               this.setState({ jokes });
+              localStorage.setItem('DadJokes', JSON.stringify(jokes));
             } else {
               retrieveRecursive.call(this);
             }

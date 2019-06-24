@@ -7,10 +7,10 @@ export default class Joke extends Component {
     this.rateDown = this.rateDown.bind(this);
   }
   rateUp() {
-    this.props.rate(this.props.id, true);
+    this.props.rate(this.props.id, +1);
   }
   rateDown() {
-    this.props.rate(this.props.id, false);
+    this.props.rate(this.props.id, -1);
   }
   render() {
     return (
