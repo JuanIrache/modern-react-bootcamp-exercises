@@ -33,6 +33,7 @@
   border-radius: 50%;
   text-align: center;
   background-color: white;
+  box-shadow: 4px 5px 19px -5px rgba(0, 0, 0, 0.45);
 }
 
 .Joke-rating-inside {
