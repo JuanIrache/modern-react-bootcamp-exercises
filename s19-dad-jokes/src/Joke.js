@@ -50,15 +50,19 @@ export default class Joke extends Component {
     return (
       <div className="Joke">
         <div className="Joke-left">
-          <button onClick={this.rateDown} className="Joke-arrow">
-            ⬇
-          </button>
-          <div className="Joke-rating" style={{ border: `3px solid rgb(${this.getRGB(rating)})` }}>
-            {rating}
-          </div>
-          <button onClick={this.rateUp} className="Joke-arrow">
-            ⬆
-          </button>
+          {rating != null && (
+            <div>
+              <button onClick={this.rateDown} className="Joke-arrow">
+                ⬇
+              </button>
+              <div className="Joke-rating" style={{ border: `3px solid rgb(${this.getRGB(rating)})` }}>
+                {rating}
+              </div>
+              <button onClick={this.rateUp} className="Joke-arrow">
+                ⬆
+              </button>
+            </div>
+          )}
         </div>
         <div className="Joke-text">{joke}</div>
         <div className="Joke-emoji">

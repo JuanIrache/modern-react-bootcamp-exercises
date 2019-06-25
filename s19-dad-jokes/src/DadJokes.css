@@ -3,5 +3,5 @@
   max-height: 600px;
   margin: auto;
   display: flex;
-  overflow: hidden;
+  overflow: visible;
 }
