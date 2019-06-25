@@ -47,6 +47,7 @@ export default class Joke extends Component {
   }
   render() {
     const { rating, joke, smileys } = this.props;
+
     return (
       <div className="Joke">
         <div className="Joke-left">
@@ -65,11 +66,9 @@ export default class Joke extends Component {
           )}
         </div>
         <div className="Joke-text">{joke}</div>
-        <div className="Joke-emoji">
-          <span role="img" aria-label="">
-            {smileys[Math.min(Math.max(rating, -11), 12).toString()]}
-          </span>
-        </div>
+        <span className={`Joke-emoji${rating == null ? ' Joke-emoji-roll' : ''}`} role="img" aria-label="">
+          {smileys[Math.min(Math.max(rating || 0, -11), 12).toString()]}
+        </span>
       </div>
     );
   }

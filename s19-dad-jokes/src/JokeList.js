@@ -9,7 +9,7 @@ export default class JokeList extends Component {
         {this.props.jokes.length ? (
           this.props.jokes.map(j => <Joke {...j} key={j.id} rate={this.props.rate} />)
         ) : (
-          <Joke key="Loading" joke="Loading..." rating="0" />
+          <Joke key="Loading" joke="Loading..." />
         )}
       </div>
     );
