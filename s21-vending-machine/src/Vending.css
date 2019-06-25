@@ -1,0 +1,7 @@
+a {
+  text-decoration: none;
+}
+
+.active-link {
+  text-decoration: underline;
+}
