@@ -1,5 +1,7 @@
 .App {
   height: 100vh;
-  background-color: #abe1fc;
+  /* background-color: #abe1fc; */
   display: flex;
+  background: linear-gradient(135deg, #abe1fc 0%, #abe1fc 50%, rgb(240, 98, 146) 50%, rgb(240, 98, 146) 100%);
+  color: rgb(73, 73, 73);
 }

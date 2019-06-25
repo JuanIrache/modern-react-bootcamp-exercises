@@ -28,11 +28,10 @@ export default class DadJokes extends Component {
   }
 
   generate() {
-    const instance = axios.create({ timeout: 1000, headers: { Accept: 'application/json' } });
     let jokes = [];
     this.setState({ jokes: [] }, () => {
       const retrieveRecursive = async () => {
-        const { data } = await instance.get('https://icanhazdadjoke.com/').catch(console.error);
+        const { data } = await axios.get('https://icanhazdadjoke.com/', { headers: { Accept: 'application/json' } }).catch(console.error);
         const { status, joke, id } = data;
         if (status === 200) {
           if (!jokes.some(j => j.id === id)) jokes.push({ joke, id, rating: 0 });

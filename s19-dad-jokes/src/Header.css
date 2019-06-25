@@ -15,7 +15,7 @@
   margin: 0.67em 0;
   outline: none;
   border: none;
-  background-color: #2fbaff;
+  background: linear-gradient(135deg, #abe1fc 0%, #abe1fc 50%, rgb(240, 98, 146) 50%, rgb(240, 98, 146) 100%);
   padding: 1em;
   color: white;
   font-size: 1.2em;
@@ -24,6 +24,7 @@
   border-radius: 1em;
   font-family: inherit;
   box-shadow: 0 8px 6px -6px black;
+  transition: all 0.2s;
 }
 
 .Header-title {
@@ -32,11 +33,11 @@
 
 .Header-button:hover {
   cursor: pointer;
-  color: #2fbaff;
-  background-color: white;
+  transform: translateY(-0.1em);
 }
 
 .Header-button[disabled] {
+  background: none;
   background-color: grey;
   cursor: not-allowed;
   color: white;
@@ -44,8 +45,35 @@
 
 .Header-icon {
   box-shadow: 0 -8px 6px -6px black;
-
   border-radius: 50%;
   font-size: 8em;
-  /* text-shadow: 0 0 0.2em black; */
+}
+
+.Header-icon:hover {
+  cursor: default;
+  animation: wobble 1s ease infinite;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }

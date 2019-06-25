@@ -22,9 +22,16 @@
   outline: none;
 }
 
-.Joke-arrow:hover {
-  color: black;
+.Joke-arrow-up:hover {
   cursor: pointer;
+  animation: move-up 0.7s ease-out;
+  color: #8bc34a;
+}
+
+.Joke-arrow-down:hover {
+  cursor: pointer;
+  animation: move-down 0.7s ease-out;
+  color: #f44336;
 }
 
 .Joke-rating {
@@ -60,5 +67,29 @@
 @keyframes spin {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes move-up {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25%,
+  75% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes move-down {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25%,
+  75% {
+    transform: translateY(3px);
   }
 }

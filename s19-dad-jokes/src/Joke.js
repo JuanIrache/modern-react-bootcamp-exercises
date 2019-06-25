@@ -53,13 +53,13 @@ export default class Joke extends Component {
         <div className="Joke-left">
           {rating != null && (
             <div>
-              <button onClick={this.rateDown} className="Joke-arrow">
+              <button onClick={this.rateDown} className="Joke-arrow Joke-arrow-down">
                 ⬇
               </button>
               <div className="Joke-rating" style={{ border: `3px solid rgb(${this.getRGB(rating)})` }}>
                 {rating}
               </div>
-              <button onClick={this.rateUp} className="Joke-arrow">
+              <button onClick={this.rateUp} className="Joke-arrow Joke-arrow-up">
                 ⬆
               </button>
             </div>
