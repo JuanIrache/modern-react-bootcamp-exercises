@@ -2,10 +2,11 @@
   margin: 1em;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
 }
 
 .Joke-left {
+  width: 100px;
 }
 
 .Joke-arrow {
@@ -17,27 +18,39 @@
 }
 
 .Joke-arrow:hover {
-  transform: translate(-1px, -1px);
+  /* transform: translate(-1px, -1px); */
+  color: black;
   cursor: pointer;
 }
 
 .Joke-rating {
   width: 2em;
   height: 2em;
-  vertical-align: middle;
+  line-height: 2em;
+  vertical-align: bottom;
   display: inline-block;
-  border: 2px solid yellow;
   border-radius: 50%;
   text-align: center;
+  background-color: white;
+}
+
+.Joke-rating-inside {
 }
 
 .Joke-text {
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 
 .Joke-emoji {
   font-size: 2em;
-  vertical-align: middle;
-
+  /* vertical-align: middle; */
+  margin-left: auto;
+  margin-right: 0;
   justify-self: flex-end;
+  transition: transform 0.8s ease-in-out;
+}
+
+.Joke-emoji:hover {
+  transform: rotate(360deg);
+  cursor: default;
 }

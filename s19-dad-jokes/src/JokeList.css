@@ -1,0 +1,9 @@
+.JokeList {
+  width: 100%;
+  background-color: lightcyan;
+  overflow-y: auto;
+  padding-right: 17px;
+  margin: 2em 0;
+  font-size: 0.9em;
+  font-family: 'Raleway', sans-serif;
+}

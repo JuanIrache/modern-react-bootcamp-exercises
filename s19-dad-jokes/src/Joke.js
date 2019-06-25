@@ -11,8 +11,8 @@ export default class Joke extends Component {
     smileys: {
       '-11': '🤬',
       '-10': '😡',
-      '-9': '😠',
-      '-8': '😤',
+      '-9': '😤',
+      '-8': '😠',
       '-7': '😭',
       '-6': '😰',
       '-5': '😢',
@@ -41,22 +41,29 @@ export default class Joke extends Component {
   rateDown() {
     this.props.rate(this.props.id, -1);
   }
+  getRGB(rating) {
+    if (rating > 0) return `${200 - rating * 20},200,0`;
+    return `200,${200 - rating * -20},0`;
+  }
   render() {
+    const { rating, joke, smileys } = this.props;
     return (
       <div className="Joke">
         <div className="Joke-left">
           <button onClick={this.rateDown} className="Joke-arrow">
             ⬇
           </button>
-          <span className="Joke-rating">{this.props.rating}</span>
+          <div className="Joke-rating" style={{ border: `3px solid rgb(${this.getRGB(rating)})` }}>
+            {rating}
+          </div>
           <button onClick={this.rateUp} className="Joke-arrow">
             ⬆
           </button>
         </div>
-        <div className="Joke-text">{this.props.joke}</div>
+        <div className="Joke-text">{joke}</div>
         <div className="Joke-emoji">
           <span role="img" aria-label="">
-            {this.props.smileys[Math.min(Math.max(this.props.rating, -11), 12).toString()]}
+            {smileys[Math.min(Math.max(rating, -11), 12).toString()]}
           </span>
         </div>
       </div>
