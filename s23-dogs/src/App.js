@@ -33,7 +33,7 @@ export default class App extends Component {
     ]
   };
   findDog(name) {
-    return this.props.dogs.find(d => d.name === name);
+    return this.props.dogs.find(d => d.name.toLowerCase() === name.toLowerCase());
   }
 
   render() {
