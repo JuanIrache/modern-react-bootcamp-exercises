@@ -1,4 +1,42 @@
+.Dogs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.Dogs-dogs {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
 .Dogs-img {
-  max-height: 20em;
-  max-width: 20em;
+  margin-top: 1em;
+  max-height: 30em;
+  box-shadow: 10px 10px 50px -15px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+.Dogs-img:hover {
+  transform: scale(1.01);
+}
+
+.Dogs-title {
+  color: rgb(88, 88, 88);
+  font-weight: 200;
+  font-size: 5em;
+  margin: 0.5em 0 0 0;
+  padding: 0 0 0.2em 0;
+  border-bottom: 1px solid rgb(255, 208, 0);
+}
+
+.Dogs a {
+  text-decoration: none;
+  color: rgb(65, 65, 65);
+}
+
+.Dogs a:hover {
+  text-decoration: underline;
 }

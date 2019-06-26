@@ -17,6 +17,7 @@ export default class Dogs extends Component {
             </div>
           ))}
         </div>
+        <div />
       </div>
     );
   }

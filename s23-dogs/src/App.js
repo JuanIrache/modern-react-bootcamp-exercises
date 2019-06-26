@@ -44,7 +44,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/dogs" />} />
           <Route exact path="/dogs" render={() => <Dogs dogs={dogs} />} />
-          <Route exact path="/dogs/:name" render={rp => <Dog dog={this.findDog(rp.match.params.name)} />} />
+          <Route exact path="/dogs/:name" render={rp => <Dog {...rp} dog={this.findDog(rp.match.params.name)} />} />
           <Route component={NotFound} />
         </Switch>
       </div>

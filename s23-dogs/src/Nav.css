@@ -1,3 +1,31 @@
+.Nav {
+  background-color: rgb(65, 65, 65);
+  padding: 0.3em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.Nav-link {
+  font-size: 0.9em;
+  padding: 0 1em;
+  color: rgb(192, 192, 192);
+  transition: all 0.3s ease;
+}
+
+.Nav-link:hover {
+  color: rgb(255, 208, 0);
+}
+
 .Nav-active {
-  color: red;
+  color: white;
+}
+
+a.Nav-link {
+  text-decoration: none;
+}
+
+.Nav-home {
+  color: rgb(255, 208, 0);
+  font-weight: bold;
+  font-size: 1.2em;
 }
