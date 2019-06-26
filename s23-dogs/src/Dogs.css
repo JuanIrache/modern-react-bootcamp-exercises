@@ -17,9 +17,11 @@
   max-height: 30em;
   box-shadow: 10px 10px 50px -15px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
+  filter: grayscale();
 }
 
-.Dogs-img:hover {
+.Dogs-dog:hover .Dogs-img {
+  filter: none;
   transform: scale(1.01);
 }
 
@@ -34,9 +36,22 @@
 
 .Dogs a {
   text-decoration: none;
-  color: rgb(65, 65, 65);
 }
 
-.Dogs a:hover {
-  text-decoration: underline;
+.Dogs-dog:hover a {
+  /* text-decoration: underline; */
+}
+
+.Dogs-dogname {
+  margin-top: 2em;
+  color: rgb(65, 65, 65);
+  letter-spacing: 0.2em;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+
+.Dogs-dog:hover .Dogs-dogname {
+  color: rgb(65, 65, 65);
+  letter-spacing: 0.2em;
+  border-bottom: 2px solid rgb(255, 208, 0);
 }
