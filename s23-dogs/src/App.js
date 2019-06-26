@@ -33,7 +33,7 @@ export default class App extends Component {
     ]
   };
   findDog(name) {
-    return this.props.dogs.reduce((acc, cur) => (cur.name === name ? cur : acc), null);
+    return this.props.dogs.find(d => d.name === name);
   }
 
   render() {
