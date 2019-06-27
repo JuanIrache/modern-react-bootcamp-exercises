@@ -8,9 +8,9 @@
 
 .ColorBox-copy {
   position: absolute;
-  width: 5em;
-  height: 2em;
-  margin: -1em 0 0 -2.5em;
+  width: 5rem;
+  height: 2rem;
+  margin: -1rem 0 0 -2.5rem;
   top: 50%;
   left: 50%;
   background: rgba(255, 255, 255, 0.25);
@@ -33,9 +33,9 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 0.3em;
-  font-size: 0.7em;
-  letter-spacing: 0.1em;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
 }
 
 .ColorBox-more {
@@ -44,6 +44,55 @@
   right: 0;
   color: white;
   background-color: rgba(255, 255, 255, 0.25);
-  padding: 0.3em;
-  font-size: 0.8em;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.ColorBox-overlay-bg {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.1);
+  transition: transform 0.6s ease-in-out;
+  z-index: 0;
+}
+
+.ColorBox-overlay-bg.show {
+  position: absolute;
+  opacity: 1;
+  transform: scale(50);
+  z-index: 1;
+}
+
+.ColorBox-overlay-text {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  text-align: center;
+  color: white;
+  width: 100%;
+  z-index: 0;
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.ColorBox-overlay-text h3 {
+  font-size: 4rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin: 0;
+  padding: 1rem;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ColorBox-overlay-text p {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+.ColorBox-overlay-text.show {
+  transition: all 0.6s ease-in-out 0s;
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
 }
