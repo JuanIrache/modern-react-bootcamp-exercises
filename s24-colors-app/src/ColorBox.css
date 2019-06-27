@@ -1,0 +1,49 @@
+.ColorBox {
+  width: 20%;
+  height: 25%;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.ColorBox-copy {
+  position: absolute;
+  width: 5em;
+  height: 2em;
+  margin: -1em 0 0 -2.5em;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-weight: bold;
+  color: white;
+  text-transform: inherit;
+  transition: all 0.3s ease;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ColorBox:hover .ColorBox-copy {
+  opacity: 1;
+}
+
+.ColorBox-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0.3em;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+}
+
+.ColorBox-more {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.3em;
+  font-size: 0.8em;
+}
