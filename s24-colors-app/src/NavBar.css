@@ -24,13 +24,12 @@
 .NavBar-slider-container span {
   font-size: 0.9rem;
   font-weight: bold;
-  margin-right: 1rem;
   color: rgb(94, 94, 94);
 }
 
 .NavBar-slider {
   width: 15rem;
-  margin: 0;
+  margin-right: 2rem;
   display: inline-block;
 }
 
@@ -52,6 +51,6 @@
   box-shadow: none;
   width: 1rem;
   height: 1rem;
-  margin-left: -10px;
+  margin-left: -11px;
   margin-top: -4px;
 }
