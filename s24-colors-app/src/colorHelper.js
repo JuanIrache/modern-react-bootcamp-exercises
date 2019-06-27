@@ -5,23 +5,30 @@ function generatePalette(starterPalette) {
   let newPalette = { ...starterPalette, colors: {} };
   //Loop original colors
   starterPalette.colors.forEach(c => {
-    //Loop from -4 (darkest) to +4 (brigthest)
-    for (let i = -4; i <= 4; i++) {
+    //Loop from -5 (darkest) to +5 (brigthest)
+    for (let i = -5; i <= 5; i++) {
       //Label shades 0 through 8
-      const shade = (i + 4).toString();
-      //Produce darker/brighter color with chroma. Multiply i by (3/4) to avoid black and white
-      const newColor = chroma(c.color).brighten(i * (3 / 4));
+      const shadeName = (i + 5).toString();
+      //Read original color luminance
+      const luma = chroma(c.color).luminance();
+      let newLuma;
+      //Find a luminance between almost black and the original luma
+      if (i < 0) newLuma = luma - (luma / 6) * -i;
+      //Find a luminance between almost white and the original luma
+      else newLuma = luma + ((1 - luma) / 6) * i;
+      //Create a new color with such luminance
+      const newColor = chroma(c.color).luminance(newLuma, 'lab');
       //Create string for each format
       const newColorObj = {
-        id: `${c.name} ${shade}`,
+        id: `${c.name} ${shadeName}`,
         hex: newColor.hex(),
         rgb: newColor.css(),
         rgba: newColor.css('rgba')
       };
       //Create array inside objects if not present
-      newPalette.colors[shade] = newPalette.colors[shade] || [];
+      newPalette.colors[shadeName] = newPalette.colors[shadeName] || [];
       //Push the new color
-      newPalette.colors[shade].push(newColorObj);
+      newPalette.colors[shadeName].push(newColorObj);
     }
   });
   return newPalette;
