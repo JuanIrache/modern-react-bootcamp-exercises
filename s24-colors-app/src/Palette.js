@@ -18,7 +18,8 @@ export default class Palette extends Component {
   }
   render() {
     const { level } = this.state;
-    const { colors } = this.props.palette;
+    const { colors, paletteName, emoji } = this.props.palette;
+
     return (
       <div className="Palette">
         <NavBar level={this.state.level} changeLevel={this.changeLevel} mode={this.state.mode} changeMode={this.changeMode} />
@@ -27,6 +28,9 @@ export default class Palette extends Component {
             <ColorBox key={c.id} {...c} mode={this.state.mode} />
           ))}
         </div>
+        <footer className="Palette-footer">
+          {paletteName} <span className="Palette-footer-emoji">{emoji}</span>
+        </footer>
       </div>
     );
   }

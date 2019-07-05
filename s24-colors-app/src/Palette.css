@@ -7,3 +7,16 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.Palette-footer {
+  height: 5%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+}
+
+.Palette-footer-emoji {
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
