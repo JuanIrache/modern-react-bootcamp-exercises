@@ -21,7 +21,7 @@ export default class Palette extends Component {
     const { colors } = this.props.palette;
     return (
       <div className="Palette">
-        <NavBar level={this.state.level} changeLevel={this.changeLevel} mode={this.state.mode} change={this.changeMode} />
+        <NavBar level={this.state.level} changeLevel={this.changeLevel} mode={this.state.mode} changeMode={this.changeMode} />
         <div className="Palette-colors">
           {colors[level].map(c => (
             <ColorBox key={c.id} {...c} mode={this.state.mode} />
