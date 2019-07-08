@@ -30,7 +30,7 @@ export default class NavBar extends Component {
     return (
       <nav className="NavBar">
         <div className="NavBar-logo">
-          <Link to="/">React Color Picker</Link>
+          <Link to="/">Palette Manager</Link>
         </div>
         <div className="NavBar-slider-container">
           <div className="NavBar-slider">
