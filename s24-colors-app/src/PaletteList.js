@@ -5,7 +5,7 @@ import { fontSize } from '@material-ui/system';
 
 const styles = {
   root: { backgroundColor: 'skyBlue', height: '100vh' },
-  container: { width: '60%', margin: 'auto' },
+  container: { width: '70%', margin: 'auto' },
   nav: {
     color: 'white',
     textTransform: 'uppercase',
@@ -19,6 +19,13 @@ const styles = {
 };
 
 class PaletteList extends Component {
+  constructor() {
+    super();
+    this.linkPalette = this.linkPalette.bind(this);
+  }
+  linkPalette(id) {
+    this.props.history.push(`/palette/${id}`);
+  }
   render() {
     const { classes } = this.props;
     return (
@@ -28,7 +35,7 @@ class PaletteList extends Component {
             <h1>Palette Manager</h1>
           </nav>
           {this.props.palettes.map(p => (
-            <MiniPalette {...p} key={p.id} />
+            <MiniPalette {...p} key={p.id} handleClick={this.linkPalette} />
           ))}
         </div>
       </div>

@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" render={() => <PaletteList palettes={seedColors} />} />
+        <Route exact path="/" render={rp => <PaletteList palettes={seedColors} {...rp} />} />
         <Route exact path="/palette/:id" render={rp => <Palette palette={findGenPalette(rp.match.params.id)} />} />
         <Route exact render={() => <h1>Not found</h1>} />
       </Switch>
