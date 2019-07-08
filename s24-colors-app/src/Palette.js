@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Emoji } from 'emoji-mart';
 import './Palette.css';
 import ColorBox from './ColorBox';
 import NavBar from './NavBar';
@@ -29,7 +30,10 @@ export default class Palette extends Component {
           ))}
         </div>
         <footer className="Palette-footer">
-          {paletteName} <span className="Palette-footer-emoji">{emoji}</span>
+          {paletteName}{' '}
+          <span className="Palette-footer-emoji">
+            <Emoji emoji={emoji} set="google" size={20} />
+          </span>
         </footer>
       </div>
     );
