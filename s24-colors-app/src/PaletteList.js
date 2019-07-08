@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MiniPalette from './MiniPalette';
 import { withStyles } from '@material-ui/styles';
-import { fontSize } from '@material-ui/system';
 
 const styles = {
   root: { backgroundColor: 'skyBlue', height: '100vh' },
