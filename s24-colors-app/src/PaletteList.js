@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import MiniPalette from './MiniPalette';
+import { withStyles } from '@material-ui/styles';
 
-export default class PaletteList extends Component {
+const styles = {
+  root: { width: '60%', margin: 'auto' }
+};
+
+class PaletteList extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <ul className="PaletteList">
+      <div className={classes.root}>
         {this.props.palettes.map(p => (
-          <li key={p.id}>
-            <Link to={`/palette/${p.id}`}>{p.paletteName}</Link>
-          </li>
+          <MiniPalette {...p} key={p.id} />
         ))}
-      </ul>
+      </div>
     );
   }
 }
+
+export default withStyles(styles)(PaletteList);
