@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import 'rc-slider/assets/index.css';
 import './NavBar.css';
 
@@ -28,7 +30,7 @@ export default class NavBar extends Component {
     return (
       <nav className="NavBar">
         <div className="NavBar-logo">
-          <a href="#">React Color Picker</a>
+          <Link to="/">React Color Picker</Link>
         </div>
         <div className="NavBar-slider-container">
           <div className="NavBar-slider">
