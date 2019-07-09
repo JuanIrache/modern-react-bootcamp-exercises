@@ -14,7 +14,8 @@
   height: 50%;
 }
 
-.ColorBox-copy {
+.ColorBox-copy,
+.ColorBox-back {
   position: absolute;
   width: 5rem;
   height: 2rem;
@@ -29,8 +30,11 @@
   color: white;
   text-transform: inherit;
   transition: all 0.3s ease;
-  opacity: 0;
   cursor: pointer;
+}
+
+.ColorBox-copy {
+  opacity: 0;
 }
 
 .ColorBox:hover .ColorBox-copy {
@@ -55,6 +59,14 @@
   padding: 0.3rem;
   font-size: 0.8rem;
   text-decoration: none;
+}
+
+.ColorBox .dark-text {
+  color: rgb(51, 51, 51);
+}
+
+.ColorBox .light-text {
+  color: white;
 }
 
 .ColorBox-overlay-bg {
