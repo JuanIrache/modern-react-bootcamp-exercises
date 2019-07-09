@@ -17,7 +17,7 @@ export default class ColorBox extends Component {
     });
   }
   render() {
-    const { hex, mode, id, name, paletteId, more } = this.props;
+    const { hex, mode, id, name, paletteId, single } = this.props;
     const { copying } = this.state;
     const moreLink = (
       <Link className="ColorBox-more" to={`/palette/${paletteId}/${id}`} onClick={e => e.stopPropagation()}>
@@ -26,7 +26,7 @@ export default class ColorBox extends Component {
     );
     return (
       <CopyToClipboard text={this.props[mode]} onCopy={this.startCopy}>
-        <div className="ColorBox" style={{ backgroundColor: hex }}>
+        <div className={`ColorBox ${!single ? 'fiveByFour' : 'sixByTwo'}`} style={{ backgroundColor: hex }}>
           <div className={`ColorBox-overlay-bg${copying ? ' show' : ''}`} style={{ backgroundColor: hex }} />
           <div className={`ColorBox-overlay-text${copying ? ' show' : ''}`}>
             <h3>Copied!</h3>
@@ -34,7 +34,7 @@ export default class ColorBox extends Component {
           </div>
           <button className="ColorBox-copy">Copy</button>
           <span className="ColorBox-name">{name}</span>
-          {more && moreLink}
+          {!single && moreLink}
         </div>
       </CopyToClipboard>
     );

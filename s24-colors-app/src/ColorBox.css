@@ -1,9 +1,17 @@
 .ColorBox {
-  width: 20%;
-  height: 25%;
   cursor: pointer;
   position: relative;
   text-transform: uppercase;
+}
+
+.ColorBox.fiveByFour {
+  width: 20%;
+  height: 25%;
+}
+
+.ColorBox.sixByTwo {
+  width: 16.6666666666666666666666%;
+  height: 50%;
 }
 
 .ColorBox-copy {
