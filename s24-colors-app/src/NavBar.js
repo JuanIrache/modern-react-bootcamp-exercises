@@ -27,17 +27,20 @@ export default class NavBar extends Component {
     this.setState({ snack: false });
   }
   render() {
+    const slider = (
+      <div className="NavBar-slider-container">
+        <div className="NavBar-slider">
+          <Slider defaultValue={this.props.level} min={0} max={10} onChange={this.props.changeLevel} />
+        </div>
+        <span>Level: {this.props.level}</span>
+      </div>
+    );
     return (
       <nav className="NavBar">
         <div className="NavBar-logo">
           <Link to="/">Palette Manager</Link>
         </div>
-        <div className="NavBar-slider-container">
-          <div className="NavBar-slider">
-            <Slider defaultValue={this.props.level} min={0} max={10} onChange={this.props.changeLevel} />
-          </div>
-          <span>Level: {this.props.level}</span>
-        </div>
+        {this.props.level != null && slider}
         <div className="NavBar-select-container">
           <Select value={this.state.mode} onChange={this.handleModeChange}>
             <MenuItem value="hex">HEX - #ffffff</MenuItem>

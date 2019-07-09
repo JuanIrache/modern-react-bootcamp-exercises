@@ -2,7 +2,7 @@ import chroma from 'chroma-js';
 
 function generatePalette(starterPalette) {
   //Clone starterPalette but override colors
-  let newPalette = { ...starterPalette, colors: {} };
+  let newPalette = { ...starterPalette, colors: [] };
   //Loop original colors
   starterPalette.colors.forEach(c => {
     //Loop from -5 (darkest) to +5 (brigthest)
