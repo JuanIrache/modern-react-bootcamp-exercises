@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Emoji } from 'emoji-mart';
 import './Palette.css';
 import ColorBox from './ColorBox';
 import NavBar from './NavBar';
+import PaletteFooter from './PaletteFooter';
 
 export default class Palette extends Component {
   constructor() {
@@ -29,12 +29,7 @@ export default class Palette extends Component {
             <ColorBox {...c} mode={mode} paletteId={id} name={c.key} />
           ))}
         </div>
-        <footer className="Palette-footer">
-          {paletteName}{' '}
-          <span className="Palette-footer-emoji">
-            <Emoji emoji={emoji} set="google" size={20} />
-          </span>
-        </footer>
+        <PaletteFooter emoji={emoji} paletteName={paletteName} />
       </div>
     );
   }
