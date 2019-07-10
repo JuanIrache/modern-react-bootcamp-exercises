@@ -26,7 +26,7 @@ export default class Palette extends Component {
         <NavBar level={level} changeLevel={this.changeLevel} mode={mode} changeMode={this.changeMode} />
         <div className="Palette-colors">
           {colors[level].map(c => (
-            <ColorBox {...c} mode={mode} paletteId={id} name={c.key} />
+            <ColorBox {...c} mode={mode} paletteId={id} key={c.id} />
           ))}
         </div>
         <PaletteFooter emoji={emoji} paletteName={paletteName} />

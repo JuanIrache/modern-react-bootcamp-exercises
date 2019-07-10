@@ -23,9 +23,9 @@ export default class SingleColorPalette extends Component {
         <NavBar mode={this.state.mode} changeMode={this.changeMode} />
         <div className="SingleColorPalette-colors">
           {shades.map(c => (
-            <ColorBox {...c} mode={this.state.mode} paletteId={paletteId} name={c.key} single />
+            <ColorBox {...c} mode={this.state.mode} paletteId={paletteId} key={c.name} single />
           ))}
-          <Link className="ColorBox sixByTwo" style={{ backgroundColor: '#fff' }} to="/">
+          <Link className="ColorBox sixByTwo" style={{ backgroundColor: '#fff' }} to={`/palette/${paletteId}`}>
             <button className="ColorBox-back dark-text">Go Back</button>
           </Link>
         </div>

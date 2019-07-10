@@ -21,7 +21,7 @@ function generatePalette(starterPalette) {
       //Create string for each format
       const newColorObj = {
         id: `${c.name}`,
-        key: `${c.name} ${shadeName}`,
+        name: `${c.name} ${shadeName}`,
         hex: newColor.hex(),
         rgb: newColor.css(),
         rgba: newColor.css('rgba')
