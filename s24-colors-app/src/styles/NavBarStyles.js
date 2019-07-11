@@ -3,25 +3,7 @@ export default {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    height: '5%',
-    '& .rc-slider-track': {
-      backgroundColor: 'transparent'
-    },
-
-    '& .rc-slider-rail': {
-      height: '0.5rem'
-    },
-
-    '& .rc-slider-handle,.rc-slider-handle:active,.rc-slider-handle:focus,.rc-slider-handle:hover': {
-      backgroundColor: 'rgb(68, 145, 128)',
-      outline: 'none',
-      border: '2px solid rgb(68, 145, 128)',
-      boxShadow: 'none',
-      width: '1rem',
-      height: '1rem',
-      marginLeft: '-11px',
-      marginTop: '-4px'
-    }
+    height: '5%'
   },
   NavBarLogo: {
     marginRight: '2rem',
@@ -42,6 +24,24 @@ export default {
       fontSize: '0.9rem',
       fontWeight: 'bold',
       color: 'rgb(94, 94, 94)'
+    },
+    '& .rc-slider-track': {
+      backgroundColor: 'transparent'
+    },
+
+    '& .rc-slider-rail': {
+      height: '0.5rem'
+    },
+
+    '& .rc-slider-handle,.rc-slider-handle:active,.rc-slider-handle:focus,.rc-slider-handle:hover': {
+      backgroundColor: 'rgb(68, 145, 128)',
+      outline: 'none',
+      border: '2px solid rgb(68, 145, 128)',
+      boxShadow: 'none',
+      width: '1rem',
+      height: '1rem',
+      marginLeft: '-11px',
+      marginTop: '-4px'
     }
   },
   NavBarSlider: {
