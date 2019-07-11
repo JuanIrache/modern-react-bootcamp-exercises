@@ -1,14 +1,18 @@
 import React from 'react';
 import { Emoji } from 'emoji-mart';
+import { withStyles } from '@material-ui/styles';
+import styles from './styles/PaletteFooterStyles';
 
-export default function PaletteFooter(props) {
-  const { paletteName, emoji } = props;
+function PaletteFooter(props) {
+  const { paletteName, emoji, classes } = props;
   return (
-    <footer className="SingleColorPalette-footer">
+    <footer className={classes.PaletteFooter}>
       {paletteName}{' '}
-      <span className="SingleColorPalette-footer-emoji">
+      <span className={classes.PaletteFooterEmoji}>
         <Emoji emoji={emoji} set="google" size={20} />
       </span>
     </footer>
   );
 }
+
+export default withStyles(styles)(PaletteFooter);

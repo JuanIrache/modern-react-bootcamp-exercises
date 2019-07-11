@@ -4,34 +4,7 @@ import { withStyles } from '@material-ui/styles';
 import NavBar from './NavBar';
 import ColorBox from './ColorBox';
 import PaletteFooter from './PaletteFooter';
-import './SingleColorPalette.css';
-
-const styles = {
-  ColorBox: {
-    width: '16.6666666666666666666666%',
-    height: '50%',
-    cursor: 'pointer',
-    position: 'relative',
-    textTransform: 'uppercase'
-  },
-  ColorBoxBack: {
-    color: 'rgb(51, 51, 51)',
-    position: 'absolute',
-    width: '5rem',
-    height: '2rem',
-    margin: '-1rem 0 0 -2.5rem',
-    top: '50%',
-    left: '50%',
-    background: 'rgba(255, 255, 255, 0.25)',
-    border: 'none',
-    outline: 'none',
-    fontFamily: 'inherit',
-    fontWeight: 'bold',
-    textTransform: 'inherit',
-    transition: 'all 0.3s ease',
-    cursor: 'pointer'
-  }
-};
+import styles from './styles/SingleColorPaletteStyles';
 
 class SingleColorPalette extends Component {
   constructor() {
@@ -47,9 +20,9 @@ class SingleColorPalette extends Component {
     const { id: paletteId, emoji, paletteName } = palette;
     const shades = palette.colors.map(col => col.find(c => c.id === color));
     return (
-      <div className="SingleColorPalette">
+      <div className={classes.SingleColorPalette}>
         <NavBar mode={this.state.mode} changeMode={this.changeMode} />
-        <div className="SingleColorPalette-colors">
+        <div className={classes.SingleColorPaletteColors}>
           {shades.map(c => (
             <ColorBox {...c} mode={this.state.mode} paletteId={paletteId} key={c.name} single />
           ))}

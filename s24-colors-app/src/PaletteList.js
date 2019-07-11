@@ -1,21 +1,7 @@
 import React, { Component } from 'react';
 import MiniPalette from './MiniPalette';
 import { withStyles } from '@material-ui/styles';
-
-const styles = {
-  root: { backgroundColor: 'skyBlue', height: '100vh' },
-  container: { width: '70%', margin: 'auto' },
-  nav: {
-    color: 'white',
-    textTransform: 'uppercase',
-    letterSpacing: '.1rem',
-    '& h1': {
-      margin: 0,
-      padding: '.5rem',
-      fontSize: '1.3rem'
-    }
-  }
-};
+import styles from './styles/PaletteListStyles';
 
 class PaletteList extends Component {
   constructor() {
