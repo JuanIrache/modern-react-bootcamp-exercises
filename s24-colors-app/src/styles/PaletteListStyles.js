@@ -5,10 +5,17 @@ export default {
     color: 'white',
     textTransform: 'uppercase',
     letterSpacing: '.1rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     '& h1': {
       margin: 0,
       padding: '.5rem',
       fontSize: '1.3rem'
+    },
+    '& a': {
+      textDecoration: 'none',
+      color: 'white'
     }
   }
 };

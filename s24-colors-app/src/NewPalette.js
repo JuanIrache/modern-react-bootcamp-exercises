@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
+import randomWords from 'random-words';
+import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
+import Button from '@material-ui/core/Button';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -12,19 +15,30 @@ import DraggableBox from './DraggableBox';
 import FormDrawer from './FormDrawer';
 
 class NewPalette extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       open: true,
       color: '#8ED2D2',
       name: 'lightTeal',
-      colors: [{ name: 'pink', color: 'pink' }, { name: 'blue', color: 'blue' }, { name: 'red', color: 'red' }]
+      colors: [],
+      paletteName: ''
     };
     this.handleDrawerClose = this.handleDrawerClose.bind(this);
     this.handleDrawerOpen = this.handleDrawerOpen.bind(this);
     this.changeColor = this.changeColor.bind(this);
     this.addColor = this.addColor.bind(this);
     this.changeName = this.changeName.bind(this);
+    this.clearPalette = this.clearPalette.bind(this);
+    this.autoColor = this.autoColor.bind(this);
+    this.savePalette = this.savePalette.bind(this);
+    this.changePaletteName = this.changePaletteName.bind(this);
+  }
+  componentDidMount() {
+    ValidatorForm.addValidationRule('paletteNotEmpty', val => this.state.colors.length);
+    ValidatorForm.addValidationRule('paletteNameUinque', val =>
+      this.props.palettes.every(p => p.paletteName.toLowerCase() !== this.state.paletteName)
+    );
   }
 
   handleDrawerOpen() {
@@ -43,19 +57,52 @@ class NewPalette extends Component {
     this.setState({ name: e.target.value });
   }
 
+  changePaletteName(e) {
+    this.setState({ paletteName: e.target.value });
+  }
+
   addColor() {
     const newColor = { name: this.state.name, color: this.state.color };
     this.setState({ colors: [...this.state.colors, newColor], name: '' });
   }
 
+  clearPalette() {
+    this.setState({ colors: [] });
+  }
+
+  autoColor() {
+    if (this.state.colors.length < 20) {
+      const newColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+      const newColorObj = {
+        color: newColor,
+        name: randomWords(3)
+          .map(w => w[0].toUpperCase() + w.slice(1))
+          .join('')
+      };
+      this.setState({ colors: [...this.state.colors, newColorObj] });
+    }
+  }
+
+  savePalette() {
+    const newPalette = {
+      colors: this.state.colors,
+      paletteName: this.state.paletteName,
+      id: this.state.paletteName.toLowerCase().replace(/\s/g, '-'),
+      emoji: 'art'
+    };
+    this.props.savePalette(newPalette);
+    this.props.history.push(`/`);
+  }
+
   render() {
     const { classes } = this.props;
-    const { open, colors } = this.state;
+    const { open, colors, paletteName } = this.state;
     return (
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
           position="fixed"
+          color="default"
           className={clsx(classes.appBar, {
             [classes.appBarShift]: open
           })}
@@ -71,9 +118,37 @@ class NewPalette extends Component {
               <MenuIcon />
             </IconButton>
             <h1>New Palette</h1>
+            <ValidatorForm ref="form" onSubmit={this.savePalette} onError={console.error}>
+              <TextValidator
+                name="newPalette"
+                title="New Palette Name"
+                placeholder="Insert palette name"
+                value={paletteName}
+                onChange={this.changePaletteName}
+                validators={['required', 'paletteNotEmpty', 'paletteNameUinque']}
+                errorMessages={['Field required', 'Add some colors', 'Palette name repeated']}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                className={classes.button}
+                disabled={!colors.length || !paletteName.length}
+              >
+                Save
+              </Button>
+            </ValidatorForm>
           </Toolbar>
         </AppBar>
-        <FormDrawer {...this.state} addColor={this.addColor} changeColor={this.changeColor} changeName={this.changeName} handleDrawerClose={this.handleDrawerClose} />
+        <FormDrawer
+          {...this.state}
+          addColor={this.addColor}
+          changeColor={this.changeColor}
+          changeName={this.changeName}
+          handleDrawerClose={this.handleDrawerClose}
+          clearPalette={this.clearPalette}
+          autoColor={this.autoColor}
+        />
         <main
           className={clsx(classes.content, {
             [classes.contentShift]: open

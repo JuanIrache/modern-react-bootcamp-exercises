@@ -17,9 +17,22 @@ class FormDrawer extends Component {
     ValidatorForm.addValidationRule('isColorUnique', val =>
       this.props.colors.every(color => color.color.toLowerCase() !== this.props.color.toLowerCase())
     );
+    ValidatorForm.addValidationRule('availableSpace', val => this.props.colors.length < 20);
   }
   render() {
-    const { classes, open, color, name, addColor, changeColor, changeName, handleDrawerClose } = this.props;
+    const {
+      classes,
+      open,
+      color,
+      colors,
+      name,
+      addColor,
+      changeColor,
+      changeName,
+      handleDrawerClose,
+      clearPalette,
+      autoColor
+    } = this.props;
     return (
       <Drawer
         className={classes.drawer}
@@ -38,10 +51,10 @@ class FormDrawer extends Component {
         <Divider />
         <div className={classes.lowDrawer}>
           <div>
-            <Button variant="outlined" color="secondary" className={classes.button}>
+            <Button variant="outlined" color="secondary" onClick={clearPalette} className={classes.button}>
               Clear Palette
             </Button>
-            <Button variant="outlined" color="primary" className={classes.button}>
+            <Button variant="outlined" color="primary" onClick={autoColor} className={classes.button} disabled={colors.length >= 20}>
               Auto Color
             </Button>
           </div>
@@ -54,10 +67,10 @@ class FormDrawer extends Component {
                 placeholder="Insert color name"
                 value={name}
                 onChange={changeName}
-                validators={['required', 'isNameUnique', 'isColorUnique']}
-                errorMessages={['Field required', 'Name must be unique', 'Color must be new']}
+                validators={['required', 'isNameUnique', 'isColorUnique', 'availableSpace']}
+                errorMessages={['Field required', 'Name must be unique', 'Color must be new', 'Palette is full']}
               />
-              <Button type="submit" variant="contained" className={classes.button} id="add-color-button" style={{ backgroundColor: color }}>
+              <Button type="submit" variant="contained" className={classes.button} id="add-color-button" disabled={colors.length >= 20}>
                 Add Color
               </Button>
             </ValidatorForm>

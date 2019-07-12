@@ -29,7 +29,8 @@ export default theme => ({
   },
   button: {
     margin: '0 .5rem',
-    '&#add-color-button': {
+    '&#add-color-button:not(.Mui-disabled)': {
+      backgroundColor: ({ color }) => color,
       color: ({ color }) => (darkColor(color) ? 'white' : 'rgb(51, 51, 51)')
     }
   }
