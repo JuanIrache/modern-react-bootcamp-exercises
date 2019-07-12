@@ -15,62 +15,49 @@ import DraggableBox from './DraggableBox';
 import FormDrawer from './FormDrawer';
 
 class NewPalette extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: true,
-      color: '#8ED2D2',
-      name: 'lightTeal',
-      colors: [],
-      paletteName: ''
-    };
-    this.handleDrawerClose = this.handleDrawerClose.bind(this);
-    this.handleDrawerOpen = this.handleDrawerOpen.bind(this);
-    this.changeColor = this.changeColor.bind(this);
-    this.addColor = this.addColor.bind(this);
-    this.changeName = this.changeName.bind(this);
-    this.clearPalette = this.clearPalette.bind(this);
-    this.autoColor = this.autoColor.bind(this);
-    this.savePalette = this.savePalette.bind(this);
-    this.changePaletteName = this.changePaletteName.bind(this);
-  }
-  componentDidMount() {
+  state = {
+    open: true,
+    color: '#8ED2D2',
+    name: 'lightTeal',
+    colors: [],
+    paletteName: ''
+  };
+
+  componentDidMount = () => {
     ValidatorForm.addValidationRule('paletteNotEmpty', val => this.state.colors.length);
-    ValidatorForm.addValidationRule('paletteNameUinque', val =>
-      this.props.palettes.every(p => p.paletteName.toLowerCase() !== this.state.paletteName)
-    );
-  }
+    ValidatorForm.addValidationRule('paletteNameUinque', val => this.props.palettes.every(p => p.paletteName.toLowerCase() !== val));
+  };
 
-  handleDrawerOpen() {
+  handleDrawerOpen = () => {
     this.setState({ open: true });
-  }
+  };
 
-  handleDrawerClose() {
+  handleDrawerClose = () => {
     this.setState({ open: false });
-  }
+  };
 
-  changeColor({ hex }) {
+  changeColor = ({ hex }) => {
     this.setState({ color: hex });
-  }
+  };
 
-  changeName(e) {
+  changeName = e => {
     this.setState({ name: e.target.value });
-  }
+  };
 
-  changePaletteName(e) {
+  changePaletteName = e => {
     this.setState({ paletteName: e.target.value });
-  }
+  };
 
-  addColor() {
+  addColor = () => {
     const newColor = { name: this.state.name, color: this.state.color };
     this.setState({ colors: [...this.state.colors, newColor], name: '' });
-  }
+  };
 
-  clearPalette() {
+  clearPalette = () => {
     this.setState({ colors: [] });
-  }
+  };
 
-  autoColor() {
+  autoColor = () => {
     if (this.state.colors.length < 20) {
       const newColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
       const newColorObj = {
@@ -81,9 +68,9 @@ class NewPalette extends Component {
       };
       this.setState({ colors: [...this.state.colors, newColorObj] });
     }
-  }
+  };
 
-  savePalette() {
+  savePalette = () => {
     const newPalette = {
       colors: this.state.colors,
       paletteName: this.state.paletteName,
@@ -92,7 +79,7 @@ class NewPalette extends Component {
     };
     this.props.savePalette(newPalette);
     this.props.history.push(`/`);
-  }
+  };
 
   render() {
     const { classes } = this.props;
