@@ -1,6 +1,6 @@
 import React from 'react';
 import { Emoji } from 'emoji-mart';
-import { withStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/PaletteFooterStyles';
 
 function PaletteFooter(props) {

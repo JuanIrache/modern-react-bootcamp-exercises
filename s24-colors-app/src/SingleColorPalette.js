@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import NavBar from './NavBar';
 import ColorBox from './ColorBox';
 import PaletteFooter from './PaletteFooter';

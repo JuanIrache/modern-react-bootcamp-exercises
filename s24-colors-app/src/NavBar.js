@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/NavBarStyles';
 import 'rc-slider/assets/index.css';
 import Slider from 'rc-slider';
