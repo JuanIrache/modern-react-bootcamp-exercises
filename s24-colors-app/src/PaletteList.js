@@ -5,13 +5,9 @@ import { Link } from 'react-router-dom';
 import styles from './styles/PaletteListStyles';
 
 class PaletteList extends Component {
-  constructor() {
-    super();
-    this.linkPalette = this.linkPalette.bind(this);
-  }
-  linkPalette(id) {
+  linkPalette = id => {
     this.props.history.push(`/palette/${id}`);
-  }
+  };
   render() {
     const { classes } = this.props;
     return (

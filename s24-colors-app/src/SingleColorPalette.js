@@ -7,14 +7,11 @@ import PaletteFooter from './PaletteFooter';
 import styles from './styles/SingleColorPaletteStyles';
 
 class SingleColorPalette extends Component {
-  constructor() {
-    super();
-    this.state = { mode: 'hex' };
-    this.changeMode = this.changeMode.bind(this);
-  }
-  changeMode(mode) {
+  state = { mode: 'hex' };
+
+  changeMode = mode => {
     this.setState({ mode });
-  }
+  };
   render() {
     const { palette, color, classes } = this.props;
     const { id: paletteId, emoji, paletteName } = palette;

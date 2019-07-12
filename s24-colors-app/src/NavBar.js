@@ -11,19 +11,14 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 class NavBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { mode: this.props.mode, snack: false };
-    this.handleModeChange = this.handleModeChange.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-  }
-  handleModeChange(e) {
+  state = { mode: this.props.mode, snack: false };
+  handleModeChange = e => {
     this.setState({ mode: e.target.value, snack: true });
     this.props.changeMode(e.target.value);
-  }
-  handleClose() {
+  };
+  handleClose = () => {
     this.setState({ snack: false });
-  }
+  };
   render() {
     const { changeLevel, classes, level } = this.props;
     const slider = (

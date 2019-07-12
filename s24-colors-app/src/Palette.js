@@ -6,18 +6,14 @@ import PaletteFooter from './PaletteFooter';
 import styles from './styles/PaletteStyles';
 
 class Palette extends Component {
-  constructor() {
-    super();
-    this.state = { level: 5, mode: 'hex' };
-    this.changeLevel = this.changeLevel.bind(this);
-    this.changeMode = this.changeMode.bind(this);
-  }
-  changeLevel(level) {
+  state = { level: 5, mode: 'hex' };
+
+  changeLevel = level => {
     this.setState({ level });
-  }
-  changeMode(mode) {
+  };
+  changeMode = mode => {
     this.setState({ mode });
-  }
+  };
   render() {
     const { level, mode } = this.state;
     const { palette, classes } = this.props;

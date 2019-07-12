@@ -9,14 +9,11 @@ import { generatePalette } from './colorHelper';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = { palettes: seedColors };
-    this.savePalette = this.savePalette.bind(this);
-  }
-  savePalette(newPalette) {
+  state = { palettes: seedColors };
+
+  savePalette = newPalette => {
     this.setState({ palettes: [...this.state.palettes, newPalette] });
-  }
+  };
   findGenPalette = id => generatePalette(this.state.palettes.find(seed => seed.id === id));
   render() {
     return (
