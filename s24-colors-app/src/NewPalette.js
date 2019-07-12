@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import randomWords from 'random-words';
 import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
-
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -62,7 +61,7 @@ class NewPalette extends Component {
       const newColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
       const newColorObj = {
         color: newColor,
-        name: randomWords(3)
+        name: randomWords(2)
           .map(w => w[0].toUpperCase() + w.slice(1))
           .join('')
       };
@@ -79,6 +78,10 @@ class NewPalette extends Component {
     };
     this.props.savePalette(newPalette);
     this.props.history.push(`/`);
+  };
+
+  removeColor = colorName => {
+    this.setState({ colors: this.state.colors.filter(c => c.name !== colorName) });
   };
 
   render() {
@@ -143,7 +146,7 @@ class NewPalette extends Component {
         >
           <div className={classes.drawerHeader} />
           {colors.map(col => (
-            <DraggableBox key={col.name} {...col} />
+            <DraggableBox key={col.name} removeColor={this.removeColor} {...col} />
           ))}
         </main>
       </div>
