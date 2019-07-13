@@ -7,27 +7,6 @@ export default theme => ({
       fontSize: '1rem'
     }
   },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
-  menuButton: {
-    marginLeft: 12,
-    marginRight: 20
-  },
-  hide: {
-    display: 'none'
-  },
   content: {
     flexGrow: 1,
     // padding: theme.spacing(3),
@@ -52,8 +31,5 @@ export default theme => ({
       duration: theme.transitions.duration.enteringScreen
     }),
     marginLeft: 0
-  },
-  button: {
-    margin: '0 .5rem'
   }
 });

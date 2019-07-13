@@ -2,30 +2,22 @@ import React, { Component } from 'react';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
 import randomWords from 'random-words';
-import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import styles from './styles/NewPaletteStyles';
 import FormDrawer from './FormDrawer';
 import BoxesList from './BoxesList';
+import TopBar from './TopBar';
 
 class NewPalette extends Component {
   state = {
     open: true,
     color: 'pink',
-    name: 'pink',
+    name: '',
     colors: [],
     paletteName: ''
   };
 
   componentDidMount = () => {
-    ValidatorForm.addValidationRule('paletteNotEmpty', val => this.state.colors.length);
-    ValidatorForm.addValidationRule('paletteNameUinque', val => this.props.palettes.every(p => p.paletteName.toLowerCase() !== val));
-    this.setState({ color: this.randomColor(), name: this.randomName() });
+    this.setState({ color: this.randomColor() });
   };
 
   handleDrawerOpen = () => {
@@ -103,51 +95,19 @@ class NewPalette extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, palettes } = this.props;
     const { open, colors, paletteName } = this.state;
     return (
       <div className={classes.root}>
-        <CssBaseline />
-        <AppBar
-          position="fixed"
-          color="default"
-          className={clsx(classes.appBar, {
-            [classes.appBarShift]: open
-          })}
-        >
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={this.handleDrawerOpen}
-              edge="start"
-              className={clsx(classes.menuButton, open && classes.hide)}
-            >
-              <MenuIcon />
-            </IconButton>
-            <h1>New Palette</h1>
-            <ValidatorForm ref="form" onSubmit={this.savePalette} onError={console.error}>
-              <TextValidator
-                name="newPalette"
-                title="New Palette Name"
-                placeholder="Insert palette name"
-                value={paletteName}
-                onChange={this.changePaletteName}
-                validators={['required', 'paletteNotEmpty', 'paletteNameUinque']}
-                errorMessages={['Field required', 'Add some colors', 'Palette name repeated']}
-              />
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                className={classes.button}
-                disabled={!colors.length || !paletteName.length}
-              >
-                Save
-              </Button>
-            </ValidatorForm>
-          </Toolbar>
-        </AppBar>
+        <TopBar
+          open={open}
+          paletteName={paletteName}
+          colors={colors}
+          palettes={palettes}
+          savePalette={this.savePalette}
+          handleDrawerOpen={this.handleDrawerOpen}
+          changePaletteName={this.changePaletteName}
+        />
         <FormDrawer
           {...this.state}
           addColor={this.addColor}
