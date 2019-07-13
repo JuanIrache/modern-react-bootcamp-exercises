@@ -5,7 +5,7 @@ import randomWords from 'random-words';
 import styles from './styles/NewPaletteStyles';
 import FormDrawer from './FormDrawer';
 import BoxesList from './BoxesList';
-import TopBar from './TopBar';
+import NewPaletteTopBar from './NewPaletteTopBar';
 
 class NewPalette extends Component {
   state = {
@@ -99,7 +99,7 @@ class NewPalette extends Component {
     const { open, colors, paletteName } = this.state;
     return (
       <div className={classes.root}>
-        <TopBar
+        <NewPaletteTopBar
           open={open}
           paletteName={paletteName}
           colors={colors}
