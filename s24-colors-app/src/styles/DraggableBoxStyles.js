@@ -6,7 +6,10 @@ export default {
   root: {
     display: 'inline-block',
     width: '20%',
-    height: '24%'
+    height: '24%',
+    '&:hover': {
+      cursor: 'pointer'
+    }
   },
   boxContent: {
     textTransform: 'uppercase',
@@ -27,10 +30,7 @@ export default {
     '& svg': {
       transition: 'all .3s ease',
       color: 'rgba(0,0,0,.5)',
-      fontSize: '1rem',
-      '&:hover': {
-        cursor: 'pointer'
-      }
+      fontSize: '1rem'
     }
   }
 };

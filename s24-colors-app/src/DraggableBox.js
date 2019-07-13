@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/DraggableBoxStyles';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { SortableElement } from 'react-sortable-hoc';
 
 function DraggableBox(props) {
   const { classes, color, name } = props;
@@ -18,4 +19,4 @@ function DraggableBox(props) {
   );
 }
 
-export default withStyles(styles)(DraggableBox);
+export default SortableElement(withStyles(styles)(DraggableBox));

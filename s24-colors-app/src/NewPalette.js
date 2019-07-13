@@ -10,8 +10,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import styles from './styles/NewPaletteStyles';
-import DraggableBox from './DraggableBox';
 import FormDrawer from './FormDrawer';
+import BoxesList from './BoxesList';
 
 class NewPalette extends Component {
   state = {
@@ -84,6 +84,19 @@ class NewPalette extends Component {
     this.setState({ colors: this.state.colors.filter(c => c.name !== colorName) });
   };
 
+  onSortEnd = ({ oldIndex: oldI, newIndex: newI }) => {
+    const { colors } = this.state;
+    const movingColor = colors[oldI];
+    const backwards = oldI > newI;
+    let newOrder;
+    if (backwards) {
+      newOrder = [...colors.slice(0, newI), movingColor, ...colors.slice(newI, oldI), ...colors.slice(oldI + 1)];
+    } else {
+      newOrder = [...colors.slice(0, oldI), ...colors.slice(oldI + 1, newI + 1), movingColor, ...colors.slice(newI + 1)];
+    }
+    this.setState({ colors: newOrder });
+  };
+
   render() {
     const { classes } = this.props;
     const { open, colors, paletteName } = this.state;
@@ -145,9 +158,14 @@ class NewPalette extends Component {
           })}
         >
           <div className={classes.drawerHeader} />
-          {colors.map(col => (
-            <DraggableBox key={col.name} removeColor={this.removeColor} {...col} />
-          ))}
+          <BoxesList
+            colors={colors}
+            removeColor={this.removeColor}
+            items={colors}
+            onSortEnd={this.onSortEnd}
+            axis="xy"
+            transitionDuration={100}
+          />
         </main>
       </div>
     );
