@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -58,6 +59,11 @@ class TopBar extends Component {
                 Save
               </Button>
             </ValidatorForm>
+            <Link to="/">
+              <Button variant="contained" color="secondary" className={classes.button}>
+                Back
+              </Button>
+            </Link>
           </Toolbar>
         </AppBar>
       </div>

@@ -5,7 +5,10 @@ export default theme => ({
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
-    })
+    }),
+    '& a': {
+      textDecoration: 'none'
+    }
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
