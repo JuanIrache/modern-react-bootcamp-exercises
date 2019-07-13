@@ -6,7 +6,7 @@ export default {
   root: {
     display: 'inline-block',
     width: '20%',
-    height: '24%',
+    height: '25%',
     '&:hover': {
       cursor: 'pointer'
     }
