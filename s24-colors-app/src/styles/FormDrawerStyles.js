@@ -28,10 +28,16 @@ export default theme => ({
     padding: '1rem 0'
   },
   button: {
-    margin: '0 .5rem',
+    margin: '1rem .5rem',
     '&#add-color-button:not(.Mui-disabled)': {
       backgroundColor: ({ color }) => color,
       color: ({ color }) => (darkColor(color) ? 'white' : 'rgb(51, 51, 51)')
+    }
+  },
+  input: {
+    height: '3rem',
+    '& input': {
+      marginTop: '1rem'
     }
   }
 });
