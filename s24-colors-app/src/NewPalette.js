@@ -64,6 +64,7 @@ class NewPalette extends Component {
         name: randomWords(2)
           .map(w => w[0].toUpperCase() + w.slice(1))
           .join('')
+          .slice(0, 14)
       };
       this.setState({ colors: [...this.state.colors, newColorObj] });
     }

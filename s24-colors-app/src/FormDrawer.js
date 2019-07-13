@@ -51,7 +51,7 @@ class FormDrawer extends Component {
         <Divider />
         <div className={classes.lowDrawer}>
           <div>
-            <Button variant="outlined" color="secondary" onClick={clearPalette} className={classes.button}>
+            <Button variant="outlined" color="secondary" onClick={clearPalette} className={classes.button} disabled={colors.length === 0}>
               Clear Palette
             </Button>
             <Button variant="outlined" color="primary" onClick={autoColor} className={classes.button} disabled={colors.length >= 20}>
