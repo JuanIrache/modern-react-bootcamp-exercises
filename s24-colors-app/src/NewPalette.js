@@ -16,8 +16,8 @@ import BoxesList from './BoxesList';
 class NewPalette extends Component {
   state = {
     open: true,
-    color: '#8ED2D2',
-    name: 'lightTeal',
+    color: 'pink',
+    name: 'pink',
     colors: [],
     paletteName: ''
   };
@@ -25,6 +25,7 @@ class NewPalette extends Component {
   componentDidMount = () => {
     ValidatorForm.addValidationRule('paletteNotEmpty', val => this.state.colors.length);
     ValidatorForm.addValidationRule('paletteNameUinque', val => this.props.palettes.every(p => p.paletteName.toLowerCase() !== val));
+    this.setState({ color: this.randomColor(), name: this.randomName() });
   };
 
   handleDrawerOpen = () => {
@@ -56,15 +57,18 @@ class NewPalette extends Component {
     this.setState({ colors: [] });
   };
 
+  randomColor = () => `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+  randomName = () =>
+    randomWords(2)
+      .map(w => w[0].toUpperCase() + w.slice(1))
+      .join('')
+      .slice(0, 14);
+
   autoColor = () => {
     if (this.state.colors.length < 20) {
-      const newColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
       const newColorObj = {
-        color: newColor,
-        name: randomWords(2)
-          .map(w => w[0].toUpperCase() + w.slice(1))
-          .join('')
-          .slice(0, 14)
+        color: this.randomColor(),
+        name: this.randomName()
       };
       this.setState({ colors: [...this.state.colors, newColorObj] });
     }
