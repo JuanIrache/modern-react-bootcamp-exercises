@@ -26,7 +26,10 @@ class NavBar extends Component {
         <div className={classes.NavBarSlider}>
           <Slider defaultValue={level} min={0} max={10} onChange={changeLevel} />
         </div>
-        <span>Level: {level}</span>
+        <span>
+          <span className={classes.hideable}>Level: </span>
+          {level}
+        </span>
       </div>
     );
     return (

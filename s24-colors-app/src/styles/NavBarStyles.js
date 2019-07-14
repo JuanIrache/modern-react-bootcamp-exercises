@@ -55,11 +55,16 @@ export default {
     marginRight: '2rem',
     display: 'inline-block',
     [sizes.down('xs')]: {
-      width: '10rem'
+      width: '10rem',
+      marginRight: '1rem'
     }
   },
   NavBarSelectContainer: {
-    margin: '0 2rem 0 auto',
-    marginRight: '1rem'
+    margin: '0 2rem 0 auto'
+  },
+  hideable: {
+    [sizes.down('xs')]: {
+      display: 'none'
+    }
   }
 };
