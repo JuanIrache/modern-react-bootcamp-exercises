@@ -23,13 +23,18 @@ class App extends Component {
     this.setState({ palettes: this.state.palettes.filter(p => p.id !== id) }, this.saveToLocal);
   };
 
+  resetPalettes = () => {
+    this.setState({ palettes: seedColors }, this.saveToLocal);
+  };
+
   findGenPalette = id => generatePalette(this.state.palettes.find(seed => seed.id === id));
   render() {
     const { palettes } = this.state;
+    const { resetPalettes, deletePalette } = this;
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" render={rp => <PaletteList palettes={palettes} deletePalette={this.deletePalette} {...rp} />} />
+          <Route exact path="/" render={rp => <PaletteList {...{ palettes, resetPalettes, deletePalette }} {...rp} />} />
           <Route exact path="/palette/new" render={rp => <NewPalette palettes={palettes} savePalette={this.savePalette} {...rp} />} />
           <Route exact path="/palette/:id" render={rp => <Palette palette={this.findGenPalette(rp.match.params.id)} />} />
           <Route

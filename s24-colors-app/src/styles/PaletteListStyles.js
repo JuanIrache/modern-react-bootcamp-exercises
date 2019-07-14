@@ -16,6 +16,16 @@ export default {
     '& a': {
       textDecoration: 'none',
       color: 'white'
+    },
+    '& button': {
+      background: 'none',
+      border: 'none',
+      outline: 'none',
+      color: 'inherit',
+      textTransform: 'inherit',
+      letterSpacing: 'inherit',
+      fontSize: 'inherit',
+      cursor: 'pointer'
     }
   }
 };
