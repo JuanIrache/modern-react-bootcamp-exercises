@@ -1,7 +1,8 @@
 import sizes from './sizes';
+import bg from './bg.svg';
 
 export default {
-  root: { backgroundColor: 'skyBlue', height: '100vh', overflow: 'auto' },
+  root: { backgroundColor: 'skyBlue', background:`url(${bg})`, height: '100vh', overflow: 'auto' },
   container: {
     width: '65%',
     margin: 'auto',
