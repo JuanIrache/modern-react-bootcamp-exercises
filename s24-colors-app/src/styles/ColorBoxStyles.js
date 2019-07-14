@@ -6,6 +6,7 @@ const darkColor = col => chroma(col).luminance() < 0.2;
 
 export default {
   ColorBox: {
+    display: 'inline-block',
     width: ({ single }) => (single ? '16.6666666666666666666666%' : '20%'),
     height: ({ single }) => (single ? '50%' : '25%'),
     backgroundColor: ({ hex }) => hex,

@@ -1,4 +1,5 @@
 import chroma from 'chroma-js';
+import sizes from './sizes';
 
 const darkColor = col => chroma(col).luminance() < 0.2;
 
@@ -9,6 +10,18 @@ export default {
     height: '25%',
     '&:hover': {
       cursor: 'pointer'
+    },
+    [sizes.down('lg')]: {
+      width: '25%',
+      height: '20%'
+    },
+    [sizes.down('md')]: {
+      width: '50%',
+      height: '10%'
+    },
+    [sizes.down('sm')]: {
+      width: '100%',
+      height: '5%'
     }
   },
   boxContent: {
