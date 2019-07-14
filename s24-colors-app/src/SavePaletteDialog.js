@@ -7,6 +7,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 import { withStyles } from '@material-ui/core/styles';
 import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
+import 'emoji-mart/css/emoji-mart.css';
+import { Picker } from 'emoji-mart';
 
 import styles from './styles/SavePaletteDialogStyles.js';
 
@@ -16,7 +18,6 @@ class SavePaletteDialog extends Component {
   };
 
   componentDidMount = () => {
-    ValidatorForm.addValidationRule('paletteNotEmpty', val => this.props.colors.length);
     ValidatorForm.addValidationRule('paletteNameUinque', val => this.props.palettes.every(p => p.paletteName.toLowerCase() !== val));
   };
 
@@ -29,15 +30,15 @@ class SavePaletteDialog extends Component {
   };
 
   render() {
-    const { savePalette, paletteName, changePaletteName, colors, classes } = this.props;
+    const { savePalette, paletteName, emoji, changePaletteName, changeEmoji, colors, classes } = this.props;
     return (
       <div>
-        <Button variant="contained" color="primary" onClick={this.handleClickOpen}>
+        <Button variant="contained" color="primary" onClick={this.handleClickOpen} disabled={!colors.length}>
           Save
         </Button>
         <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
           <ValidatorForm onSubmit={savePalette} onError={console.error}>
-            <DialogTitle id="form-dialog-title">Choose palette name</DialogTitle>
+            <DialogTitle id="form-dialog-title">Choose name</DialogTitle>
             <DialogContent>
               <TextValidator
                 fullWidth
@@ -48,21 +49,27 @@ class SavePaletteDialog extends Component {
                 placeholder="Insert palette name"
                 value={paletteName}
                 onChange={changePaletteName}
-                validators={['required', 'paletteNotEmpty', 'paletteNameUinque']}
-                errorMessages={['Field required', 'Add some colors', 'Palette name repeated']}
+                validators={['required', 'paletteNameUinque']}
+                errorMessages={['Field required', 'Palette name repeated']}
+              />
+            </DialogContent>
+            <DialogTitle id="form-dialog-title">Choose emoji</DialogTitle>
+            <DialogContent>
+              <Picker
+                set="google"
+                showSkinTones={false}
+                showPreview={false}
+                emojiSize={30}
+                emojiTooltip={true}
+                exclude={['recent']}
+                onSelect={changeEmoji}
               />
             </DialogContent>
             <DialogActions>
               <Button onClick={this.handleClose} color="primary">
                 Cancel
               </Button>
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                className={classes.button}
-                disabled={!colors.length || !paletteName.length}
-              >
+              <Button type="submit" variant="contained" color="primary" className={classes.button} disabled={!paletteName.length}>
                 Next
               </Button>
             </DialogActions>

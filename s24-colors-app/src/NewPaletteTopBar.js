@@ -13,7 +13,18 @@ import SavePaletteDialog from './SavePaletteDialog';
 
 class TopBar extends Component {
   render() {
-    const { classes, open, paletteName, colors, savePalette, handleDrawerOpen, changePaletteName, palettes } = this.props;
+    const {
+      classes,
+      open,
+      paletteName,
+      colors,
+      savePalette,
+      handleDrawerOpen,
+      changePaletteName,
+      emoji,
+      changeEmoji,
+      palettes
+    } = this.props;
     return (
       <div>
         <CssBaseline />
@@ -46,8 +57,10 @@ class TopBar extends Component {
                   savePalette={savePalette}
                   paletteName={paletteName}
                   changePaletteName={changePaletteName}
+                  changeEmoji={changeEmoji}
                   colors={colors}
                   palettes={palettes}
+                  emoji={emoji}
                 />
               </div>
             </div>

@@ -13,7 +13,8 @@ class NewPalette extends Component {
     color: 'pink',
     name: '',
     colors: [],
-    paletteName: ''
+    paletteName: '',
+    emoji: ''
   };
 
   componentDidMount = () => {
@@ -38,6 +39,9 @@ class NewPalette extends Component {
 
   changePaletteName = e => {
     this.setState({ paletteName: e.target.value });
+  };
+  changeEmoji = emoji => {
+    this.setState({ emoji: emoji.id });
   };
 
   addColor = () => {
@@ -71,7 +75,7 @@ class NewPalette extends Component {
       colors: this.state.colors,
       paletteName: this.state.paletteName,
       id: this.state.paletteName.toLowerCase().replace(/\s/g, '-'),
-      emoji: 'art'
+      emoji: this.state.emoji
     };
     this.props.savePalette(newPalette);
     this.props.history.push(`/`);
@@ -96,17 +100,19 @@ class NewPalette extends Component {
 
   render() {
     const { classes, palettes } = this.props;
-    const { open, colors, paletteName } = this.state;
+    const { open, colors, paletteName, emoji } = this.state;
     return (
       <div className={classes.root}>
         <NewPaletteTopBar
           open={open}
           paletteName={paletteName}
+          emoji={emoji}
           colors={colors}
           palettes={palettes}
           savePalette={this.savePalette}
           handleDrawerOpen={this.handleDrawerOpen}
           changePaletteName={this.changePaletteName}
+          changeEmoji={this.changeEmoji}
         />
         <FormDrawer
           {...this.state}
