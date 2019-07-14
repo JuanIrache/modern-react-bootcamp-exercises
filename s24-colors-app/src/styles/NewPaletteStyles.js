@@ -1,4 +1,4 @@
-const drawerWidth = 400;
+import { DRAWER_WIDTH } from '../constants';
 
 export default theme => ({
   root: {
@@ -14,7 +14,7 @@ export default theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
     }),
-    marginLeft: -drawerWidth,
+    marginLeft: -DRAWER_WIDTH,
     height: '100vh',
     fontSize: 0
   },

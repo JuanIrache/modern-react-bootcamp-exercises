@@ -1,17 +1,17 @@
 import chroma from 'chroma-js';
+import { DRAWER_WIDTH } from '../constants';
 
 // const lightColor = col => chroma(col).luminance() > 0.75;
 const darkColor = col => chroma(col).luminance() < 0.2;
-const drawerWidth = 400;
 
 export default theme => ({
   drawer: {
-    width: drawerWidth,
+    width: DRAWER_WIDTH,
     flexShrink: 0,
     textAlign: 'center'
   },
   drawerPaper: {
-    width: drawerWidth
+    width: DRAWER_WIDTH
   },
   drawerHeader: {
     display: 'flex',
