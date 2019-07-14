@@ -9,22 +9,28 @@ import { generatePalette } from './colorHelper';
 import './App.css';
 
 class App extends Component {
-  state = { palettes: seedColors };
+  state = { palettes: JSON.parse(window.localStorage.getItem('palettes')) || seedColors };
+
+  saveToLocal = () => {
+    window.localStorage.setItem('palettes', JSON.stringify(this.state.palettes));
+  };
 
   savePalette = newPalette => {
-    this.setState({ palettes: [...this.state.palettes, newPalette] });
+    this.setState({ palettes: [...this.state.palettes, newPalette] }, this.saveToLocal);
   };
+
+  deletePalette = id => {
+    this.setState({ palettes: this.state.palettes.filter(p => p.id !== id) }, this.saveToLocal);
+  };
+
   findGenPalette = id => generatePalette(this.state.palettes.find(seed => seed.id === id));
   render() {
+    const { palettes } = this.state;
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" render={rp => <PaletteList palettes={this.state.palettes} {...rp} />} />
-          <Route
-            exact
-            path="/palette/new"
-            render={rp => <NewPalette palettes={this.state.palettes} savePalette={this.savePalette} {...rp} />}
-          />
+          <Route exact path="/" render={rp => <PaletteList palettes={palettes} deletePalette={this.deletePalette} {...rp} />} />
+          <Route exact path="/palette/new" render={rp => <NewPalette palettes={palettes} savePalette={this.savePalette} {...rp} />} />
           <Route exact path="/palette/:id" render={rp => <Palette palette={this.findGenPalette(rp.match.params.id)} />} />
           <Route
             exact
