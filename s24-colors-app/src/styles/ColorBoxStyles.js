@@ -1,4 +1,5 @@
 import chroma from 'chroma-js';
+import sizes from './sizes';
 
 const lightColor = col => chroma(col).luminance() > 0.75;
 const darkColor = col => chroma(col).luminance() < 0.2;
@@ -13,6 +14,18 @@ export default {
     textTransform: 'uppercase',
     '&:hover $ColorBoxCopy': {
       opacity: 1
+    },
+    [sizes.down('lg')]: {
+      width: ({ single }) => (single ? 100 / 3 + '%' : '25%'),
+      height: ({ single }) => (single ? '25%' : '20%')
+    },
+    [sizes.down('md')]: {
+      width: ({ single }) => (single ? '50%' : '50%'),
+      height: ({ single }) => (single ? 100 / 6 + '%' : '10%')
+    },
+    [sizes.down('xs')]: {
+      width: ({ single }) => (single ? '100%' : '100%'),
+      height: ({ single }) => (single ? 100 / 12 + '%' : '5%')
     }
   },
   ColorBoxMore: {
@@ -51,12 +64,15 @@ export default {
     opacity: 0,
     transform: 'scale(0.1)',
     '& h3': {
-      fontSize: '4rem',
+      fontSize: '5rem',
       fontWeight: 'bold',
       backgroundColor: 'rgba(255, 255, 255, 0.25)',
       margin: 0,
       padding: '1rem',
-      textShadow: '2px 2px rgba(0, 0, 0, 0.5)'
+      textShadow: '2px 2px rgba(0, 0, 0, 0.5)',
+      [sizes.down('sm')]: {
+        fontSize: '3rem'
+      }
     },
     '& p': {
       color: ({ hex }) => (lightColor(hex) ? 'rgb(51, 51, 51)' : 'white'),
