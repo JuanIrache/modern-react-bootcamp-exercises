@@ -1,6 +1,17 @@
+import sizes from './sizes';
+
 export default {
   root: { backgroundColor: 'skyBlue', height: '100vh', overflow: 'auto' },
-  container: { width: '65%', margin: 'auto' },
+  container: {
+    width: '65%',
+    margin: 'auto',
+    [sizes.down('md')]: {
+      width: '75%'
+    },
+    [sizes.down('sm')]: {
+      width: '90%'
+    }
+  },
   nav: {
     color: 'white',
     textTransform: 'uppercase',
@@ -20,6 +31,7 @@ export default {
     '& button': {
       background: 'none',
       border: 'none',
+      padding: 0,
       outline: 'none',
       color: 'inherit',
       textTransform: 'inherit',
@@ -27,5 +39,8 @@ export default {
       fontSize: 'inherit',
       cursor: 'pointer'
     }
+  },
+  links: {
+    textAlign: 'right'
   }
 };

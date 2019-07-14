@@ -15,7 +15,7 @@ function PaletteList(props) {
       <div className={classes.container}>
         <nav className={classes.nav}>
           <h1>Palette Manager</h1>
-          <div>
+          <div className={classes.links}>
             <button onClick={resetPalettes}>Reset</button> | <Link to="/palette/new">Create Palette</Link>
           </div>
         </nav>

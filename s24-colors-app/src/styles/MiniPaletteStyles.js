@@ -1,7 +1,18 @@
+import sizes from './sizes';
+
 export default {
   root: {
     display: 'inline-block',
-    width: '25%'
+    width: '25%',
+    [sizes.down('lg')]: {
+      width: 100 / 3 + '%'
+    },
+    [sizes.down('sm')]: {
+      width: '50%'
+    },
+    [sizes.down('xs')]: {
+      width: '100%'
+    }
   },
   inner: {
     backgroundColor: 'white',
