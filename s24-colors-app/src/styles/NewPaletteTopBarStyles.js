@@ -27,5 +27,14 @@ export default theme => ({
   },
   button: {
     margin: '0 .5rem'
+  },
+  rightSide: {
+    display: 'flex'
+  },
+  toolbarContent: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   }
 });
