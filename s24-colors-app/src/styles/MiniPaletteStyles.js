@@ -14,7 +14,7 @@ export default {
     }
   },
   colors: {
-    height: '6rem',
+    height: '19rem',
     backgroundColor: '#ddd',
     marginBottom: '.5rem',
     fontSize: 0,

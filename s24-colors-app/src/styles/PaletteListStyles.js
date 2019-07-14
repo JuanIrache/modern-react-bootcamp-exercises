@@ -1,6 +1,6 @@
 export default {
-  root: { backgroundColor: 'skyBlue', height: '100vh' },
-  container: { width: '70%', margin: 'auto' },
+  root: { backgroundColor: 'skyBlue', height: '100vh', overflow: 'auto' },
+  container: { width: '65%', margin: 'auto' },
   nav: {
     color: 'white',
     textTransform: 'uppercase',
