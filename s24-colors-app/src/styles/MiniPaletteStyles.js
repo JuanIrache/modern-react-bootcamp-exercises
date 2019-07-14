@@ -1,7 +1,7 @@
 export default {
   root: {
     display: 'inline-block',
-    width: '33.3%'
+    width: '25%'
   },
   inner: {
     backgroundColor: 'white',
@@ -14,7 +14,7 @@ export default {
     }
   },
   colors: {
-    height: '19rem',
+    height: '11rem',
     backgroundColor: '#ddd',
     marginBottom: '.5rem',
     fontSize: 0,
