@@ -1,5 +1,6 @@
 import chroma from 'chroma-js';
-import { DRAWER_WIDTH } from '../constants';
+import { DRAWER_WIDTH, DRAWER_WIDTH_SMALL } from '../constants';
+import sizes from './sizes';
 
 // const lightColor = col => chroma(col).luminance() > 0.75;
 const darkColor = col => chroma(col).luminance() < 0.2;
@@ -8,17 +9,36 @@ export default theme => ({
   drawer: {
     width: DRAWER_WIDTH,
     flexShrink: 0,
-    textAlign: 'center'
+    textAlign: 'center',
+    [sizes.down('sm')]: {
+      width: DRAWER_WIDTH_SMALL
+    }
   },
   drawerPaper: {
-    width: DRAWER_WIDTH
+    width: DRAWER_WIDTH,
+    [sizes.down('sm')]: {
+      width: DRAWER_WIDTH_SMALL
+    }
   },
   drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
     padding: '0 8px',
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end'
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    '& h1': {
+      fontSize: '1.4rem',
+      color: '#5D5D5D',
+      [sizes.down('sm')]: {
+        fontSize: '1rem'
+      }
+    },
+    '& button': {
+      position: 'absolute',
+      top: '.5rem',
+      right: '1rem'
+    }
   },
   picker: {
     margin: '1rem auto'

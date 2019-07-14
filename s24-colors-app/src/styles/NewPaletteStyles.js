@@ -1,11 +1,9 @@
-import { DRAWER_WIDTH } from '../constants';
+import { DRAWER_WIDTH, DRAWER_WIDTH_SMALL } from '../constants';
+import sizes from './sizes';
 
 export default theme => ({
   root: {
-    display: 'flex',
-    '& h1': {
-      fontSize: '1rem'
-    }
+    display: 'flex'
   },
   content: {
     flexGrow: 1,
@@ -16,7 +14,10 @@ export default theme => ({
     }),
     marginLeft: -DRAWER_WIDTH,
     height: '100vh',
-    fontSize: 0
+    fontSize: 0,
+    [sizes.down('md')]: {
+      marginLeft: -DRAWER_WIDTH_SMALL
+    }
   },
   drawerHeader: {
     display: 'flex',

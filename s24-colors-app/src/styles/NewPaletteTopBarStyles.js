@@ -1,4 +1,5 @@
-import { DRAWER_WIDTH } from '../constants';
+import { DRAWER_WIDTH, DRAWER_WIDTH_SMALL } from '../constants';
+import sizes from './sizes';
 
 export default theme => ({
   appBar: {
@@ -16,7 +17,11 @@ export default theme => ({
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen
-    })
+    }),
+    [sizes.down('md')]: {
+      width: `calc(100% - ${DRAWER_WIDTH_SMALL}px)`,
+      marginLeft: DRAWER_WIDTH_SMALL
+    }
   },
   menuButton: {
     marginLeft: 12,
@@ -35,6 +40,6 @@ export default theme => ({
     width: '100%',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'flex-end'
   }
 });

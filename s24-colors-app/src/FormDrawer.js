@@ -45,6 +45,8 @@ class FormDrawer extends Component {
         }}
       >
         <div className={classes.drawerHeader}>
+          <div />
+          <h1>New Palette</h1>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />{' '}
           </IconButton>
@@ -69,8 +71,8 @@ class FormDrawer extends Component {
                 placeholder="Insert color name"
                 value={name}
                 onChange={changeName}
-                validators={['required', 'isNameUnique', 'isColorUnique', 'availableSpace','stringNotTooLong']}
-                errorMessages={['Field required', 'Name must be unique', 'Color must be new', 'Palette is full','Name is too long']}
+                validators={['required', 'isNameUnique', 'isColorUnique', 'availableSpace', 'stringNotTooLong']}
+                errorMessages={['Field required', 'Name must be unique', 'Color must be new', 'Palette is full', 'Name is too long']}
               />
               <Button type="submit" variant="contained" className={classes.button} id="add-color-button" disabled={colors.length >= 20}>
                 Add Color

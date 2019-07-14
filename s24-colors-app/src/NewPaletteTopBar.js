@@ -34,7 +34,6 @@ function TopBar(props) {
             <MenuIcon />
           </IconButton>
           <div className={classes.toolbarContent}>
-            <h1>New Palette</h1>
             <div className={classes.rightSide}>
               <Link to="/">
                 <Button variant="outlined" color="secondary" className={classes.button}>
