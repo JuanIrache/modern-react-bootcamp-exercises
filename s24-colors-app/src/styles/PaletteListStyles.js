@@ -26,21 +26,38 @@ export default {
     },
     '& a': {
       textDecoration: 'none',
-      color: 'white'
+      color: 'white',
+      display: 'inline-block',
+      [sizes.down('sm')]: {
+        display: 'block',
+        fontSize: '.8rem'
+      }
     },
     '& button': {
+      color: '#FFE385',
+      marginRight: 0,
+      marginLeft: 'auto',
+      display: 'inline-block',
       background: 'none',
       border: 'none',
       padding: 0,
       outline: 'none',
-      color: 'inherit',
       textTransform: 'inherit',
       letterSpacing: 'inherit',
       fontSize: 'inherit',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      [sizes.down('sm')]: {
+        display: 'block',
+        fontSize: '.8rem'
+      }
     }
   },
   links: {
     textAlign: 'right'
+  },
+  hideable: {
+    [sizes.down('sm')]: {
+      display: 'none'
+    }
   }
 };
