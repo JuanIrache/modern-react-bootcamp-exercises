@@ -27,7 +27,7 @@ class Palette extends Component {
             <ColorBox {...c} mode={mode} paletteId={id} key={c.id} />
           ))}
         </div>
-        <PaletteFooter emoji={emoji} paletteName={paletteName} />
+        <PaletteFooter {...{emoji,paletteName}} />
       </div>
     );
   }
