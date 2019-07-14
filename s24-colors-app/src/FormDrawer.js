@@ -18,6 +18,7 @@ class FormDrawer extends Component {
       this.props.colors.every(color => color.color.toLowerCase() !== this.props.color.toLowerCase())
     );
     ValidatorForm.addValidationRule('availableSpace', val => this.props.colors.length < 20);
+    ValidatorForm.addValidationRule('stringNotTooLong', val => this.props.name.length <= 14);
   }
   render() {
     const {
@@ -68,8 +69,8 @@ class FormDrawer extends Component {
                 placeholder="Insert color name"
                 value={name}
                 onChange={changeName}
-                validators={['required', 'isNameUnique', 'isColorUnique', 'availableSpace']}
-                errorMessages={['Field required', 'Name must be unique', 'Color must be new', 'Palette is full']}
+                validators={['required', 'isNameUnique', 'isColorUnique', 'availableSpace','stringNotTooLong']}
+                errorMessages={['Field required', 'Name must be unique', 'Color must be new', 'Palette is full','Name is too long']}
               />
               <Button type="submit" variant="contained" className={classes.button} id="add-color-button" disabled={colors.length >= 20}>
                 Add Color

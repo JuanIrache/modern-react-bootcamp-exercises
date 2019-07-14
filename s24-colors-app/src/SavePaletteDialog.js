@@ -30,7 +30,7 @@ class SavePaletteDialog extends Component {
   };
 
   render() {
-    const { savePalette, paletteName, emoji, changePaletteName, changeEmoji, colors, classes } = this.props;
+    const { savePalette, paletteName, changePaletteName, changeEmoji, colors, classes } = this.props;
     return (
       <div>
         <Button variant="contained" color="primary" onClick={this.handleClickOpen} disabled={!colors.length}>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
@@ -11,64 +11,43 @@ import MenuIcon from '@material-ui/icons/Menu';
 import styles from './styles/NewPaletteTopBarStyles';
 import SavePaletteDialog from './SavePaletteDialog';
 
-class TopBar extends Component {
-  render() {
-    const {
-      classes,
-      open,
-      paletteName,
-      colors,
-      savePalette,
-      handleDrawerOpen,
-      changePaletteName,
-      emoji,
-      changeEmoji,
-      palettes
-    } = this.props;
-    return (
-      <div>
-        <CssBaseline />
-        <AppBar
-          position="fixed"
-          color="default"
-          className={clsx(classes.appBar, {
-            [classes.appBarShift]: open
-          })}
-        >
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-              className={clsx(classes.menuButton, open && classes.hide)}
-            >
-              <MenuIcon />
-            </IconButton>
-            <div className={classes.toolbarContent}>
-              <h1>New Palette</h1>
-              <div className={classes.rightSide}>
-                <Link to="/">
-                  <Button variant="outlined" color="secondary" className={classes.button}>
-                    Back
-                  </Button>
-                </Link>
-                <SavePaletteDialog
-                  savePalette={savePalette}
-                  paletteName={paletteName}
-                  changePaletteName={changePaletteName}
-                  changeEmoji={changeEmoji}
-                  colors={colors}
-                  palettes={palettes}
-                  emoji={emoji}
-                />
-              </div>
+function TopBar(props) {
+  const { classes, open, paletteName, colors, savePalette, handleDrawerOpen, changePaletteName, emoji, changeEmoji, palettes } = props;
+  return (
+    <div>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        color="default"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open
+        })}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="Open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            className={clsx(classes.menuButton, open && classes.hide)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <div className={classes.toolbarContent}>
+            <h1>New Palette</h1>
+            <div className={classes.rightSide}>
+              <Link to="/">
+                <Button variant="outlined" color="secondary" className={classes.button}>
+                  Back
+                </Button>
+              </Link>
+              <SavePaletteDialog {...{ savePalette, paletteName, changePaletteName, changeEmoji, colors, palettes, emoji }} />
             </div>
-          </Toolbar>
-        </AppBar>
-      </div>
-    );
-  }
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
 
 export default withStyles(styles, { withTheme: true })(TopBar);

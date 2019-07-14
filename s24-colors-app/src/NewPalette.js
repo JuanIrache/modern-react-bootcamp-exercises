@@ -100,43 +100,34 @@ class NewPalette extends Component {
 
   render() {
     const { classes, palettes } = this.props;
-    const { open, colors, paletteName, emoji } = this.state;
+    const { open, colors, color, name, paletteName, emoji  } = this.state;
+    const {
+      savePalette,
+      handleDrawerOpen,
+      changePaletteName,
+      changeEmoji,
+      addColor,
+      changeColor,
+      changeName,
+      handleDrawerClose,
+      clearPalette,
+      autoColor,
+      removeColor,
+      onSortEnd
+    } = this;
     return (
       <div className={classes.root}>
         <NewPaletteTopBar
-          open={open}
-          paletteName={paletteName}
-          emoji={emoji}
-          colors={colors}
-          palettes={palettes}
-          savePalette={this.savePalette}
-          handleDrawerOpen={this.handleDrawerOpen}
-          changePaletteName={this.changePaletteName}
-          changeEmoji={this.changeEmoji}
+          {...{ open, paletteName, emoji, colors, palettes, savePalette, handleDrawerOpen, changePaletteName, changeEmoji }}
         />
-        <FormDrawer
-          {...this.state}
-          addColor={this.addColor}
-          changeColor={this.changeColor}
-          changeName={this.changeName}
-          handleDrawerClose={this.handleDrawerClose}
-          clearPalette={this.clearPalette}
-          autoColor={this.autoColor}
-        />
+        <FormDrawer {...{ open, colors, color, name, addColor, changeColor, changeName, handleDrawerClose, clearPalette, autoColor }} />
         <main
           className={clsx(classes.content, {
             [classes.contentShift]: open
           })}
         >
           <div className={classes.drawerHeader} />
-          <BoxesList
-            colors={colors}
-            removeColor={this.removeColor}
-            items={colors}
-            onSortEnd={this.onSortEnd}
-            axis="xy"
-            transitionDuration={100}
-          />
+          <BoxesList {...{ colors, removeColor, onSortEnd }} items={colors} axis="xy" transitionDuration={100} />
         </main>
       </div>
     );
