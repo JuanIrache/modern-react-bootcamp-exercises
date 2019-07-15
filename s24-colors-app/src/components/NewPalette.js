@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
 import randomWords from 'random-words';
+import smartColorGenerator from '../util/smartColorGenerator';
 import FormDrawer from './FormDrawer';
 import BoxesList from './BoxesList';
 import NewPaletteTopBar from './NewPaletteTopBar';
@@ -18,7 +19,7 @@ class NewPalette extends Component {
   };
 
   componentDidMount = () => {
-    this.setState({ color: this.randomColor() });
+    this.setState({ ...this.randomColor() });
   };
 
   handleDrawerOpen = () => {
@@ -53,7 +54,14 @@ class NewPalette extends Component {
     this.setState({ colors: [] });
   };
 
-  randomColor = () => `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+  randomColor = () => {
+    let newColor;
+    do {
+      newColor = smartColorGenerator(this.state.colors[this.state.colors.length - 1]);
+    } while (this.state.colors.some(color => color.name === newColor.name || color.color === newColor.color));
+    return newColor;
+  };
+
   randomName = () =>
     randomWords(2)
       .map(w => w[0].toUpperCase() + w.slice(1))
@@ -62,11 +70,7 @@ class NewPalette extends Component {
 
   autoColor = () => {
     if (this.state.colors.length < 20) {
-      const newColorObj = {
-        color: this.randomColor(),
-        name: this.randomName()
-      };
-      this.setState({ colors: [...this.state.colors, newColorObj] });
+      this.setState({ colors: [...this.state.colors, this.randomColor()] });
     }
   };
 

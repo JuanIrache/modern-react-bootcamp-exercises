@@ -31,10 +31,10 @@ export default {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    fontSize: '0.7rem',
+    fontSize: '0.6rem',
     letterSpacing: '0.1rem',
     '& span': {
-      margin: '.6rem'
+      margin: '.5rem .3rem'
     },
     '&:hover svg': {
       transform: 'scale(1.5)'
@@ -43,7 +43,13 @@ export default {
   deleteIcon: {
     '& svg': {
       transition: 'all .3s ease',
-      fontSize: '1rem'
+      fontSize: '1rem',
+      '& MuiSvgIcon-root': {
+        margin: '0'
+      }
     }
+  },
+  name: {
+    padding: '.2rem 0'
   }
 };

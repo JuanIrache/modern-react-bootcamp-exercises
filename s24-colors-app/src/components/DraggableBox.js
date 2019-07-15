@@ -10,7 +10,7 @@ function DraggableBox(props) {
   return (
     <div className={classes.root} style={{ backgroundColor: color }}>
       <div className={classes.boxContent}>
-        <span>{name}</span>
+        <span className={classes.name}>{name}</span>
         <span className={classes.deleteIcon}>
           <DeleteIcon onClick={removeColor} />
         </span>
