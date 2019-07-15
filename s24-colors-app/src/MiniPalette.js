@@ -1,32 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Emoji } from 'emoji-mart';
 import styles from './styles/MiniPaletteStyles';
+import ConfirmationDialog from './ConfirmationDialog';
 
-function MiniPalette(props) {
-  const { classes, paletteName, emoji, id, colors } = props;
-  const handleClick = () => props.handleClick(id);
-  const deletePalette = e => {
-    e.stopPropagation();
-    props.deletePalette(id);
+class MiniPalette extends Component {
+  state = { dialogOpen: false };
+  handleClick = () => this.props.handleClick(this.props.id);
+  deletePalette = () => {
+    this.props.deletePalette(this.props.id);
   };
-  return (
-    <div className={classes.root}>
-      <div className={classes.inner} onClick={handleClick}>
-        <div className={classes.colors}>
-          <DeleteIcon className={classes.deleteIcon} onClick={deletePalette} />
-          {colors.map(c => (
-            <div key={c.color} style={{ backgroundColor: c.color }} className={classes.smallColor} />
-          ))}
+  openDialog = e => {
+    e.stopPropagation();
+    this.setState({ dialogOpen: true });
+  };
+
+  closeDialog = () => {
+    this.setState({ dialogOpen: false });
+  };
+
+  render() {
+    const { classes, paletteName, emoji, colors } = this.props;
+    return (
+      <div className={classes.root}>
+        <div className={classes.inner} onClick={this.handleClick}>
+          <div className={classes.colors}>
+            <DeleteIcon className={classes.deleteIcon} onClick={this.openDialog} />
+            {colors.map(c => (
+              <div key={c.color} style={{ backgroundColor: c.color }} className={classes.smallColor} />
+            ))}
+          </div>
+          <div className={classes.title}>
+            <h3>{paletteName}</h3>
+            <Emoji emoji={emoji} set="google" size={18} />
+          </div>
         </div>
-        <div className={classes.title}>
-          <h3>{paletteName}</h3>
-          <Emoji emoji={emoji} set="google" size={18} />
-        </div>
+        <ConfirmationDialog open={this.state.dialogOpen} onClose={this.closeDialog} deletePalette={this.deletePalette} />
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default withStyles(styles)(MiniPalette);

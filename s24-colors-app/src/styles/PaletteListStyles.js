@@ -11,6 +11,12 @@ export default {
     },
     [sizes.down('sm')]: {
       width: '90%'
+    },
+    '& .fade-exit': {
+      transition:'all 500ms ease',
+    },
+    '& .fade-exit-active': {
+      opacity:0
     }
   },
   nav: {
