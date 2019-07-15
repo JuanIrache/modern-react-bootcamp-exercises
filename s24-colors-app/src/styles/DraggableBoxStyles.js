@@ -31,9 +31,11 @@ export default {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    padding: '0.3rem',
     fontSize: '0.7rem',
     letterSpacing: '0.1rem',
+    '& span': {
+      margin:'.6rem'
+    },
     '&:hover svg': {
       color: 'white',
       transform: 'scale(1.5)'

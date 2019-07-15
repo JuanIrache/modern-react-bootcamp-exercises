@@ -100,7 +100,7 @@ class NewPalette extends Component {
 
   render() {
     const { classes, palettes } = this.props;
-    const { open, colors, color, name, paletteName, emoji  } = this.state;
+    const { open, colors, color, name, paletteName, emoji } = this.state;
     const {
       savePalette,
       handleDrawerOpen,

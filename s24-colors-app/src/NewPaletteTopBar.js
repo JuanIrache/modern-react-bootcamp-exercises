@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,7 +14,6 @@ function TopBar(props) {
   const { classes, open, paletteName, colors, savePalette, handleDrawerOpen, changePaletteName, emoji, changeEmoji, palettes } = props;
   return (
     <div>
-      <CssBaseline />
       <AppBar
         position="fixed"
         color="default"

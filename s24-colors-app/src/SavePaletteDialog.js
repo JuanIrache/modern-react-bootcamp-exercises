@@ -28,16 +28,20 @@ class SavePaletteDialog extends Component {
   handleClose = () => {
     this.setState({ open: false });
   };
+  savePalette = () => {
+    this.handleClose();
+    setTimeout(this.props.savePalette,40);
+  }
 
   render() {
-    const { savePalette, paletteName, changePaletteName, changeEmoji, colors, classes } = this.props;
+    const { paletteName, changePaletteName, changeEmoji, colors, classes } = this.props;
     return (
       <div>
         <Button variant="contained" color="primary" onClick={this.handleClickOpen} disabled={!colors.length}>
           Save
         </Button>
         <Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
-          <ValidatorForm onSubmit={savePalette} onError={console.error}>
+          <ValidatorForm onSubmit={this.savePalette} onError={console.error}>
             <DialogTitle id="form-dialog-title">Choose name</DialogTitle>
             <DialogContent>
               <TextValidator
@@ -70,7 +74,7 @@ class SavePaletteDialog extends Component {
                 Cancel
               </Button>
               <Button type="submit" variant="contained" color="primary" className={classes.button} disabled={!paletteName.length}>
-                Next
+                Save
               </Button>
             </DialogActions>
           </ValidatorForm>

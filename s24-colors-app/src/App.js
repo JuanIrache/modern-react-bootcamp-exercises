@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import seedColors from './seedColors';
 import Palette from './Palette';
 import SingleColorPalette from './SingleColorPalette';
 import NewPalette from './NewPalette';
 import PaletteList from './PaletteList';
-import { Route, Switch } from 'react-router-dom';
+import Page from './Page';
 import { generatePalette } from './colorHelper';
 import './App.css';
 
@@ -33,17 +35,62 @@ class App extends Component {
     const { resetPalettes, deletePalette } = this;
     return (
       <div className="App">
-        <Switch>
-          <Route exact path="/" render={rp => <PaletteList {...{ palettes, resetPalettes, deletePalette }} {...rp} />} />
-          <Route exact path="/palette/new" render={rp => <NewPalette palettes={palettes} savePalette={this.savePalette} {...rp} />} />
-          <Route exact path="/palette/:id" render={rp => <Palette palette={this.findGenPalette(rp.match.params.id)} />} />
-          <Route
-            exact
-            path="/palette/:paletteId/:colorId"
-            render={rp => <SingleColorPalette palette={this.findGenPalette(rp.match.params.paletteId)} color={rp.match.params.colorId} />}
-          />
-          <Route exact render={() => <h1>Not found</h1>} />
-        </Switch>
+        <Route
+          render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition key={location.key} timeout={500} classNames="page">
+                <Switch location={location}>
+                  <Route
+                    exact
+                    path="/"
+                    render={rp => {
+                      return (
+                        <Page>
+                          <PaletteList {...{ palettes, resetPalettes, deletePalette }} {...rp} />
+                        </Page>
+                      );
+                    }}
+                  />
+                  <Route
+                    exact
+                    path="/palette/new"
+                    render={rp => (
+                      <Page>
+                        <NewPalette palettes={palettes} savePalette={this.savePalette} {...rp} />
+                      </Page>
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/palette/:id"
+                    render={rp => (
+                      <Page>
+                        <Palette palette={this.findGenPalette(rp.match.params.id)} />
+                      </Page>
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/palette/:paletteId/:colorId"
+                    render={rp => (
+                      <Page>
+                        <SingleColorPalette palette={this.findGenPalette(rp.match.params.paletteId)} color={rp.match.params.colorId} />
+                      </Page>
+                    )}
+                  />
+                  <Route
+                    exact
+                    render={rp => (
+                      <Page>
+                        <h1>Not found</h1>
+                      </Page>
+                    )}
+                  />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
       </div>
     );
   }
