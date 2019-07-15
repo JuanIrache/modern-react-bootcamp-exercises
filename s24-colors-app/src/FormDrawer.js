@@ -63,7 +63,7 @@ class FormDrawer extends Component {
           </div>
           <ChromePicker color={color} width="90%" onChangeComplete={changeColor} className={classes.picker} />
           <div className={classes.lowerForm}>
-            <ValidatorForm onSubmit={addColor} onError={console.error}>
+            <ValidatorForm onSubmit={addColor} instantValidate={false}>
               <TextValidator
                 className={classes.input}
                 name="newColorName"
