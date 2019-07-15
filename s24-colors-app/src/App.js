@@ -79,12 +79,13 @@ class App extends Component {
                     )}
                   />
                   <Route
-                    exact
-                    render={rp => (
-                      <Page>
-                        <h1>Not found</h1>
-                      </Page>
-                    )}
+                    render={rp => {
+                      return (
+                        <Page>
+                          <PaletteList {...{ palettes, resetPalettes, deletePalette }} {...rp} />
+                        </Page>
+                      );
+                    }}
                   />
                 </Switch>
               </CSSTransition>
