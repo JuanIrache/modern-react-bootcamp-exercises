@@ -51,7 +51,7 @@ function TopBar(props) {
                 </Button>
               </Link>
               <Button variant="outlined" onClick={autoSort} color="primary" className={classes.button} disabled={colors.length < 2}>
-                Auto-Sort
+                <span className="hideable">Auto-</span>Sort
               </Button>
               <SavePaletteDialog {...{ savePalette, paletteName, changePaletteName, changeEmoji, colors, palettes, emoji }} />
             </div>

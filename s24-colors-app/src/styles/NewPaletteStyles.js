@@ -3,7 +3,12 @@ import sizes from './sizes';
 
 export default theme => ({
   root: {
-    display: 'flex'
+    display: 'flex',
+    '& .hideable': {
+      [sizes.down('xs')]: {
+        display: 'none'
+      }
+    }
   },
   content: {
     flexGrow: 1,
