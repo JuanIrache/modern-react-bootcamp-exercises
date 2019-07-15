@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
 import 'rc-slider/assets/index.css';
-import styles from './styles/NavBarStyles';
+import styles from '../styles/NavBarStyles';
 
 class NavBar extends Component {
   state = { mode: this.props.mode, snack: false };

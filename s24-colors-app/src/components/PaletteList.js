@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import MiniPalette from './MiniPalette';
 import ConfirmationDialog from './ConfirmationDialog';
-import styles from './styles/PaletteListStyles';
+import styles from '../styles/PaletteListStyles';
 
 class PaletteList extends Component {
   state = { dialogOpen: false };

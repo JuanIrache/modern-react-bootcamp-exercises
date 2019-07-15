@@ -8,7 +8,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { withStyles } from '@material-ui/core/styles';
 import 'emoji-mart/css/emoji-mart.css';
-import styles from './styles/SavePaletteDialogStyles.js';
+import styles from '../styles/SavePaletteDialogStyles.js';
 
 class SavePaletteDialog extends Component {
   state = {

@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
-import styles from './styles/FormDrawerStyles';
+import styles from '../styles/FormDrawerStyles';
 
 class FormDrawer extends Component {
   componentDidMount() {

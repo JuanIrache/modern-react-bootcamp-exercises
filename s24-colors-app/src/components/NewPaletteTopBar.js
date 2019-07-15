@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SavePaletteDialog from './SavePaletteDialog';
 import { withStyles } from '@material-ui/core/styles';
-import styles from './styles/NewPaletteTopBarStyles';
+import styles from '../styles/NewPaletteTopBarStyles';
 
 function TopBar(props) {
   const { classes, open, paletteName, colors, savePalette, handleDrawerOpen, changePaletteName, emoji, changeEmoji, palettes } = props;

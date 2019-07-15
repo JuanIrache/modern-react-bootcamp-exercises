@@ -1,5 +1,5 @@
 import chroma from 'chroma-js';
-import { DRAWER_WIDTH, DRAWER_WIDTH_SMALL } from '../constants';
+import { DRAWER_WIDTH, DRAWER_WIDTH_SMALL } from '../util/constants';
 import sizes from './sizes';
 
 // const lightColor = col => chroma(col).luminance() > 0.75;

@@ -3,7 +3,7 @@ import { Emoji } from 'emoji-mart';
 import { withStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ConfirmationDialog from './ConfirmationDialog';
-import styles from './styles/MiniPaletteStyles';
+import styles from '../styles/MiniPaletteStyles';
 
 class MiniPalette extends PureComponent {
   state = { dialogOpen: false };

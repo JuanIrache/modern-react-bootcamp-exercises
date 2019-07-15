@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import NavBar from './NavBar';
 import ColorBox from './ColorBox';
 import PaletteFooter from './PaletteFooter';
-import styles from './styles/SingleColorPaletteStyles';
+import styles from '../styles/SingleColorPaletteStyles';
 
 class SingleColorPalette extends Component {
   state = { mode: 'hex' };

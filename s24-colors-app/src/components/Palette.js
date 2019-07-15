@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import ColorBox from './ColorBox';
 import NavBar from './NavBar';
 import PaletteFooter from './PaletteFooter';
-import styles from './styles/PaletteStyles';
+import styles from '../styles/PaletteStyles';
 
 class Palette extends Component {
   state = { level: 5, mode: 'hex' };
@@ -27,7 +27,7 @@ class Palette extends Component {
             <ColorBox {...c} mode={mode} paletteId={id} key={c.id} />
           ))}
         </div>
-        <PaletteFooter {...{emoji,paletteName}} />
+        <PaletteFooter {...{ emoji, paletteName }} />
       </div>
     );
   }
