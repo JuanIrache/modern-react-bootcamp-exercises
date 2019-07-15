@@ -1,8 +1,5 @@
-import chroma from 'chroma-js';
 import sizes from './sizes';
-
-const lightColor = col => chroma(col).luminance() > 0.75;
-const darkColor = col => chroma(col).luminance() < 0.2;
+import { lightColor, darkColor } from '../util/contrast';
 
 export default {
   ColorBox: {

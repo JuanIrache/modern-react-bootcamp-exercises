@@ -1,7 +1,5 @@
-import chroma from 'chroma-js';
 import sizes from './sizes';
-
-const darkColor = col => chroma(col).luminance() < 0.2;
+import { darkColor } from '../util/contrast';
 
 export default {
   root: {
