@@ -58,7 +58,7 @@ class FormDrawer extends Component {
               Clear Palette
             </Button>
             <Button variant="outlined" color="primary" onClick={autoColor} className={classes.button} disabled={colors.length >= 20}>
-              Auto Color
+              Smart Color
             </Button>
           </div>
           <ChromePicker color={color} width="90%" onChangeComplete={changeColor} className={classes.picker} />
