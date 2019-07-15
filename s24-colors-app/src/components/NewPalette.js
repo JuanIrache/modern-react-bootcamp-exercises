@@ -56,9 +56,10 @@ class NewPalette extends Component {
 
   randomColor = () => {
     let newColor;
+    const repeated = col => this.state.colors.some(color => color.name === col.name || color.color === col.color);
     do {
       newColor = smartColorGenerator(this.state.colors[this.state.colors.length - 1]);
-    } while (this.state.colors.some(color => color.name === newColor.name || color.color === newColor.color));
+    } while (repeated(newColor));
     return newColor;
   };
 

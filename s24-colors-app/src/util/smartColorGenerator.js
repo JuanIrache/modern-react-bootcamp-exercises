@@ -2,25 +2,32 @@ import chroma from 'chroma-js';
 const namer = require('color-namer');
 
 function smartColorGenerator(prevColor) {
+  //Helper functions
+  const getComponent = (col, comp) => chroma(col).get('hsl.' + comp);
+  const randomDir = num => (Math.random() > 0.5 ? num : -num);
+  const modColor = (col, comp, val) => chroma(col).set('hsl.' + comp, val);
+  const colorStr = col => `rgb(${col.rgb().join(',')})`;
+  const random = n => Math.floor(Math.random() * n);
+  const pickRandom = arr => arr[Math.floor(Math.random() * arr.length)];
   let newColor;
   let newName;
   if (prevColor) {
-    //Helper functions
-    const getComponent = (col, comp) => chroma(col).get('hsl.' + comp);
-    const randomDir = num => (Math.random() > 0.5 ? num : -num);
-    const modColor = (col, comp, val) => chroma(col).set('hsl.' + comp, val);
-    const colorStr = col => `rgb(${col.rgb().join(',')})`;
     //Possible color manipulation
     const rules = [
-      //Rule 1, adjacent hue
+      //Rule 1, change hue
       ({ color }) => {
         const preHue = getComponent(color, 'h');
-        let hue = preHue + randomDir(10);
+        //3 inner possible rules;
+        //1) change color slightly
+        //2) Change color a third of the color wheel
+        //3) Change color half the color wheel
+        const innerRules = [10, 255 / 3, 255 / 2];
+        let hue = preHue + randomDir(pickRandom(innerRules));
         hue = hue % 255;
         const newColor = modColor(color, 'h', hue);
         return colorStr(newColor);
       },
-      //Rule 2, shade of same hue
+      //Rule 2, change light
       ({ color }) => {
         const prevLuma = getComponent(color, 'l');
         let luma;
@@ -30,23 +37,7 @@ function smartColorGenerator(prevColor) {
         const newColor = modColor(color, 'l', luma);
         return colorStr(newColor);
       },
-      //Rule 3, triadic (turn a third in the color wheel)
-      ({ color }) => {
-        const preHue = getComponent(color, 'h');
-        let hue = preHue + randomDir(Math.floor(256 / 3));
-        hue = hue % 255;
-        const newColor = modColor(color, 'h', hue);
-        return colorStr(newColor);
-      },
-      //Rule 4, complementary (opposite side of the color wheel)
-      ({ color }) => {
-        const preHue = getComponent(color, 'h');
-        let hue = preHue + randomDir(Math.floor(256 / 2));
-        hue = hue % 255;
-        const newColor = modColor(color, 'h', hue);
-        return colorStr(newColor);
-      },
-      //Rule 5, tweak saturation
+      //Rule 3, change saturation
       ({ color }) => {
         const prevSat = getComponent(color, 's');
         let sat;
@@ -57,12 +48,11 @@ function smartColorGenerator(prevColor) {
         return colorStr(newColor);
       }
     ];
+
     // pick random rule each time
-    const ruleIndex = Math.floor(Math.random() * rules.length);
-    newColor = rules[ruleIndex](prevColor);
+    newColor = pickRandom(rules)(prevColor);
   } else {
     //If no previous color, return completely random
-    const random = n => Math.floor(Math.random() * n);
     newColor = `rgb(${random(256)},${random(256)},${random(256)})`;
   }
 
