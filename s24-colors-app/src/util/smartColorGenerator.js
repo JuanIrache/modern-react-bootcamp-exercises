@@ -18,7 +18,7 @@ function smartColorGenerator(prevColor) {
       ({ color }) => {
         const preHue = getComponent(color, 'h');
         //3 inner possible rules;
-        //1) change color slightly
+        //1) Change color slightly
         //2) Change color a third of the color wheel
         //3) Change color half the color wheel
         const innerRules = [10, 255 / 3, 255 / 2];
@@ -32,8 +32,8 @@ function smartColorGenerator(prevColor) {
         const prevLuma = getComponent(color, 'l');
         let luma;
         do {
-          luma = prevLuma + randomDir(0.2);
-        } while (luma < 0.1 || luma > 0.9);
+          luma = prevLuma + randomDir(0.15);
+        } while (luma < 0.2 || luma > 0.95);
         const newColor = modColor(color, 'l', luma);
         return colorStr(newColor);
       },
