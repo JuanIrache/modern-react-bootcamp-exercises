@@ -1,5 +1,5 @@
 import chroma from 'chroma-js';
-const namer = require('color-namer');
+import namer from 'color-namer';
 
 function smartColorGenerator(prevColor) {
   //Helper functions
