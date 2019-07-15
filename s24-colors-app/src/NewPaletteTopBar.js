@@ -1,14 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import styles from './styles/NewPaletteTopBarStyles';
 import SavePaletteDialog from './SavePaletteDialog';
+import { withStyles } from '@material-ui/core/styles';
+import styles from './styles/NewPaletteTopBarStyles';
 
 function TopBar(props) {
   const { classes, open, paletteName, colors, savePalette, handleDrawerOpen, changePaletteName, emoji, changeEmoji, palettes } = props;

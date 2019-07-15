@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import MiniPalette from './MiniPalette';
-import { withStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import styles from './styles/PaletteListStyles';
+import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
+import MiniPalette from './MiniPalette';
 import ConfirmationDialog from './ConfirmationDialog';
+import styles from './styles/PaletteListStyles';
 
 class PaletteList extends Component {
   state = { dialogOpen: false };

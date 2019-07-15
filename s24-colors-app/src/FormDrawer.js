@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import styles from './styles/FormDrawerStyles';
+import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
+import { ChromePicker } from 'react-color';
 import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Divider from '@material-ui/core/Divider';
-import { ChromePicker } from 'react-color';
-import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
+import { withStyles } from '@material-ui/core/styles';
+import styles from './styles/FormDrawerStyles';
 
 class FormDrawer extends Component {
   componentDidMount() {

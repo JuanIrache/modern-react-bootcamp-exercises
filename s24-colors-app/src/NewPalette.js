@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
 import randomWords from 'random-words';
-import styles from './styles/NewPaletteStyles';
 import FormDrawer from './FormDrawer';
 import BoxesList from './BoxesList';
 import NewPaletteTopBar from './NewPaletteTopBar';
+import { withStyles } from '@material-ui/core/styles';
+import styles from './styles/NewPaletteStyles';
 
 class NewPalette extends Component {
   state = {

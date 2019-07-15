@@ -15,13 +15,14 @@ class SingleColorPalette extends Component {
   render() {
     const { palette, color, classes } = this.props;
     const { id: paletteId, emoji, paletteName } = palette;
+    const { mode } = this.state;
     const shades = palette.colors.map(col => col.find(c => c.id === color));
     return (
       <div className={classes.SingleColorPalette}>
-        <NavBar mode={this.state.mode} changeMode={this.changeMode} />
+        <NavBar mode={mode} changeMode={this.changeMode} />
         <div className={classes.SingleColorPaletteColors}>
           {shades.map(c => (
-            <ColorBox {...c} mode={this.state.mode} paletteId={paletteId} key={c.name} single />
+            <ColorBox {...c} mode={mode} paletteId={paletteId} key={c.name} single />
           ))}
           <Link className={classes.ColorBox} style={{ backgroundColor: '#fff' }} to={`/palette/${paletteId}`}>
             <button className={classes.ColorBoxBack}>Go Back</button>
