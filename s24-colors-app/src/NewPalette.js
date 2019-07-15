@@ -127,7 +127,7 @@ class NewPalette extends Component {
           })}
         >
           <div className={classes.drawerHeader} />
-          <BoxesList {...{ colors, removeColor, onSortEnd }} items={colors} axis="xy" transitionDuration={100} />
+          <BoxesList {...{ colors, removeColor, onSortEnd }} items={colors} axis="xy" distance={20} transitionDuration={100} />
         </main>
       </div>
     );
