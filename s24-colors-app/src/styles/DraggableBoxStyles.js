@@ -34,17 +34,15 @@ export default {
     fontSize: '0.7rem',
     letterSpacing: '0.1rem',
     '& span': {
-      margin:'.6rem'
+      margin: '.6rem'
     },
     '&:hover svg': {
-      color: 'white',
       transform: 'scale(1.5)'
     }
   },
   deleteIcon: {
     '& svg': {
       transition: 'all .3s ease',
-      color: 'rgba(0,0,0,.5)',
       fontSize: '1rem'
     }
   }
