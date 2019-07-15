@@ -11,7 +11,19 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from '../styles/NewPaletteTopBarStyles';
 
 function TopBar(props) {
-  const { classes, open, paletteName, colors, savePalette, handleDrawerOpen, changePaletteName, emoji, changeEmoji, palettes } = props;
+  const {
+    classes,
+    open,
+    paletteName,
+    colors,
+    savePalette,
+    handleDrawerOpen,
+    changePaletteName,
+    emoji,
+    changeEmoji,
+    palettes,
+    autoSort
+  } = props;
   return (
     <div>
       <AppBar
@@ -38,6 +50,9 @@ function TopBar(props) {
                   Back
                 </Button>
               </Link>
+              <Button variant="outlined" onClick={autoSort} color="primary" className={classes.button} disabled={colors.length < 2}>
+                Auto-Sort
+              </Button>
               <SavePaletteDialog {...{ savePalette, paletteName, changePaletteName, changeEmoji, colors, palettes, emoji }} />
             </div>
           </div>

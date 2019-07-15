@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
+import chroma from 'chroma-js';
 import randomWords from 'random-words';
 import smartColorGenerator from '../util/smartColorGenerator';
 import FormDrawer from './FormDrawer';
@@ -103,6 +104,20 @@ class NewPalette extends Component {
     this.setState({ colors: newOrder });
   };
 
+  autoSort = () => {
+    const getComponent = (col, comp) => chroma(col).get('hsl.' + comp);
+    const firstReorder = this.state.colors.sort(
+      (a, b) => getComponent(a.color, 'l') + getComponent(b.color, 's') - getComponent(a.color, 's') - getComponent(b.color, 'l')
+    );
+    let newOrder = [];
+    for (let i = 0; i < 4; i++) {
+      newOrder = newOrder
+        .concat(firstReorder.slice(i * 5, i * 5 + 5))
+        .sort((a, b) => getComponent(b.color, 'h') - getComponent(a.color, 'h'));
+    }
+    this.setState({ colors: newOrder });
+  };
+
   render() {
     const { classes, palettes } = this.props;
     const { open, colors, color, name, paletteName, emoji } = this.state;
@@ -118,12 +133,13 @@ class NewPalette extends Component {
       clearPalette,
       autoColor,
       removeColor,
-      onSortEnd
+      onSortEnd,
+      autoSort
     } = this;
     return (
       <div className={classes.root}>
         <NewPaletteTopBar
-          {...{ open, paletteName, emoji, colors, palettes, savePalette, handleDrawerOpen, changePaletteName, changeEmoji }}
+          {...{ open, paletteName, emoji, colors, palettes, savePalette, handleDrawerOpen, changePaletteName, changeEmoji, autoSort }}
         />
         <FormDrawer {...{ open, colors, color, name, addColor, changeColor, changeName, handleDrawerClose, clearPalette, autoColor }} />
         <main
