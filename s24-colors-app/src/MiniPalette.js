@@ -36,7 +36,12 @@ class MiniPalette extends Component {
             <Emoji emoji={emoji} set="google" size={18} />
           </div>
         </div>
-        <ConfirmationDialog open={this.state.dialogOpen} onClose={this.closeDialog} deletePalette={this.deletePalette} />
+        <ConfirmationDialog
+          open={this.state.dialogOpen}
+          onClose={this.closeDialog}
+          confirmedAction={this.deletePalette}
+          question="Delete palette?"
+        />
       </div>
     );
   }
