@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.2edf2cd4.chunk.css",
-    "main.js": "/static/js/main.a3f63b68.chunk.js",
-    "main.js.map": "/static/js/main.a3f63b68.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.e337d257.chunk.css": "/static/css/2.e337d257.chunk.css",
-    "static/js/2.ea03b76a.chunk.js": "/static/js/2.ea03b76a.chunk.js",
-    "static/js/2.ea03b76a.chunk.js.map": "/static/js/2.ea03b76a.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.06b66f0b8b85b71fa8b42342d9bf86a1.js": "/precache-manifest.06b66f0b8b85b71fa8b42342d9bf86a1.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.e337d257.chunk.css.map": "/static/css/2.e337d257.chunk.css.map",
-    "static/css/main.2edf2cd4.chunk.css.map": "/static/css/main.2edf2cd4.chunk.css.map",
-    "static/media/bg.svg": "/static/media/bg.77bfb637.svg"
+    "main.css": "/modern-react-bootcamp-exercises/s24-colors-app/static/css/main.2edf2cd4.chunk.css",
+    "main.js": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/main.a3f63b68.chunk.js",
+    "main.js.map": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/main.a3f63b68.chunk.js.map",
+    "runtime~main.js": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/runtime~main.0e02e0a0.js",
+    "runtime~main.js.map": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/runtime~main.0e02e0a0.js.map",
+    "static/css/2.e337d257.chunk.css": "/modern-react-bootcamp-exercises/s24-colors-app/static/css/2.e337d257.chunk.css",
+    "static/js/2.ea03b76a.chunk.js": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/2.ea03b76a.chunk.js",
+    "static/js/2.ea03b76a.chunk.js.map": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/2.ea03b76a.chunk.js.map",
+    "index.html": "/modern-react-bootcamp-exercises/s24-colors-app/index.html",
+    "precache-manifest.8933590d0b9bfd421f5250c8fbcd833e.js": "/modern-react-bootcamp-exercises/s24-colors-app/precache-manifest.8933590d0b9bfd421f5250c8fbcd833e.js",
+    "service-worker.js": "/modern-react-bootcamp-exercises/s24-colors-app/service-worker.js",
+    "static/css/2.e337d257.chunk.css.map": "/modern-react-bootcamp-exercises/s24-colors-app/static/css/2.e337d257.chunk.css.map",
+    "static/css/main.2edf2cd4.chunk.css.map": "/modern-react-bootcamp-exercises/s24-colors-app/static/css/main.2edf2cd4.chunk.css.map",
+    "static/media/bg.svg": "/modern-react-bootcamp-exercises/s24-colors-app/static/media/bg.77bfb637.svg"
   }
 }
