@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Emoji } from 'emoji-mart';
 import styles from './styles/MiniPaletteStyles';
 import ConfirmationDialog from './ConfirmationDialog';
 
-class MiniPalette extends Component {
+class MiniPalette extends PureComponent {
   state = { dialogOpen: false };
   handleClick = () => this.props.handleClick(this.props.id);
   deletePalette = () => {
