@@ -8,7 +8,7 @@ function smartColorGenerator(prevColor) {
   const modColor = (col, comp, val) => chroma(col).set('hsl.' + comp, val);
   const colorStr = col => `rgb(${col.rgb().join(',')})`;
   const random = n => Math.floor(Math.random() * n);
-  const pickRandom = arr => arr[Math.floor(Math.random() * arr.length)];
+  const pickRandom = arr => arr[random(arr.length)];
   let newColor;
   let newName;
   if (prevColor) {
