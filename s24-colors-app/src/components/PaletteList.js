@@ -21,6 +21,11 @@ class PaletteList extends Component {
     this.setState({ dialogOpen: false });
   };
 
+  duplicatePalette = id => {
+    this.props.duplicatePalette(id);
+    this.props.history.push(`/palette/new`);
+  };
+
   render() {
     const { classes, resetPalettes, palettes, deletePalette } = this.props;
     return (
@@ -37,7 +42,7 @@ class PaletteList extends Component {
           <TransitionGroup>
             {palettes.map(p => (
               <CSSTransition key={p.id} timeout={500} classNames="fade">
-                <MiniPalette {...p} deletePalette={deletePalette} handleClick={this.linkPalette} />
+                <MiniPalette {...p} deletePalette={deletePalette} duplicatePalette={this.duplicatePalette} handleClick={this.linkPalette} />
               </CSSTransition>
             ))}
           </TransitionGroup>

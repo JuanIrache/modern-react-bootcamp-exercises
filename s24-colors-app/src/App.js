@@ -11,7 +11,7 @@ import Page from './components/Page';
 import './App.css';
 
 class App extends Component {
-  state = { palettes: JSON.parse(window.localStorage.getItem('palettes')) || seedColors };
+  state = { palettes: JSON.parse(window.localStorage.getItem('palettes')) || seedColors, startingColors: [] };
 
   saveToLocal = () => {
     window.localStorage.setItem('palettes', JSON.stringify(this.state.palettes));
@@ -29,10 +29,14 @@ class App extends Component {
     this.setState({ palettes: seedColors }, this.saveToLocal);
   };
 
+  duplicatePalette = id => {
+    this.setState({ startingColors: this.state.palettes.find(p => p.id === id).colors });
+  };
+
   findGenPalette = id => generatePalette(this.state.palettes.find(seed => seed.id === id));
   render() {
-    const { palettes } = this.state;
-    const { resetPalettes, deletePalette } = this;
+    const { palettes, startingColors } = this.state;
+    const { resetPalettes, deletePalette, duplicatePalette } = this;
     return (
       <div className="App">
         <Route
@@ -46,7 +50,7 @@ class App extends Component {
                     render={rp => {
                       return (
                         <Page>
-                          <PaletteList {...{ palettes, resetPalettes, deletePalette }} {...rp} />
+                          <PaletteList {...{ palettes, resetPalettes, deletePalette, duplicatePalette }} {...rp} />
                         </Page>
                       );
                     }}
@@ -56,7 +60,7 @@ class App extends Component {
                     path="/palette/new"
                     render={rp => (
                       <Page>
-                        <NewPalette palettes={palettes} savePalette={this.savePalette} {...rp} />
+                        <NewPalette {...{ palettes, startingColors }} savePalette={this.savePalette} {...rp} />
                       </Page>
                     )}
                   />

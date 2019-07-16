@@ -14,7 +14,7 @@ class NewPalette extends Component {
     open: true,
     color: 'pink',
     name: '',
-    colors: [],
+    colors: this.props.startingColors,
     paletteName: '',
     emoji: ''
   };

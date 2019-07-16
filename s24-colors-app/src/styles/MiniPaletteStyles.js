@@ -24,6 +24,9 @@ export default {
     '& :hover': {
       '& $deleteIcon': {
         opacity: 1
+      },
+      '& $copyIcon': {
+        opacity: 1
       }
     }
   },
@@ -50,6 +53,17 @@ export default {
     zIndex: 1,
     color: 'white',
     backgroundColor: '#c0392b',
+    opacity: 0,
+    transition: 'all .3s ease'
+  },
+  copyIcon: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    padding: '.4rem',
+    zIndex: 1,
+    color: 'white',
+    backgroundColor: '#58b19f',
     opacity: 0,
     transition: 'all .3s ease'
   }
