@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "efb0fbd2605a7f0468cea8e493d4ff0b",
+    "revision": "a661085ff602bd82f37339824e9a1733",
     "url": "/modern-react-bootcamp-exercises/s24-colors-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/css/2.e337d257.chunk.css"
   },
   {
-    "revision": "6d73847083167247f9ec",
+    "revision": "4a0fa8965d5dec282070",
     "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/css/main.2edf2cd4.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/2.336a7fb5.chunk.js"
   },
   {
-    "revision": "6d73847083167247f9ec",
-    "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/main.12d4169f.chunk.js"
+    "revision": "4a0fa8965d5dec282070",
+    "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/main.6b95d426.chunk.js"
   },
   {
     "revision": "8385411bc411ac05b529",
