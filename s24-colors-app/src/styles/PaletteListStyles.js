@@ -2,7 +2,7 @@ import sizes from './sizes';
 import bg from './bg.svg';
 
 export default {
-  root: { backgroundColor: 'skyBlue', background:`url(${bg})`, height: '100vh', overflow: 'auto' },
+  root: { backgroundColor: 'skyBlue', background: `url(${bg})`, height: '100vh', overflow: 'auto' },
   container: {
     width: '65%',
     margin: 'auto',
@@ -13,10 +13,10 @@ export default {
       width: '90%'
     },
     '& .fade-exit': {
-      transition:'all 500ms ease',
+      transition: 'all 500ms ease'
     },
     '& .fade-exit-active': {
-      opacity:0
+      opacity: 0
     }
   },
   nav: {
@@ -65,6 +65,18 @@ export default {
   hideable: {
     [sizes.down('sm')]: {
       display: 'none'
+    }
+  },
+  footer: {
+    fontSize: '.7rem',
+    color: '#0f1112',
+    textAlign: 'center',
+    position: 'absolute',
+    bottom: 0,
+    paddingBottom: '.3rem',
+    width: '100%',
+    '& a': {
+      color: 'inherit'
     }
   }
 };

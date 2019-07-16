@@ -29,31 +29,54 @@ class PaletteList extends Component {
   render() {
     const { classes, resetPalettes, palettes, deletePalette } = this.props;
     return (
-      <div className={classes.root}>
-        <div className={classes.container}>
-          <nav className={classes.nav}>
-            <h1>Palette Manager</h1>
-            <div className={classes.links}>
-              <button onClick={this.openDialog}>Reset</button>
-              <span className={classes.hideable}> | </span>
-              <Link to="/palette/new">Create Palette</Link>
-            </div>
-          </nav>
-          <TransitionGroup>
-            {palettes.map(p => (
-              <CSSTransition key={p.id} timeout={500} classNames="fade">
-                <MiniPalette {...p} deletePalette={deletePalette} duplicatePalette={this.duplicatePalette} handleClick={this.linkPalette} />
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
+      <>
+        <div className={classes.root}>
+          <div className={classes.container}>
+            <nav className={classes.nav}>
+              <h1>Palette Manager</h1>
+              <div className={classes.links}>
+                <button onClick={this.openDialog}>Reset</button>
+                <span className={classes.hideable}> | </span>
+                <Link to="/palette/new">Create Palette</Link>
+              </div>
+            </nav>
+            <TransitionGroup>
+              {palettes.map(p => (
+                <CSSTransition key={p.id} timeout={500} classNames="fade">
+                  <MiniPalette
+                    {...p}
+                    deletePalette={deletePalette}
+                    duplicatePalette={this.duplicatePalette}
+                    handleClick={this.linkPalette}
+                  />
+                </CSSTransition>
+              ))}
+            </TransitionGroup>
+          </div>
+          <ConfirmationDialog
+            open={this.state.dialogOpen}
+            onClose={this.closeDialog}
+            confirmedAction={resetPalettes}
+            question="Reset palettes?"
+          />
         </div>
-        <ConfirmationDialog
-          open={this.state.dialogOpen}
-          onClose={this.closeDialog}
-          confirmedAction={resetPalettes}
-          question="Reset palettes?"
-        />
-      </div>
+        <footer className={classes.footer}>
+          <span>
+            Adapted by{' '}
+            <a href="https://github.com/juanirache" rel="noopener noreferrer" target="_blank">
+              Juan Irache Duesca
+            </a>{' '}
+            |{' '}
+            <a
+              href="https://github.com/JuanIrache/modern-react-bootcamp-exercises/tree/master/s24-colors-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Source code
+            </a>
+          </span>
+        </footer>
+      </>
     );
   }
 }
