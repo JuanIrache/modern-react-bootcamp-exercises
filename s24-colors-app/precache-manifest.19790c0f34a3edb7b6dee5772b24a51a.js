@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9cff8ddf7ef25d02b1943db954a8b6bd",
+    "revision": "9e1b253e5075fca35c09757ca5da54f2",
     "url": "/modern-react-bootcamp-exercises/s24-colors-app/index.html"
   },
   {
-    "revision": "f65790559b8b487307ec",
+    "revision": "6a3ed54b6b1491664163",
     "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/css/2.e337d257.chunk.css"
   },
   {
-    "revision": "25b26c314b413b9bf012",
+    "revision": "3f231093167803b88352",
     "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/css/main.2edf2cd4.chunk.css"
   },
   {
-    "revision": "f65790559b8b487307ec",
-    "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/2.47162d1f.chunk.js"
+    "revision": "6a3ed54b6b1491664163",
+    "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/2.bbbc2ee6.chunk.js"
   },
   {
-    "revision": "25b26c314b413b9bf012",
-    "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/main.886e9364.chunk.js"
+    "revision": "3f231093167803b88352",
+    "url": "/modern-react-bootcamp-exercises/s24-colors-app/static/js/main.9d73191c.chunk.js"
   },
   {
     "revision": "8385411bc411ac05b529",
