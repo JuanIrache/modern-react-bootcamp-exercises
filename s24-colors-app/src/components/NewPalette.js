@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
 import chroma from 'chroma-js';
-import randomWords from 'random-words';
 import smartColorGenerator from '../util/smartColorGenerator';
 import FormDrawer from './FormDrawer';
 import BoxesList from './BoxesList';
@@ -64,12 +63,6 @@ class NewPalette extends Component {
     } while (repeated(newColor));
     return newColor;
   };
-
-  randomName = () =>
-    randomWords(2)
-      .map(w => w[0].toUpperCase() + w.slice(1))
-      .join('')
-      .slice(0, 14);
 
   autoColor = () => {
     if (this.state.colors.length < 20) {
