@@ -119,7 +119,7 @@ class NewPalette extends Component {
       const c = this.state.colors[i];
       if (c && c.locked) newColors[i] = c;
       else {
-        const pickRandom = arr => (arr.length ? arr[Math.floor(Math.random() * arr.length)] : null);
+        const pickRandom = arr => arr[Math.floor(Math.random() * arr.length)];
         const basedOn = pickRandom(baseColors);
         const newColor = this.randomColor(basedOn, baseColors);
         baseColors.push(newColor);
