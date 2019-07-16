@@ -9,6 +9,21 @@ export default theme => ({
     }),
     '& a': {
       textDecoration: 'none'
+    },
+    [sizes.down('sm')]: {
+      '& button': {
+        paddingLeft: '.3rem',
+        paddingRight: '.3rem',
+        minWidth: '0 !important',
+        marginLeft: '.05rem',
+        marginRight: 0,
+        fontSize: '.6rem'
+      }
+    },
+    [sizes.down('md')]: {
+      '& .hideable': {
+        display: 'none'
+      }
     }
   },
   appBarShift: {
