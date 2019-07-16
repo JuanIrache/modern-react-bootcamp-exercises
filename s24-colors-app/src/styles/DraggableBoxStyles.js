@@ -27,36 +27,35 @@ export default {
     color: ({ color }) => (darkColor(color) ? 'white' : 'rgb(51, 51, 51)'),
     height: '100%',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    fontSize: '0.6rem',
-    letterSpacing: '0.1rem',
-    '& span': {
-      margin: '.5rem .3rem'
+    '& div': {
+      margin: '.5rem .3rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between'
     },
     '&:hover svg': {
       transform: 'scale(1.5)'
-    }
-  },
-  deleteIcon: {
-    '& svg': {
-      transition: 'all .3s ease',
-      fontSize: '1rem',
-      '& MuiSvgIcon-root': {
-        margin: '0'
+    },
+    [sizes.down('sm')]: {
+      flexDirection: 'row',
+      '& .lower': {
+        width: '80%'
       }
     }
   },
-  duplicateIcon: {
+  icon: {
     '& svg': {
-      transition: 'all .3s ease',
       fontSize: '1rem',
+      transition: 'all .3s ease',
       '& MuiSvgIcon-root': {
         margin: '0'
       }
     }
   },
   name: {
-    padding: '.2rem 0'
+    fontSize: '0.6rem',
+    letterSpacing: '0.1rem'
   }
 };
