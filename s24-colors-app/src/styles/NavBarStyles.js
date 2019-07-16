@@ -1,3 +1,5 @@
+import sizes from './sizes';
+
 export default {
   NavBar: {
     display: 'flex',
@@ -6,7 +8,7 @@ export default {
     height: '5%'
   },
   NavBarLogo: {
-    marginRight: '2rem',
+    marginRight: '1rem',
     padding: '0 2rem',
     fontSize: '1.2rem',
     backgroundColor: '#eceff1',
@@ -17,9 +19,13 @@ export default {
       textDecoration: 'none',
       color: 'rgb(46, 46, 46)',
       fontWeight: 'bold'
+    },
+    [sizes.down('sm')]: {
+      display: 'none'
     }
   },
   NavBarSliderContainer: {
+    marginLeft: '1rem',
     '& span': {
       fontSize: '0.9rem',
       fontWeight: 'bold',
@@ -47,9 +53,18 @@ export default {
   NavBarSlider: {
     width: '15rem',
     marginRight: '2rem',
-    display: 'inline-block'
+    display: 'inline-block',
+    [sizes.down('xs')]: {
+      width: '10rem',
+      marginRight: '1rem'
+    }
   },
   NavBarSelectContainer: {
     margin: '0 2rem 0 auto'
+  },
+  hideable: {
+    [sizes.down('xs')]: {
+      display: 'none'
+    }
   }
 };

@@ -5,7 +5,6 @@ export default {
 
   PaletteColors: {
     height: '90%',
-    display: 'flex',
-    flexWrap: 'wrap'
+    fontSize: 0
   }
 };

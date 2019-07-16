@@ -1,29 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/styles';
-import styles from './styles/NavBarStyles';
-import 'rc-slider/assets/index.css';
 import Slider from 'rc-slider';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import { withStyles } from '@material-ui/core/styles';
+import 'rc-slider/assets/index.css';
+import styles from '../styles/NavBarStyles';
 
 class NavBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { mode: this.props.mode, snack: false };
-    this.handleModeChange = this.handleModeChange.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-  }
-  handleModeChange(e) {
+  state = { mode: this.props.mode, snack: false };
+  handleModeChange = e => {
     this.setState({ mode: e.target.value, snack: true });
     this.props.changeMode(e.target.value);
-  }
-  handleClose() {
+  };
+  handleClose = () => {
     this.setState({ snack: false });
-  }
+  };
   render() {
     const { changeLevel, classes, level } = this.props;
     const slider = (
@@ -31,7 +26,10 @@ class NavBar extends Component {
         <div className={classes.NavBarSlider}>
           <Slider defaultValue={level} min={0} max={10} onChange={changeLevel} />
         </div>
-        <span>Level: {level}</span>
+        <span>
+          <span className={classes.hideable}>Level: </span>
+          {level}
+        </span>
       </div>
     );
     return (

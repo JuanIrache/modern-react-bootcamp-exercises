@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/styles';
-import styles from './styles/ColorBoxStyles';
+import { withStyles } from '@material-ui/core/styles';
+import styles from '../styles/ColorBoxStyles';
 
 class ColorBox extends Component {
-  constructor() {
-    super();
-    this.state = { copying: false };
-    this.startCopy = this.startCopy.bind(this);
-  }
-  startCopy() {
+  state = { copying: false };
+
+  startCopy = () => {
     this.setState({ copying: true }, () => {
       setTimeout(() => {
         this.setState({ copying: false });
       }, 800);
     });
-  }
+  };
   render() {
     const { mode, id, name, paletteId, classes, single } = this.props;
     const { copying } = this.state;

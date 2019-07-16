@@ -1,3 +1,5 @@
+import sizes from './sizes';
+
 export default {
   SingleColorPalette: {
     height: '100vh'
@@ -14,7 +16,19 @@ export default {
     height: '50%',
     cursor: 'pointer',
     position: 'relative',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    [sizes.down('lg')]: {
+      width: 100 / 3 + '%',
+      height: '25%'
+    },
+    [sizes.down('md')]: {
+      width: '50%',
+      height: 100 / 6 + '%'
+    },
+    [sizes.down('xs')]: {
+      width: '100%',
+      height: 100 / 12 + '%'
+    }
   },
   ColorBoxBack: {
     color: 'rgb(51, 51, 51)',
