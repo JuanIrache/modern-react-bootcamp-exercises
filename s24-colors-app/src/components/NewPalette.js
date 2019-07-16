@@ -55,11 +55,12 @@ class NewPalette extends Component {
     this.setState({ colors: this.state.colors.filter(c => c.locked) });
   };
 
-  randomColor = () => {
+  randomColor = (basedOn, compareList = this.state.colors) => {
     let newColor;
-    const repeated = col => this.state.colors.some(color => color.name === col.name || color.color === col.color);
+    basedOn = basedOn || this.state.colors[this.state.colors.length - 1];
+    const repeated = col => compareList.some(color => color.name === col.name || color.color === col.color);
     do {
-      newColor = smartColorGenerator(this.state.colors[this.state.colors.length - 1]);
+      newColor = smartColorGenerator(basedOn);
     } while (repeated(newColor));
     return { ...newColor, locked: false };
   };
@@ -111,6 +112,23 @@ class NewPalette extends Component {
     this.setState({ colors: newOrder });
   };
 
+  autoGenerate = () => {
+    let baseColors = this.state.colors.filter(c => c.locked);
+    let newColors = [];
+    for (let i = 0; i < 20; i++) {
+      const c = this.state.colors[i];
+      if (c && c.locked) newColors[i] = c;
+      else {
+        const pickRandom = arr => (arr.length ? arr[Math.floor(Math.random() * arr.length)] : null);
+        const basedOn = pickRandom(baseColors);
+        const newColor = this.randomColor(basedOn, baseColors);
+        baseColors.push(newColor);
+        newColors[i] = newColor;
+      }
+    }
+    this.setState({ colors: newColors });
+  };
+
   duplicateColor = color => {
     this.setState({ name: color.name, color: color.color });
   };
@@ -137,12 +155,25 @@ class NewPalette extends Component {
       onSortEnd,
       autoSort,
       duplicateColor,
-      toggleLock
+      toggleLock,
+      autoGenerate
     } = this;
     return (
       <div className={classes.root}>
         <NewPaletteTopBar
-          {...{ open, paletteName, emoji, colors, palettes, savePalette, handleDrawerOpen, changePaletteName, changeEmoji, autoSort }}
+          {...{
+            open,
+            paletteName,
+            emoji,
+            colors,
+            palettes,
+            savePalette,
+            handleDrawerOpen,
+            changePaletteName,
+            changeEmoji,
+            autoSort,
+            autoGenerate
+          }}
         />
         <FormDrawer {...{ open, colors, color, name, addColor, changeColor, changeName, handleDrawerClose, clearPalette, autoColor }} />
         <main
