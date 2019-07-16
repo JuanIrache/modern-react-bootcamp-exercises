@@ -22,7 +22,8 @@ function TopBar(props) {
     emoji,
     changeEmoji,
     palettes,
-    autoSort
+    autoSort,
+    autoGenerate
   } = props;
   return (
     <div>
@@ -50,6 +51,9 @@ function TopBar(props) {
                   Back
                 </Button>
               </Link>
+              <Button variant="outlined" onClick={autoGenerate} color="primary" className={classes.button}>
+                <span className="hideable">Auto-</span>Generate
+              </Button>
               <Button variant="outlined" onClick={autoSort} color="primary" className={classes.button} disabled={colors.length < 2}>
                 <span className="hideable">Auto-</span>Sort
               </Button>

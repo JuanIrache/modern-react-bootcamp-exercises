@@ -11,11 +11,12 @@ function DraggableBox(props) {
   const { classes, color, name, locked } = props;
   const removeColor = () => props.removeColor(name);
   const duplicateColor = () => props.duplicateColor({ color, name });
+  const toggleLock = () => props.toggleLock(name);
   return (
     <div className={classes.root} style={{ backgroundColor: color }}>
       <div className={classes.boxContent}>
         <div>
-          <span className={classes.icon}>{locked ? <LockedIcon /> : <UnlockedIcon />}</span>
+          <span className={classes.icon}>{locked ? <LockedIcon onClick={toggleLock} /> : <UnlockedIcon onClick={toggleLock} />}</span>
         </div>
         <div className="lower">
           <span className={classes.icon}>
