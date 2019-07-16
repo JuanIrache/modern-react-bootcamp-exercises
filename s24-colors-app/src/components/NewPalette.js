@@ -105,15 +105,13 @@ class NewPalette extends Component {
   };
 
   autoSort = () => {
-    const getComponent = (col, comp) => chroma(col).get('hsl.' + comp);
-    const firstReorder = this.state.colors.sort(
-      (a, b) => getComponent(a.color, 'l') + getComponent(b.color, 's') - getComponent(a.color, 's') - getComponent(b.color, 'l')
-    );
+    const dist = (col, ref) => chroma.deltaE(ref, col);
+    const temp = col => chroma(col).temperature();
+    const firstReorder = this.state.colors.sort((a, b) => temp(a.color) - temp(b.color));
     let newOrder = [];
     for (let i = 0; i < 4; i++) {
-      newOrder = newOrder
-        .concat(firstReorder.slice(i * 5, i * 5 + 5))
-        .sort((a, b) => getComponent(b.color, 'h') - getComponent(a.color, 'h'));
+      const section = firstReorder.slice(i * 5, i * 5 + 5);
+      newOrder = newOrder.concat(section.sort((a, b) => dist(a.color, section[0].color) - dist(b.color, section[0].color)));
     }
     this.setState({ colors: newOrder });
   };
