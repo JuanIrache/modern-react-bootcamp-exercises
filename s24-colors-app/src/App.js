@@ -33,10 +33,14 @@ class App extends Component {
     this.setState({ startingColors: this.state.palettes.find(p => p.id === id).colors });
   };
 
+  resetStartingColors = () => {
+    this.setState({ startingColors: [] });
+  };
+
   findGenPalette = id => generatePalette(this.state.palettes.find(seed => seed.id === id));
   render() {
     const { palettes, startingColors } = this.state;
-    const { resetPalettes, deletePalette, duplicatePalette } = this;
+    const { resetPalettes, deletePalette, duplicatePalette, resetStartingColors } = this;
     return (
       <div className="App">
         <Route
@@ -60,7 +64,7 @@ class App extends Component {
                     path="/palette/new"
                     render={rp => (
                       <Page>
-                        <NewPalette {...{ palettes, startingColors }} savePalette={this.savePalette} {...rp} />
+                        <NewPalette {...{ palettes, startingColors, resetStartingColors }} savePalette={this.savePalette} {...rp} />
                       </Page>
                     )}
                   />

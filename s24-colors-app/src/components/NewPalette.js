@@ -21,6 +21,7 @@ class NewPalette extends Component {
 
   componentDidMount = () => {
     this.setState({ ...this.randomColor() });
+    this.props.resetStartingColors();
   };
 
   handleDrawerOpen = () => {
