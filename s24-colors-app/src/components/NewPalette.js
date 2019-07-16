@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
 import chroma from 'chroma-js';
-import randomWords from 'random-words';
 import smartColorGenerator from '../util/smartColorGenerator';
 import FormDrawer from './FormDrawer';
 import BoxesList from './BoxesList';
@@ -14,7 +13,7 @@ class NewPalette extends Component {
     open: true,
     color: 'pink',
     name: '',
-    colors: this.props.startingColors,
+    colors: this.props.startingColors.map(c => ({ ...c, locked: false })),
     paletteName: '',
     emoji: ''
   };
@@ -48,12 +47,12 @@ class NewPalette extends Component {
   };
 
   addColor = () => {
-    const newColor = { name: this.state.name, color: this.state.color };
+    const newColor = { name: this.state.name, color: this.state.color, locked: false };
     this.setState({ colors: [...this.state.colors, newColor], name: '' });
   };
 
   clearPalette = () => {
-    this.setState({ colors: [] });
+    this.setState({ colors: this.state.colors.filter(c => c.locked) });
   };
 
   randomColor = () => {
@@ -62,14 +61,8 @@ class NewPalette extends Component {
     do {
       newColor = smartColorGenerator(this.state.colors[this.state.colors.length - 1]);
     } while (repeated(newColor));
-    return newColor;
+    return { ...newColor, locked: false };
   };
-
-  randomName = () =>
-    randomWords(2)
-      .map(w => w[0].toUpperCase() + w.slice(1))
-      .join('')
-      .slice(0, 14);
 
   autoColor = () => {
     if (this.state.colors.length < 20) {
@@ -79,7 +72,7 @@ class NewPalette extends Component {
 
   savePalette = () => {
     const newPalette = {
-      colors: this.state.colors,
+      colors: this.state.colors.map(c => ({ name: c.name, color: c.color })),
       paletteName: this.state.paletteName,
       id: this.state.paletteName.toLowerCase().replace(/\s/g, '-'),
       emoji: this.state.emoji
@@ -118,7 +111,7 @@ class NewPalette extends Component {
   };
 
   duplicateColor = color => {
-    this.setState({...color});
+    this.setState({ ...color });
   };
 
   render() {
@@ -152,7 +145,13 @@ class NewPalette extends Component {
           })}
         >
           <div className={classes.drawerHeader} />
-          <BoxesList {...{ colors, removeColor, onSortEnd, duplicateColor }} items={colors} axis="xy" distance={20} transitionDuration={100} />
+          <BoxesList
+            {...{ colors, removeColor, onSortEnd, duplicateColor }}
+            items={colors}
+            axis="xy"
+            distance={20}
+            transitionDuration={100}
+          />
         </main>
       </div>
     );
