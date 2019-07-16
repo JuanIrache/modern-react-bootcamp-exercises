@@ -9,11 +9,11 @@ const styles = {
   }
 };
 
-function BoxesList({ colors, removeColor, classes }) {
+function BoxesList({ colors, removeColor, classes, duplicateColor }) {
   return (
     <div className={classes.root}>
       {colors.map((col, i) => (
-        <DraggableBox key={col.name} index={i} removeColor={removeColor} {...col} />
+        <DraggableBox key={col.name} index={i} {...{duplicateColor,removeColor}} {...col} />
       ))}
     </div>
   );

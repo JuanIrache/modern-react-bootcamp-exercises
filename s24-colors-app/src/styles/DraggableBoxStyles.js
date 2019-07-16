@@ -47,6 +47,15 @@ export default {
       }
     }
   },
+  duplicateIcon: {
+    '& svg': {
+      transition: 'all .3s ease',
+      fontSize: '1rem',
+      '& MuiSvgIcon-root': {
+        margin: '0'
+      }
+    }
+  },
   name: {
     padding: '.2rem 0'
   }

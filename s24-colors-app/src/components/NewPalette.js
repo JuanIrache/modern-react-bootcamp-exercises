@@ -116,6 +116,10 @@ class NewPalette extends Component {
     this.setState({ colors: newOrder });
   };
 
+  duplicateColor = color => {
+    this.setState({...color});
+  };
+
   render() {
     const { classes, palettes } = this.props;
     const { open, colors, color, name, paletteName, emoji } = this.state;
@@ -132,7 +136,8 @@ class NewPalette extends Component {
       autoColor,
       removeColor,
       onSortEnd,
-      autoSort
+      autoSort,
+      duplicateColor
     } = this;
     return (
       <div className={classes.root}>
@@ -146,7 +151,7 @@ class NewPalette extends Component {
           })}
         >
           <div className={classes.drawerHeader} />
-          <BoxesList {...{ colors, removeColor, onSortEnd }} items={colors} axis="xy" distance={20} transitionDuration={100} />
+          <BoxesList {...{ colors, removeColor, onSortEnd, duplicateColor }} items={colors} axis="xy" distance={20} transitionDuration={100} />
         </main>
       </div>
     );
