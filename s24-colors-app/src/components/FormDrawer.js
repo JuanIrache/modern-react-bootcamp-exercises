@@ -61,7 +61,7 @@ class FormDrawer extends Component {
               Smart Color
             </Button>
           </div>
-          <ChromePicker color={color} width="90%" onChangeComplete={changeColor} className={classes.picker} />
+          <ChromePicker color={color} width="90%" onChangeComplete={changeColor} className={classes.picker} disableAlpha={true} />
           <div className={classes.lowerForm}>
             <ValidatorForm onSubmit={addColor} instantValidate={false}>
               <TextValidator
