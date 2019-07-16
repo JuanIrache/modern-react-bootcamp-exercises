@@ -183,11 +183,7 @@ class NewPalette extends Component {
         >
           <div className={classes.drawerHeader} />
           <BoxesList
-<<<<<<< HEAD
-            {...{ colors, removeColor, onSortEnd, duplicateColor }}
-=======
             {...{ colors, removeColor, onSortEnd, duplicateColor, toggleLock }}
->>>>>>> fix_commit
             items={colors}
             axis="xy"
             distance={20}
