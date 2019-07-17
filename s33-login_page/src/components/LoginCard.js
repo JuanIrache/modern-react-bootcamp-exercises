@@ -29,9 +29,9 @@ const dictionary = {
   fr: {
     signIn: 'Se Connecter',
     name: 'Nom',
-    insertYourName: 'Inserez votre nom',
+    insertYourName: 'Insérez votre nom',
     password: 'Mot de passe',
-    insertYourPassword: 'Inserez votre mot de passe',
+    insertYourPassword: 'Insérez votre mot de passe',
     rememberMe: 'Souvienez-vous de moi',
     language: 'Langue'
   },
