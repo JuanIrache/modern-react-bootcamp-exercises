@@ -65,7 +65,7 @@ export default () => {
           />
           <div className={classes.input}>
             <Button variant="contained" color="primary" className={classes.button}>
-              Primary
+              Sign In
             </Button>
           </div>
         </div>
