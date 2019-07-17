@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/modern-react-bootcamp-exercises/s23-dogs/static/css/main.e728c192.chunk.css",
-    "main.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/main.d566bf87.chunk.js",
-    "main.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/main.d566bf87.chunk.js.map",
+    "main.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/main.ccfb3154.chunk.js",
+    "main.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/main.ccfb3154.chunk.js.map",
     "runtime~main.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/runtime~main.c255dd0d.js",
     "runtime~main.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/runtime~main.c255dd0d.js.map",
-    "static/js/2.858658a2.chunk.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/2.858658a2.chunk.js",
-    "static/js/2.858658a2.chunk.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/2.858658a2.chunk.js.map",
+    "static/js/2.79a8c86e.chunk.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/2.79a8c86e.chunk.js",
+    "static/js/2.79a8c86e.chunk.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/2.79a8c86e.chunk.js.map",
     "index.html": "/modern-react-bootcamp-exercises/s23-dogs/index.html",
-    "precache-manifest.b219193cfff2af2afbdc3663eca5bacf.js": "/modern-react-bootcamp-exercises/s23-dogs/precache-manifest.b219193cfff2af2afbdc3663eca5bacf.js",
+    "precache-manifest.32869e8b52c3dbb70373c2f767335845.js": "/modern-react-bootcamp-exercises/s23-dogs/precache-manifest.32869e8b52c3dbb70373c2f767335845.js",
     "service-worker.js": "/modern-react-bootcamp-exercises/s23-dogs/service-worker.js",
     "static/css/main.e728c192.chunk.css.map": "/modern-react-bootcamp-exercises/s23-dogs/static/css/main.e728c192.chunk.css.map"
   }
