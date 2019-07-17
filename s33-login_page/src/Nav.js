@@ -9,39 +9,60 @@ import { Emoji } from 'emoji-mart';
 import styles from './styles/NavStyles';
 import { withStyles } from '@material-ui/core/styles';
 import ThemeContext from './contexts/ThemeContext';
+import { withLanguageContext } from './contexts/LanguageContext';
+
+const dictionary = {
+  en: {
+    loginPage: 'Login Page',
+    theme: 'Theme',
+    search: 'Search',
+    language: 'Language',
+    flag: 'uk',
+    darkOrLightTheme:'Dark or light theme'
+  },
+  fr: {
+    loginPage: 'Page de connexion',
+    theme: 'Thème',
+    search: 'Chercher',
+    language: 'langue',
+    flag: 'fr',
+    darkOrLightTheme:'Thème sombre ou clair'
+  }
+};
 
 class Nav extends Component {
   static contextType = ThemeContext;
   render() {
     const { classes } = this.props;
+    const { lang } = this.props.languageContext;
     const { darkTheme, toggleTheme } = this.context;
     return (
       <div className={classes.root}>
         <AppBar position="static" className={`${classes.appBar} ${darkTheme ? classes.dark : ''}`}>
           <Toolbar>
             <div className={classes.flag}>
-              <Emoji emoji="fr" set="google" size={20} aria-label="Language: fr" />
+              <Emoji emoji={dictionary[lang].flag} set="google" size={20} aria-label={`${dictionary[lang].language}: ${lang}`} />
             </div>
             <Typography className={classes.title} variant="h6" noWrap>
-              Login Page
+              {dictionary[lang].loginPage}
             </Typography>
             <div className={classes.switch}>
               <Typography className={classes.p} variant="body1" noWrap>
-                Theme
+                {dictionary[lang].theme}
               </Typography>
-              <Switch value="checkedF" color="secondary" onChange={toggleTheme} inputProps={{ 'aria-label': 'Dark or light theme' }} />
+              <Switch value="checkedF" color="secondary" onChange={toggleTheme} inputProps={{ 'aria-label': dictionary[lang].darkOrLightTheme }} />
             </div>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
               <InputBase
-                placeholder="Search…"
+                placeholder={`${dictionary[lang].search}...`}
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput
                 }}
-                inputProps={{ 'aria-label': 'Search' }}
+                inputProps={{ 'aria-label': dictionary[lang].search }}
               />
             </div>
           </Toolbar>
@@ -51,4 +72,4 @@ class Nav extends Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(Nav);
+export default withLanguageContext(withStyles(styles, { withTheme: true })(Nav));
