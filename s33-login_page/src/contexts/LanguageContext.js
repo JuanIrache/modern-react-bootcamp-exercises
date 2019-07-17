@@ -3,8 +3,11 @@ import React, { useState, createContext } from 'react';
 const LanguageContext = createContext();
 
 export function LanguageContextProvider({ children }) {
-  const [lang, setLang] = useState(JSON.parse(window.localStorage.getItem('lang') || '"fr"'));
-  const selectLang = e => setLang(e.target.value);
+  const [lang, setLang] = useState(window.localStorage.getItem('lang') || 'fr');
+  const selectLang = e => {
+    setLang(e.target.value);
+    window.localStorage.setItem('lang', e.target.value);
+  };
 
   return <LanguageContext.Provider value={{ lang, selectLang }}>{children}</LanguageContext.Provider>;
 }
