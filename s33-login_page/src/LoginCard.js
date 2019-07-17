@@ -14,12 +14,38 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { withStyles } from '@material-ui/core/styles';
 import ThemeContext from './contexts/ThemeContext';
 import styles from './styles/LoginCardStyles';
+import { withLanguageContext } from './contexts/LanguageContext';
+
+const dictionary = {
+  en: {
+    signIn: 'Sign In',
+    name: 'Name',
+    insertYourName: 'Insert your name',
+    password: 'Password',
+    insertYourPassword: 'Insert your password',
+    rememberMe: 'Remember me',
+    language: 'Language'
+  },
+  fr: {
+    signIn: 'Se Connecter',
+    name: 'Nom',
+    insertYourName: 'Inserez votre nom',
+    password: 'Mot de passe',
+    insertYourPassword: 'Inserez votre mot de passe',
+    rememberMe: 'Souvienez-vous de moi',
+    language: 'Langue'
+  }
+};
 
 class LoginCard extends Component {
   static contextType = ThemeContext;
   render() {
+    console.log(this.props);
+
     const { classes } = this.props;
+    const { lang, setLang } = this.props.languageContext;
     const { darkTheme } = this.context;
+
     return (
       <Card className={`${classes.card} ${darkTheme ? classes.dark : ''}`}>
         <CardContent>
@@ -27,12 +53,12 @@ class LoginCard extends Component {
             <LockIcon />
           </Avatar>
           <Typography className={classes.title} variant="h4" component="h1">
-            Sign In
+            {dictionary[lang].signIn}
           </Typography>
           <FormControl className={classes.formControl}>
-            <Select value={'en'} onChange={null} name="age" className={classes.select}>
+            <Select value={lang} onChange={setLang} name="age" className={classes.select}>
               <MenuItem value="" disabled>
-                Language
+                {dictionary[lang].language}
               </MenuItem>
               <MenuItem value={'en'}>English</MenuItem>
               <MenuItem value={'fr'}>Français</MenuItem>
@@ -42,8 +68,8 @@ class LoginCard extends Component {
           <div className={classes.inputs}>
             <div className={classes.input}>
               <TextField
-                label="Name"
-                placeholder="Insert your name"
+                label={dictionary[lang].name}
+                placeholder={dictionary[lang].insertYourName}
                 fullWidth
                 InputLabelProps={{
                   shrink: true
@@ -52,8 +78,8 @@ class LoginCard extends Component {
             </div>
             <div className={classes.input}>
               <TextField
-                label="Password"
-                placeholder="Insert your passord"
+                label={dictionary[lang].password}
+                placeholder={dictionary[lang].insertYourPassword}
                 type="password"
                 fullWidth
                 InputLabelProps={{
@@ -64,11 +90,11 @@ class LoginCard extends Component {
             <FormControlLabel
               className={classes.input}
               control={<Checkbox checked={true} onChange={null} color="primary" />}
-              label="Remember me?"
+              label={dictionary[lang].rememberMe}
             />
             <div className={classes.input}>
               <Button variant="contained" color="primary" className={classes.button}>
-                Sign In
+                {dictionary[lang].signIn}
               </Button>
             </div>
           </div>
@@ -78,4 +104,4 @@ class LoginCard extends Component {
   }
 }
 
-export default withStyles(styles)(LoginCard);
+export default withLanguageContext(withStyles(styles)(LoginCard));

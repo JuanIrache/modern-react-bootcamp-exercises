@@ -3,14 +3,17 @@ import Nav from './Nav';
 import Page from './Page';
 import LoginCard from './LoginCard';
 import { ThemeContextProvider } from './contexts/ThemeContext';
+import { LanguageContextProvider } from './contexts/LanguageContext';
 
 export default () => {
   return (
     <ThemeContextProvider>
-      <Page>
-        <Nav />
-        <LoginCard />
-      </Page>
+      <LanguageContextProvider>
+        <Page>
+          <Nav />
+          <LoginCard />
+        </Page>
+      </LanguageContextProvider>
     </ThemeContextProvider>
   );
 };
