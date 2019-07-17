@@ -13,7 +13,7 @@
 }
 
 .Dogs-img {
-  margin-top: 1em;
+  margin: 1em 0.3em 0 0.3em;
   max-height: 30em;
   max-width: 90vw;
   box-shadow: 10px 10px 50px -15px rgba(0, 0, 0, 0.2);
