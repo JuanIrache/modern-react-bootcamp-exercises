@@ -4,3 +4,4 @@ Here I will post some of the results:
 
 - [Smart Palette Manager](https://juanirache.github.io/modern-react-bootcamp-exercises/s24-colors-app/)
 - [Context-based login page](https://juanirache.github.io/modern-react-bootcamp-exercises/s33-login_page/)
+- [Router-based dog gallery](https://juanirache.github.io/modern-react-bootcamp-exercises/s23-dogs/)
