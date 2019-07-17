@@ -1,8 +1,10 @@
 {
   "name": "s23-dogs",
   "version": "0.1.0",
+  "homepage": "https://juanirache.github.io/modern-react-bootcamp-exercises/s23-dogs",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
@@ -12,7 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -e s23-dogs"
   },
   "eslintConfig": {
     "extends": "react-app"
