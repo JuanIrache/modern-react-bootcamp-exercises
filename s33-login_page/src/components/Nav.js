@@ -58,7 +58,7 @@ export default () => {
             <Typography className={classes.p} variant="body1" noWrap>
               {words.theme}
             </Typography>
-            <Switch value="checkedF" color="secondary" onChange={toggleTheme} inputProps={{ 'aria-label': words.darkOrLightTheme }} />
+            <Switch checked={darkTheme} color="secondary" onChange={toggleTheme} inputProps={{ 'aria-label': words.darkOrLightTheme }} />
           </div>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
