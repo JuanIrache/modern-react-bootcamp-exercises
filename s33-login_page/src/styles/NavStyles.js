@@ -4,6 +4,13 @@ export default theme => ({
   root: {
     flexGrow: 1
   },
+  appBar: {
+    transition: 'all .5s ease',
+    backgroundColor: '#40739e'
+  },
+  dark: {
+    backgroundColor: '#0e162a'
+  },
   flag: {
     marginRight: theme.spacing(2)
   },

@@ -17,7 +17,7 @@ class Nav extends Component {
     const { darkTheme, toggleTheme } = this.context;
     return (
       <div className={classes.root}>
-        <AppBar position="static" style={{ transition: 'all .5s ease', backgroundColor: darkTheme ? '#0e162a' : '#40739e' }}>
+        <AppBar position="static" className={`${classes.appBar} ${darkTheme ? classes.dark : ''}`}>
           <Toolbar>
             <div className={classes.flag}>
               <Emoji emoji="fr" set="google" size={20} aria-label="Language: fr" />
