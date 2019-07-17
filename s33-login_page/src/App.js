@@ -17,12 +17,10 @@ const theme = createMuiTheme({
   }
 });
 
-const App = () => {
+export default () => {
   return (
     <MuiThemeProvider theme={theme}>
       <Todo />
     </MuiThemeProvider>
   );
 };
-
-export default App;

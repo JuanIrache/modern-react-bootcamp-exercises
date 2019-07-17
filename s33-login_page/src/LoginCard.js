@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
@@ -11,10 +11,10 @@ import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import ThemeContext from './contexts/ThemeContext';
 import styles from './styles/LoginCardStyles';
-import { withLanguageContext } from './contexts/LanguageContext';
+import LanguageContext from './contexts/LanguageContext';
 
 const dictionary = {
   en: {
@@ -46,69 +46,64 @@ const dictionary = {
   }
 };
 
-class LoginCard extends Component {
-  static contextType = ThemeContext;
-  render() {
-    const { classes } = this.props;
-    const { lang, setLang } = this.props.languageContext;
-    const { darkTheme } = this.context;
+export default () => {
+  const { lang, setLang } = useContext(LanguageContext);
+  const { darkTheme } = useContext(ThemeContext);
+  const classes = makeStyles(styles)();
 
-    return (
-      <Card className={`${classes.card} ${darkTheme ? classes.dark : ''}`}>
-        <CardContent>
-          <Avatar className={classes.avatar}>
-            <LockIcon />
-          </Avatar>
-          <Typography className={classes.title} variant="h4" component="h1">
-            {dictionary[lang].signIn}
-          </Typography>
-          <FormControl className={classes.formControl}>
-            <Select value={lang} onChange={setLang} name="age" className={classes.select}>
-              <MenuItem value="" disabled>
-                {dictionary[lang].language}
-              </MenuItem>
-              <MenuItem value={'en'}>English</MenuItem>
-              <MenuItem value={'fr'}>Français</MenuItem>
-              <MenuItem value={'es'}>Español</MenuItem>
-            </Select>
-          </FormControl>
-          <div className={classes.inputs}>
-            <div className={classes.input}>
-              <TextField
-                label={dictionary[lang].name}
-                placeholder={dictionary[lang].insertYourName}
-                fullWidth
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
-            </div>
-            <div className={classes.input}>
-              <TextField
-                label={dictionary[lang].password}
-                placeholder={dictionary[lang].insertYourPassword}
-                type="password"
-                fullWidth
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
-            </div>
-            <FormControlLabel
-              className={classes.input}
-              control={<Checkbox checked={true} onChange={null} color="primary" />}
-              label={dictionary[lang].rememberMe}
+  return (
+    <Card className={`${classes.card} ${darkTheme ? classes.dark : ''}`}>
+      <CardContent>
+        <Avatar className={classes.avatar}>
+          <LockIcon />
+        </Avatar>
+        <Typography className={classes.title} variant="h4" component="h1">
+          {dictionary[lang].signIn}
+        </Typography>
+        <FormControl className={classes.formControl}>
+          <Select value={lang} onChange={setLang} name="age" className={classes.select}>
+            <MenuItem value="" disabled>
+              {dictionary[lang].language}
+            </MenuItem>
+            <MenuItem value={'en'}>English</MenuItem>
+            <MenuItem value={'fr'}>Français</MenuItem>
+            <MenuItem value={'es'}>Español</MenuItem>
+          </Select>
+        </FormControl>
+        <div className={classes.inputs}>
+          <div className={classes.input}>
+            <TextField
+              label={dictionary[lang].name}
+              placeholder={dictionary[lang].insertYourName}
+              fullWidth
+              InputLabelProps={{
+                shrink: true
+              }}
             />
-            <div className={classes.input}>
-              <Button variant="contained" color="primary" className={classes.button}>
-                {dictionary[lang].signIn}
-              </Button>
-            </div>
           </div>
-        </CardContent>
-      </Card>
-    );
-  }
-}
-
-export default withLanguageContext(withStyles(styles)(LoginCard));
+          <div className={classes.input}>
+            <TextField
+              label={dictionary[lang].password}
+              placeholder={dictionary[lang].insertYourPassword}
+              type="password"
+              fullWidth
+              InputLabelProps={{
+                shrink: true
+              }}
+            />
+          </div>
+          <FormControlLabel
+            className={classes.input}
+            control={<Checkbox checked={true} onChange={null} color="primary" />}
+            label={dictionary[lang].rememberMe}
+          />
+          <div className={classes.input}>
+            <Button variant="contained" color="primary" className={classes.button}>
+              {dictionary[lang].signIn}
+            </Button>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};

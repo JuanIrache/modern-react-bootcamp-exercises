@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
 import ThemeContext from './contexts/ThemeContext';
-import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/PageStyles';
 
-class Page extends Component {
-  static contextType = ThemeContext;
+export default ({ children }) => {
+  const { darkTheme } = useContext(ThemeContext);
+  const classes = makeStyles(styles)();
 
-  render() {
-    const { darkTheme } = this.context;
-    const { classes, children } = this.props;
-    return <Paper className={`${classes.root} ${darkTheme ? classes.dark : ''}`}>{children}</Paper>;
-  }
-}
-
-export default withStyles(styles)(Page);
+  return <Paper className={`${classes.root} ${darkTheme ? classes.dark : ''}`}>{children}</Paper>;
+};
