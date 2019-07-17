@@ -47,9 +47,10 @@ const dictionary = {
 };
 
 export default () => {
-  const { lang, setLang } = useContext(LanguageContext);
+  const { lang, selectLang } = useContext(LanguageContext);
   const { darkTheme } = useContext(ThemeContext);
   const classes = makeStyles(styles)();
+  const words = dictionary[lang];
 
   return (
     <Card className={`${classes.card} ${darkTheme ? classes.dark : ''}`}>
@@ -58,12 +59,12 @@ export default () => {
           <LockIcon />
         </Avatar>
         <Typography className={classes.title} variant="h4" component="h1">
-          {dictionary[lang].signIn}
+          {words.signIn}
         </Typography>
         <FormControl className={classes.formControl}>
-          <Select value={lang} onChange={setLang} name="age" className={classes.select}>
+          <Select value={lang} onChange={selectLang} name="age" className={classes.select}>
             <MenuItem value="" disabled>
-              {dictionary[lang].language}
+              {words.language}
             </MenuItem>
             <MenuItem value={'en'}>English</MenuItem>
             <MenuItem value={'fr'}>Français</MenuItem>
@@ -73,8 +74,8 @@ export default () => {
         <div className={classes.inputs}>
           <div className={classes.input}>
             <TextField
-              label={dictionary[lang].name}
-              placeholder={dictionary[lang].insertYourName}
+              label={words.name}
+              placeholder={words.insertYourName}
               fullWidth
               InputLabelProps={{
                 shrink: true
@@ -83,8 +84,8 @@ export default () => {
           </div>
           <div className={classes.input}>
             <TextField
-              label={dictionary[lang].password}
-              placeholder={dictionary[lang].insertYourPassword}
+              label={words.password}
+              placeholder={words.insertYourPassword}
               type="password"
               fullWidth
               InputLabelProps={{
@@ -95,11 +96,11 @@ export default () => {
           <FormControlLabel
             className={classes.input}
             control={<Checkbox checked={true} onChange={null} color="primary" />}
-            label={dictionary[lang].rememberMe}
+            label={words.rememberMe}
           />
           <div className={classes.input}>
             <Button variant="contained" color="primary" className={classes.button}>
-              {dictionary[lang].signIn}
+              {words.signIn}
             </Button>
           </div>
         </div>

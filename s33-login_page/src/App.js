@@ -17,10 +17,8 @@ const theme = createMuiTheme({
   }
 });
 
-export default () => {
-  return (
-    <MuiThemeProvider theme={theme}>
-      <Todo />
-    </MuiThemeProvider>
-  );
-};
+export default () => (
+  <MuiThemeProvider theme={theme}>
+    <Todo />
+  </MuiThemeProvider>
+);

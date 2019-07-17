@@ -42,39 +42,35 @@ export default () => {
   const { darkTheme, toggleTheme } = useContext(ThemeContext);
   const { lang } = useContext(LanguageContext);
   const classes = makeStyles(styles)();
+  const words = dictionary[lang];
 
   return (
     <div className={classes.root}>
       <AppBar position="static" className={`${classes.appBar} ${darkTheme ? classes.dark : ''}`}>
         <Toolbar>
           <div className={classes.flag}>
-            <Emoji emoji={dictionary[lang].flag} set="google" size={20} aria-label={`${dictionary[lang].language}: ${lang}`} />
+            <Emoji emoji={words.flag} set="google" size={20} aria-label={`${words.language}: ${lang}`} />
           </div>
           <Typography className={classes.title} variant="h6" noWrap>
-            {dictionary[lang].loginPage}
+            {words.loginPage}
           </Typography>
           <div className={classes.switch}>
             <Typography className={classes.p} variant="body1" noWrap>
-              {dictionary[lang].theme}
+              {words.theme}
             </Typography>
-            <Switch
-              value="checkedF"
-              color="secondary"
-              onChange={toggleTheme}
-              inputProps={{ 'aria-label': dictionary[lang].darkOrLightTheme }}
-            />
+            <Switch value="checkedF" color="secondary" onChange={toggleTheme} inputProps={{ 'aria-label': words.darkOrLightTheme }} />
           </div>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
-              placeholder={`${dictionary[lang].search}...`}
+              placeholder={`${words.search}...`}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput
               }}
-              inputProps={{ 'aria-label': dictionary[lang].search }}
+              inputProps={{ 'aria-label': words.search }}
             />
           </div>
         </Toolbar>

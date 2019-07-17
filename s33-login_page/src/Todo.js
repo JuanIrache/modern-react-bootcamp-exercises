@@ -5,15 +5,13 @@ import LoginCard from './LoginCard';
 import { ThemeContextProvider } from './contexts/ThemeContext';
 import { LanguageContextProvider } from './contexts/LanguageContext';
 
-export default () => {
-  return (
-    <ThemeContextProvider>
-      <LanguageContextProvider>
-        <Page>
-          <Nav />
-          <LoginCard />
-        </Page>
-      </LanguageContextProvider>
-    </ThemeContextProvider>
-  );
-};
+export default () => (
+  <ThemeContextProvider>
+    <LanguageContextProvider>
+      <Page>
+        <Nav />
+        <LoginCard />
+      </Page>
+    </LanguageContextProvider>
+  </ThemeContextProvider>
+);
