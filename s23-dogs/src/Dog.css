@@ -1,5 +1,5 @@
 .Dog {
-  margin: 2em 0 auto 0;
+  margin: 4em 0 auto 0;
   align-self: center;
   width: 40em;
   max-width: 90%;
@@ -71,6 +71,9 @@
 }
 
 @media (max-width: 576px) {
+  .Dog {
+    margin: 2em 0 auto 0;
+  }
   .Dog-img {
     max-height: 60vh;
   }
