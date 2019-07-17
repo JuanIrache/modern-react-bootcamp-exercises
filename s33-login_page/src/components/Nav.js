@@ -6,10 +6,10 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import Switch from '@material-ui/core/Switch';
 import { Emoji } from 'emoji-mart';
-import styles from './styles/NavStyles';
+import styles from '../styles/NavStyles';
 import { makeStyles } from '@material-ui/core/styles';
-import ThemeContext from './contexts/ThemeContext';
-import LanguageContext from './contexts/LanguageContext';
+import ThemeContext from '../contexts/ThemeContext';
+import LanguageContext from '../contexts/LanguageContext';
 
 const dictionary = {
   en: {
