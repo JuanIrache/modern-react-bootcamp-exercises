@@ -1,11 +1,17 @@
 .Dog {
-  align-self: center;
   margin: 2em 0 auto 0;
+  align-self: center;
+  width: 40em;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.Dog-inner {
   display: flex;
   flex-direction: column;
   background-color: rgb(250, 253, 255);
   box-shadow: 10px 10px 50px -15px rgba(0, 0, 0, 0.2);
-  width: 40em;
+  margin-bottom: 1.5em;
 }
 
 .Dog-img {
@@ -21,7 +27,6 @@
 }
 
 .Dog-description-left {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,4 +68,29 @@
 
 .Dog-button:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 576px) {
+  .Dog-img {
+    max-height: 60vh;
+  }
+  .Dog-description {
+    flex-direction: column;
+  }
+  .Dog-description-left {
+    flex-direction: row;
+  }
+  .Dog-name {
+    margin: 0.7rem 1rem 0 1rem;
+    padding: 0.7rem 1rem 0 1rem;
+    display: inline-block;
+  }
+  .Dog-age {
+    margin: 0.7rem 1rem 0 1rem;
+    padding: 0.7rem 1rem 0 1rem;
+    display: inline-block;
+  }
+  .Dog-button {
+    margin: 1rem 0.5rem 1.5rem 0.5rem;
+  }
 }

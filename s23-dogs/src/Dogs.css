@@ -15,6 +15,7 @@
 .Dogs-img {
   margin-top: 1em;
   max-height: 30em;
+  max-width: 85%;
   box-shadow: 10px 10px 50px -15px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
   filter: grayscale();
