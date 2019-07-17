@@ -15,12 +15,10 @@ export default makeStyles(theme => ({
     }
   },
   switch: {
-    margin:'auto'
-    // marginLeft:0,
-    // marginRight:'auto'
+    margin: 'auto'
   },
-  p:{
-    display:'inline'
+  p: {
+    display: 'inline'
   },
   search: {
     position: 'relative',
