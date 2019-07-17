@@ -18,15 +18,23 @@ const dictionary = {
     search: 'Search',
     language: 'Language',
     flag: 'uk',
-    darkOrLightTheme:'Dark or light theme'
+    darkOrLightTheme: 'Dark or light theme'
   },
   fr: {
     loginPage: 'Page de connexion',
     theme: 'Thème',
     search: 'Chercher',
-    language: 'langue',
+    language: 'Langue',
     flag: 'fr',
-    darkOrLightTheme:'Thème sombre ou clair'
+    darkOrLightTheme: 'Thème sombre ou clair'
+  },
+  es: {
+    loginPage: 'Página de identificación',
+    theme: 'Tema',
+    search: 'Buscar',
+    language: 'Idioma',
+    flag: 'es',
+    darkOrLightTheme: 'Tema oscuro o claro'
   }
 };
 
@@ -50,7 +58,12 @@ class Nav extends Component {
               <Typography className={classes.p} variant="body1" noWrap>
                 {dictionary[lang].theme}
               </Typography>
-              <Switch value="checkedF" color="secondary" onChange={toggleTheme} inputProps={{ 'aria-label': dictionary[lang].darkOrLightTheme }} />
+              <Switch
+                value="checkedF"
+                color="secondary"
+                onChange={toggleTheme}
+                inputProps={{ 'aria-label': dictionary[lang].darkOrLightTheme }}
+              />
             </div>
             <div className={classes.search}>
               <div className={classes.searchIcon}>

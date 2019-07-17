@@ -34,6 +34,15 @@ const dictionary = {
     insertYourPassword: 'Inserez votre mot de passe',
     rememberMe: 'Souvienez-vous de moi',
     language: 'Langue'
+  },
+  es: {
+    signIn: 'Iniciar Sesión',
+    name: 'Nombre',
+    insertYourName: 'Introduzca su nombre',
+    password: 'Contraseña',
+    insertYourPassword: 'Introduzca su contraseña',
+    rememberMe: 'Recordarme',
+    language: 'Idioma'
   }
 };
 
