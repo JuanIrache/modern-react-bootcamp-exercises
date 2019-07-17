@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/modern-react-bootcamp-exercises/s24-colors-app/precache-manifest.7ac58de4c839f1b475fa0dd2c8461ba9.js"
+  "/modern-react-bootcamp-exercises/s24-colors-app/precache-manifest.4b45def7351526872dcb2646381a047e.js"
 );
 
 self.addEventListener('message', (event) => {
