@@ -29,7 +29,7 @@ const dictionary = {
     darkOrLightTheme: 'Thème sombre ou clair'
   },
   es: {
-    loginPage: 'Página de identificación',
+    loginPage: 'Página de entrada',
     theme: 'Tema',
     search: 'Buscar',
     language: 'Idioma',
