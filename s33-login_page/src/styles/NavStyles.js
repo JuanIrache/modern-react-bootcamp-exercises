@@ -15,14 +15,19 @@ export default theme => ({
     marginRight: theme.spacing(2)
   },
   title: {
-    // flexGrow: 1,
+    flexGrow: 1,
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
     }
   },
   switch: {
-    margin: 'auto'
+    margin: 'auto',
+    [theme.breakpoints.up('sm')]: {
+      position: 'absolute',
+      left: '50%',
+      transform: 'translate(-50%, 0)'
+    }
   },
   p: {
     display: 'inline'
