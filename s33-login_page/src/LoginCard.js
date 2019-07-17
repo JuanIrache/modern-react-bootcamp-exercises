@@ -52,7 +52,6 @@ class LoginCard extends Component {
             </div>
             <div className={classes.input}>
               <TextField
-                className={classes.input}
                 label="Password"
                 placeholder="Insert your passord"
                 type="password"
