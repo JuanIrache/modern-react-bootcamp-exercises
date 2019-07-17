@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/modern-react-bootcamp-exercises/s23-dogs/static/css/main.8e51a023.chunk.css",
-    "main.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/main.886e39c2.chunk.js",
-    "main.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/main.886e39c2.chunk.js.map",
+    "main.css": "/modern-react-bootcamp-exercises/s23-dogs/static/css/main.2145eb6f.chunk.css",
+    "main.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/main.d6d9203e.chunk.js",
+    "main.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/main.d6d9203e.chunk.js.map",
     "runtime~main.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/runtime~main.c255dd0d.js",
     "runtime~main.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/runtime~main.c255dd0d.js.map",
-    "static/js/2.79a8c86e.chunk.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/2.79a8c86e.chunk.js",
-    "static/js/2.79a8c86e.chunk.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/2.79a8c86e.chunk.js.map",
+    "static/js/2.858658a2.chunk.js": "/modern-react-bootcamp-exercises/s23-dogs/static/js/2.858658a2.chunk.js",
+    "static/js/2.858658a2.chunk.js.map": "/modern-react-bootcamp-exercises/s23-dogs/static/js/2.858658a2.chunk.js.map",
     "index.html": "/modern-react-bootcamp-exercises/s23-dogs/index.html",
-    "precache-manifest.5314a1ec6761a9da01d814f4a32fe0fa.js": "/modern-react-bootcamp-exercises/s23-dogs/precache-manifest.5314a1ec6761a9da01d814f4a32fe0fa.js",
+    "precache-manifest.dc358fc3f09a95eb77bfbc41fe93abb0.js": "/modern-react-bootcamp-exercises/s23-dogs/precache-manifest.dc358fc3f09a95eb77bfbc41fe93abb0.js",
     "service-worker.js": "/modern-react-bootcamp-exercises/s23-dogs/service-worker.js",
-    "static/css/main.8e51a023.chunk.css.map": "/modern-react-bootcamp-exercises/s23-dogs/static/css/main.8e51a023.chunk.css.map"
+    "static/css/main.2145eb6f.chunk.css.map": "/modern-react-bootcamp-exercises/s23-dogs/static/css/main.2145eb6f.chunk.css.map"
   }
 }
