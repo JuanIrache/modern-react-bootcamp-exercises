@@ -1,6 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
-
-export default makeStyles(theme => ({
+export default theme => ({
   card: {
     margin: '2rem auto auto auto',
     width: '85%',
@@ -8,6 +6,9 @@ export default makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       width: '30rem'
     }
+  },
+  dark: {
+    backgroundColor: '#dff9fb'
   },
   avatar: {
     margin: '1rem auto',
@@ -30,4 +31,4 @@ export default makeStyles(theme => ({
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2)
   }
-}));
+});
