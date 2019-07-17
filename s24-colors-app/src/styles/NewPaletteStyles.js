@@ -15,7 +15,7 @@ export default theme => ({
     marginLeft: -DRAWER_WIDTH,
     height: '100vh',
     fontSize: 0,
-    [sizes.down('md')]: {
+    [sizes.down('sm')]: {
       marginLeft: -DRAWER_WIDTH_SMALL
     }
   },
