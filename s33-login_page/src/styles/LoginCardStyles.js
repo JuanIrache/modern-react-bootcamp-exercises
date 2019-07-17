@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
 
 export default makeStyles(theme => ({
   card: {
@@ -13,7 +12,7 @@ export default makeStyles(theme => ({
   avatar: {
     margin: '1rem auto',
     color: '#fff',
-    backgroundColor: green[500]
+    backgroundColor: '#eab543'
   },
   title: {
     margin: theme.spacing(3)

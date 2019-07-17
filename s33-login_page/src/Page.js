@@ -1,20 +1,27 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Component } from 'react';
 import Paper from '@material-ui/core/Paper';
+import ThemeContext from './contexts/ThemeContext';
+import { withStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
+const styles = {
   root: {
-    backgroundColor: 'white',
+    // backgroundColor: darkTheme ? 'black' : 'white',
     height: '100vh'
   }
-}));
-
-export default ({ children }) => {
-  const classes = useStyles();
-
-  return (
-    <div>
-      <Paper className={classes.root}>{children}</Paper>
-    </div>
-  );
 };
+
+class Page extends Component {
+  static contextType = ThemeContext;
+
+  render() {
+    const { darkTheme } = this.context;
+    const { classes, children } = this.props;
+    return (
+      <Paper className={classes.root} style={{ transition: 'all .5s ease', backgroundColor: darkTheme ? '#2f3640' : '#f5f6fa' }}>
+        {children}
+      </Paper>
+    );
+  }
+}
+
+export default withStyles(styles)(Page);

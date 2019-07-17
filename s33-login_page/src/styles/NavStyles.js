@@ -1,6 +1,6 @@
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { fade } from '@material-ui/core/styles';
 
-export default makeStyles(theme => ({
+export default theme => ({
   root: {
     flexGrow: 1
   },
@@ -57,4 +57,4 @@ export default makeStyles(theme => ({
       }
     }
   }
-}));
+});

@@ -19,7 +19,7 @@ export default () => {
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Avatar className={classes.avatar}>
+        <Avatar backgroundColor="secondary" className={classes.avatar}>
           <LockIcon />
         </Avatar>
         <Typography className={classes.title} variant="h4" component="h1">
