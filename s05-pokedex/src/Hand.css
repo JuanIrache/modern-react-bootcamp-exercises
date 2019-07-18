@@ -1,0 +1,24 @@
+.Hand {
+  margin-bottom: 2.5rem;
+}
+
+.Hand-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Hand-p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.Hand-winner {
+  padding: 0.3rem 0;
+  color: white;
+  background-color: darkcyan;
+}
+.Hand-loser {
+  padding: 0.3rem 0;
+  color: white;
+  background-color: brown;
+}

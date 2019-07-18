@@ -1,0 +1,1 @@
+I use a slightly different approach than Colt's. I take his instructions literally, so the remove function returns the REMOVED food, not the new array. I "deliver" that removed food and count the remaining items on the original array.
