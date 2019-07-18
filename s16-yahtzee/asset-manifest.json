@@ -1,6 +1,15 @@
 {
-  "main.css": "static/css/main.488467e6.css",
-  "main.css.map": "static/css/main.488467e6.css.map",
-  "main.js": "static/js/main.ba587a0e.js",
-  "main.js.map": "static/js/main.ba587a0e.js.map"
+  "files": {
+    "main.css": "/modern-react-bootcamp-exercises/s16-yahtzee/static/css/main.2dd6b9c4.chunk.css",
+    "main.js": "/modern-react-bootcamp-exercises/s16-yahtzee/static/js/main.e2d5d67e.chunk.js",
+    "main.js.map": "/modern-react-bootcamp-exercises/s16-yahtzee/static/js/main.e2d5d67e.chunk.js.map",
+    "runtime~main.js": "/modern-react-bootcamp-exercises/s16-yahtzee/static/js/runtime~main.77c40d73.js",
+    "runtime~main.js.map": "/modern-react-bootcamp-exercises/s16-yahtzee/static/js/runtime~main.77c40d73.js.map",
+    "static/js/2.47856582.chunk.js": "/modern-react-bootcamp-exercises/s16-yahtzee/static/js/2.47856582.chunk.js",
+    "static/js/2.47856582.chunk.js.map": "/modern-react-bootcamp-exercises/s16-yahtzee/static/js/2.47856582.chunk.js.map",
+    "index.html": "/modern-react-bootcamp-exercises/s16-yahtzee/index.html",
+    "precache-manifest.b329e0edd549dabb51c5978d65d94e4d.js": "/modern-react-bootcamp-exercises/s16-yahtzee/precache-manifest.b329e0edd549dabb51c5978d65d94e4d.js",
+    "service-worker.js": "/modern-react-bootcamp-exercises/s16-yahtzee/service-worker.js",
+    "static/css/main.2dd6b9c4.chunk.css.map": "/modern-react-bootcamp-exercises/s16-yahtzee/static/css/main.2dd6b9c4.chunk.css.map"
+  }
 }
