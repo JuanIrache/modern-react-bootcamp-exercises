@@ -9,3 +9,4 @@ Here I will post some of the results:
 - [Api-based card dealer](https://juanirache.github.io/modern-react-bootcamp-exercises/s18-deck-of-cards/)
 - [Yatzee! Dice game](https://juanirache.github.io/modern-react-bootcamp-exercises/s16-yahtzee)
 - [Simple CRUD Todo List](https://juanirache.github.io/modern-react-bootcamp-exercises/s15-todo-list)
+- [Lights Out mini game](https://juanirache.github.io/modern-react-bootcamp-exercises/s12-lights-out)
