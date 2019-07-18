@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Joke.css';
+import { Emoji } from 'emoji-mart';
 
 export default class Joke extends Component {
   constructor(props) {
@@ -9,30 +10,30 @@ export default class Joke extends Component {
   }
   static defaultProps = {
     smileys: {
-      '-11': '🤬',
-      '-10': '😡',
-      '-9': '😤',
-      '-8': '😠',
-      '-7': '😭',
-      '-6': '😰',
-      '-5': '😢',
-      '-4': '😖',
-      '-3': '😞',
-      '-2': '😒',
-      '-1': '🙁',
-      '0': '🙄',
-      '1': '😑',
-      '2': '😌',
-      '3': '🙃',
-      '4': '😏',
-      '5': '😜',
-      '6': '🤗',
-      '7': '😅',
-      '8': '😁',
-      '9': '😆',
-      '10': '😂',
-      '11': '🤣',
-      '12': '🤯'
+      '-11': 'dizzy_face',
+      '-10': 'rage',
+      '-9': 'triumph',
+      '-8': 'angry',
+      '-7': 'sob',
+      '-6': 'cold_sweat',
+      '-5': 'disappointed_relieved',
+      '-4': 'confounded',
+      '-3': 'anguished',
+      '-2': 'unamused',
+      '-1': 'disappointed',
+      '0': 'frowning',
+      '1': 'neutral_face',
+      '2': 'relieved',
+      '3': 'grimacing',
+      '4': 'smirk',
+      '5': 'stuck_out_tongue_winking_eye',
+      '6': 'blush',
+      '7': 'sweat_smile',
+      '8': 'smile',
+      '9': 'laughing',
+      '10': 'joy',
+      '11': 'scream',
+      '12': 'sunglasses'
     }
   };
   rateUp() {
@@ -67,7 +68,7 @@ export default class Joke extends Component {
         </div>
         <div className="Joke-text">{joke}</div>
         <span className={`Joke-emoji${rating == null ? ' Joke-emoji-roll' : ''}`} role="img" aria-label="">
-          {smileys[Math.min(Math.max(rating || 0, -11), 12).toString()]}
+          <Emoji emoji={`:${smileys[Math.min(Math.max(rating || 0, -11), 12).toString()]}:`} set="messenger" size={32} />
         </span>
       </div>
     );

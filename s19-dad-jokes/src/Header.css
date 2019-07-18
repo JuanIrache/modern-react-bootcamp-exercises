@@ -29,6 +29,14 @@
 
 .Header-title {
   color: white;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.Header-title-top {
+  font-family: 'Libre Baskerville';
+  text-transform: uppercase;
+  display: block;
 }
 
 .Header-button:hover {
@@ -46,34 +54,47 @@
 .Header-icon {
   box-shadow: 0 -8px 6px -6px black;
   border-radius: 50%;
-  font-size: 8em;
+  padding: 1.5rem;
+  margin: 1.5rem;
 }
 
 .Header-icon:hover {
   cursor: default;
-  animation: wobble 1s ease infinite;
+  animation: wobble 0.6s ease infinite;
 }
 
 @keyframes wobble {
   0% {
-    transform: translateX(0%);
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
   }
-  15% {
-    transform: translateX(-25%) rotate(-5deg);
+  10% {
+    -webkit-transform: translate(-2px, -3px) rotate(-2deg);
+  }
+  20% {
+    -webkit-transform: translate(-4px, 0px) rotate(2deg);
   }
   30% {
-    transform: translateX(20%) rotate(3deg);
+    -webkit-transform: translate(0px, 3px) rotate(0deg);
   }
-  45% {
-    transform: translateX(-15%) rotate(-3deg);
+  40% {
+    -webkit-transform: translate(2px, -2px) rotate(2deg);
+  }
+  50% {
+    -webkit-transform: translate(-2px, 3px) rotate(-2deg);
   }
   60% {
-    transform: translateX(10%) rotate(2deg);
+    -webkit-transform: translate(-4px, 2px) rotate(0deg);
   }
-  75% {
-    transform: translateX(-5%) rotate(-1deg);
+  70% {
+    -webkit-transform: translate(3px, 2px) rotate(-2deg);
+  }
+  80% {
+    -webkit-transform: translate(-2px, -2px) rotate(2deg);
+  }
+  90% {
+    -webkit-transform: translate(3px, 3px) rotate(0deg);
   }
   100% {
-    transform: translateX(0%);
+    -webkit-transform: translate(2px, -3px) rotate(-2deg);
   }
 }
