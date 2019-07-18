@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.bd1e9d57.chunk.css",
+    "main.css": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.78d22f3d.chunk.css",
     "main.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/main.1bb4ef4c.chunk.js",
     "main.js.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/main.1bb4ef4c.chunk.js.map",
     "runtime~main.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/runtime~main.7803680e.js",
@@ -8,8 +8,8 @@
     "static/js/2.cd881d90.chunk.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/2.cd881d90.chunk.js",
     "static/js/2.cd881d90.chunk.js.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/2.cd881d90.chunk.js.map",
     "index.html": "/modern-react-bootcamp-exercises/s19-dad-jokes/index.html",
-    "precache-manifest.a6f20f855334d197679d51f8b76d7353.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/precache-manifest.a6f20f855334d197679d51f8b76d7353.js",
+    "precache-manifest.ac19f585254444396233785a954254aa.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/precache-manifest.ac19f585254444396233785a954254aa.js",
     "service-worker.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/service-worker.js",
-    "static/css/main.bd1e9d57.chunk.css.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.bd1e9d57.chunk.css.map"
+    "static/css/main.78d22f3d.chunk.css.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.78d22f3d.chunk.css.map"
   }
 }
