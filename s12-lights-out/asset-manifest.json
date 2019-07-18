@@ -1,13 +1,15 @@
 {
-  "main.css": "/modern-react-bootcamp-exercises/s12-lights-out/static/css/main.8315b824.chunk.css",
-  "main.js": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/main.3ee0328b.chunk.js",
-  "main.js.map": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/main.3ee0328b.chunk.js.map",
-  "static/js/1.e614b0c7.chunk.js": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/1.e614b0c7.chunk.js",
-  "static/js/1.e614b0c7.chunk.js.map": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/1.e614b0c7.chunk.js.map",
-  "runtime~main.js": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/runtime~main.4d51e37d.js",
-  "runtime~main.js.map": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/runtime~main.4d51e37d.js.map",
-  "static/css/main.8315b824.chunk.css.map": "/modern-react-bootcamp-exercises/s12-lights-out/static/css/main.8315b824.chunk.css.map",
-  "index.html": "/modern-react-bootcamp-exercises/s12-lights-out/index.html",
-  "precache-manifest.c2d58c09d30cdb81ba3939e28fee58ad.js": "/modern-react-bootcamp-exercises/s12-lights-out/precache-manifest.c2d58c09d30cdb81ba3939e28fee58ad.js",
-  "service-worker.js": "/modern-react-bootcamp-exercises/s12-lights-out/service-worker.js"
+  "files": {
+    "main.css": "/modern-react-bootcamp-exercises/s12-lights-out/static/css/main.d9733a22.chunk.css",
+    "main.js": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/main.44e604dc.chunk.js",
+    "main.js.map": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/main.44e604dc.chunk.js.map",
+    "runtime~main.js": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/runtime~main.adb57738.js",
+    "runtime~main.js.map": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/runtime~main.adb57738.js.map",
+    "static/js/2.75a47e04.chunk.js": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/2.75a47e04.chunk.js",
+    "static/js/2.75a47e04.chunk.js.map": "/modern-react-bootcamp-exercises/s12-lights-out/static/js/2.75a47e04.chunk.js.map",
+    "index.html": "/modern-react-bootcamp-exercises/s12-lights-out/index.html",
+    "precache-manifest.d7342eba73b93ae5bd86b1673aa64acf.js": "/modern-react-bootcamp-exercises/s12-lights-out/precache-manifest.d7342eba73b93ae5bd86b1673aa64acf.js",
+    "service-worker.js": "/modern-react-bootcamp-exercises/s12-lights-out/service-worker.js",
+    "static/css/main.d9733a22.chunk.css.map": "/modern-react-bootcamp-exercises/s12-lights-out/static/css/main.d9733a22.chunk.css.map"
+  }
 }
