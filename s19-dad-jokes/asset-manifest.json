@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.dc866b7a.chunk.css",
-    "main.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/main.7dc25308.chunk.js",
-    "main.js.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/main.7dc25308.chunk.js.map",
+    "main.css": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.e351ef5e.chunk.css",
+    "main.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/main.b0543cf2.chunk.js",
+    "main.js.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/main.b0543cf2.chunk.js.map",
     "runtime~main.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/runtime~main.7803680e.js",
     "runtime~main.js.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/runtime~main.7803680e.js.map",
-    "static/js/2.cb759169.chunk.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/2.cb759169.chunk.js",
-    "static/js/2.cb759169.chunk.js.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/2.cb759169.chunk.js.map",
+    "static/js/2.cd881d90.chunk.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/2.cd881d90.chunk.js",
+    "static/js/2.cd881d90.chunk.js.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/2.cd881d90.chunk.js.map",
     "index.html": "/modern-react-bootcamp-exercises/s19-dad-jokes/index.html",
-    "precache-manifest.7b6917f0aad7165841653d042d00b3e5.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/precache-manifest.7b6917f0aad7165841653d042d00b3e5.js",
+    "precache-manifest.8d2d158d59a3e69ecf461467bed13ab7.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/precache-manifest.8d2d158d59a3e69ecf461467bed13ab7.js",
     "service-worker.js": "/modern-react-bootcamp-exercises/s19-dad-jokes/service-worker.js",
-    "static/css/main.dc866b7a.chunk.css.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.dc866b7a.chunk.css.map"
+    "static/css/main.e351ef5e.chunk.css.map": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.e351ef5e.chunk.css.map"
   }
 }
