@@ -9,7 +9,8 @@
 @media (max-width: 992px) {
   .DadJokes {
     flex-direction: column;
-    max-width: 95vw;
-    max-height: 95vh;
+    width: 95vw;
+    height: 95vh;
+    margin: auto;
   }
 }

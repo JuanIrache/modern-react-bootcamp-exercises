@@ -16,5 +16,6 @@
   .JokeList {
     width: 100%;
     height: auto;
+    margin-top: 0;
   }
 }
