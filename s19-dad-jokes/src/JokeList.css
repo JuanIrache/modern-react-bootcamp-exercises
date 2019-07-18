@@ -11,3 +11,10 @@
   font-family: 'Raleway', sans-serif;
   box-shadow: 0 8px 6px -6px black;
 }
+
+@media (max-width: 992px) {
+  .JokeList {
+    width: 100%;
+    height: auto;
+  }
+}

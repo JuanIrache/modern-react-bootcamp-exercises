@@ -10,7 +10,7 @@ export default class Header extends Component {
         <h1 className="Header-title">
           <span className="Header-title-top">Dad</span> Jokes
         </h1>
-        <img className="Header-icon" src={skeptic} aria-label="Smiley" />
+        <img className="Header-icon" src={skeptic} aria-label="Smiley" alt="Logo" />
         <button className="Header-button" onClick={generate} disabled={!enabled}>
           {enabled ? 'New Jokes' : 'Waiting...'}
         </button>
