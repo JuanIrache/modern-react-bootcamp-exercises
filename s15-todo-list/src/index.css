@@ -2,16 +2,17 @@
 
 body {
   background-image: url(bg.svg);
-  background-size:cover;
+  background-size: cover;
   /* background by SVGBackgrounds.com */
   font-family: 'IBM Plex Sans', sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
-  overflow:hidden;
+  margin: 0;
+  padding: 0;
 }
 
 #root {
-  width:100%;
+  width: 100%;
 }
