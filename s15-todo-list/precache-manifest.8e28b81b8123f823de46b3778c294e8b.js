@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bce3f99d99f39e02f8085b8bf06e9e8b",
+    "revision": "c87cf480a81ed29d0867616bfd2cb944",
     "url": "/modern-react-bootcamp-exercises/s15-todo-list/index.html"
   },
   {
-    "revision": "5d176b665b14443bd08d",
-    "url": "/modern-react-bootcamp-exercises/s15-todo-list/static/css/main.f977fa69.chunk.css"
+    "revision": "f64d9b263a566c8596a2",
+    "url": "/modern-react-bootcamp-exercises/s15-todo-list/static/css/main.16838ebd.chunk.css"
   },
   {
     "revision": "3a78d3f5e8d66730cdf0",
     "url": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/2.8199aca0.chunk.js"
   },
   {
-    "revision": "5d176b665b14443bd08d",
+    "revision": "f64d9b263a566c8596a2",
     "url": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/main.b9e53ef5.chunk.js"
   },
   {
