@@ -4,3 +4,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
+#bg {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #abe1fc 0%, #abe1fc 50%, rgb(240, 98, 146) 50%, rgb(240, 98, 146) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

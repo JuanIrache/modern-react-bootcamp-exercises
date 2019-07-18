@@ -15,7 +15,6 @@
 @media (max-width: 992px) {
   .JokeList {
     width: 100%;
-    height: auto;
     margin-top: 0;
   }
 }

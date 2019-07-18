@@ -10,7 +10,7 @@
   .DadJokes {
     flex-direction: column;
     width: 95vw;
-    height: 95vh;
+    height: 100%;
     margin: auto;
   }
 }
