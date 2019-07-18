@@ -4,7 +4,7 @@
   font-size: 0.9rem;
   width: 80%;
   background-color: white;
-  padding: 1em;
+  padding: 0 1em 1em 1em;
 }
 
 .ScoreTable table {
@@ -16,4 +16,12 @@
 .ScoreTable-section {
   vertical-align: top;
   width: 100%;
+}
+
+.ScoreTable-section-total {
+  margin: 2rem 0;
+}
+
+.ScoreTable-section h2 {
+  margin: 1rem 0;
 }
