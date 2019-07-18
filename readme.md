@@ -6,3 +6,4 @@ Here I will post some of the results:
 - [Context-based login page](https://juanirache.github.io/modern-react-bootcamp-exercises/s33-login_page/)
 - [Router-based dog gallery](https://juanirache.github.io/modern-react-bootcamp-exercises/s23-dogs/)
 - [Api-based Dad Jokes App](https://juanirache.github.io/modern-react-bootcamp-exercises/s19-dad-jokes)
+- [Api-based card dealer](https://juanirache.github.io/modern-react-bootcamp-exercises/s18-deck-of-cards/)
