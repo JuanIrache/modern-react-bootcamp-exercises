@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/modern-react-bootcamp-exercises/s15-todo-list/static/css/main.4b91003d.chunk.css",
+    "main.js": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/main.275eb06d.chunk.js",
+    "main.js.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/main.275eb06d.chunk.js.map",
+    "runtime~main.js": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/runtime~main.beaa4a56.js",
+    "runtime~main.js.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/runtime~main.beaa4a56.js.map",
+    "static/js/2.8199aca0.chunk.js": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/2.8199aca0.chunk.js",
+    "static/js/2.8199aca0.chunk.js.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/2.8199aca0.chunk.js.map",
+    "index.html": "/modern-react-bootcamp-exercises/s15-todo-list/index.html",
+    "precache-manifest.b5f710d6e99545ae71dbff15b98db2da.js": "/modern-react-bootcamp-exercises/s15-todo-list/precache-manifest.b5f710d6e99545ae71dbff15b98db2da.js",
+    "service-worker.js": "/modern-react-bootcamp-exercises/s15-todo-list/service-worker.js",
+    "static/css/main.4b91003d.chunk.css.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/css/main.4b91003d.chunk.css.map",
+    "static/media/index.css": "/modern-react-bootcamp-exercises/s15-todo-list/static/media/bg.4f96b4e8.svg"
+  }
+}
