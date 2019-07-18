@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/modern-react-bootcamp-exercises/s15-todo-list/static/css/main.16838ebd.chunk.css",
-    "main.js": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/main.b9e53ef5.chunk.js",
-    "main.js.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/main.b9e53ef5.chunk.js.map",
+    "main.css": "/modern-react-bootcamp-exercises/s15-todo-list/static/css/main.a1138738.chunk.css",
+    "main.js": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/main.49dc3dd9.chunk.js",
+    "main.js.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/main.49dc3dd9.chunk.js.map",
     "runtime~main.js": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/runtime~main.beaa4a56.js",
     "runtime~main.js.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/runtime~main.beaa4a56.js.map",
     "static/js/2.8199aca0.chunk.js": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/2.8199aca0.chunk.js",
     "static/js/2.8199aca0.chunk.js.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/js/2.8199aca0.chunk.js.map",
     "index.html": "/modern-react-bootcamp-exercises/s15-todo-list/index.html",
-    "precache-manifest.8e28b81b8123f823de46b3778c294e8b.js": "/modern-react-bootcamp-exercises/s15-todo-list/precache-manifest.8e28b81b8123f823de46b3778c294e8b.js",
+    "precache-manifest.373bfd69f1e28ebaf7d514451273d360.js": "/modern-react-bootcamp-exercises/s15-todo-list/precache-manifest.373bfd69f1e28ebaf7d514451273d360.js",
     "service-worker.js": "/modern-react-bootcamp-exercises/s15-todo-list/service-worker.js",
-    "static/css/main.16838ebd.chunk.css.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/css/main.16838ebd.chunk.css.map",
+    "static/css/main.a1138738.chunk.css.map": "/modern-react-bootcamp-exercises/s15-todo-list/static/css/main.a1138738.chunk.css.map",
     "static/media/index.css": "/modern-react-bootcamp-exercises/s15-todo-list/static/media/bg.4f96b4e8.svg"
   }
 }
