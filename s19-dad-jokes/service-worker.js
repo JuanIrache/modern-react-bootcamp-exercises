@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/modern-react-bootcamp-exercises/s19-dad-jokes/precache-manifest.8d2d158d59a3e69ecf461467bed13ab7.js"
+  "/modern-react-bootcamp-exercises/s19-dad-jokes/precache-manifest.9c45716c2d6bb15e7989e81e0a16ce7a.js"
 );
 
 self.addEventListener('message', (event) => {

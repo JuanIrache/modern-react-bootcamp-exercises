@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0ebe006b2f16ddf25f66c896ac66e376",
+    "revision": "45f643acde9e7d90efb2621d024cd3ee",
     "url": "/modern-react-bootcamp-exercises/s19-dad-jokes/index.html"
   },
   {
-    "revision": "2009410ee46cf5a4e60d",
-    "url": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.e351ef5e.chunk.css"
+    "revision": "b09148881fd5c00fe7cc",
+    "url": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/css/main.70e0b459.chunk.css"
   },
   {
     "revision": "be57157b86a709e9e5d3",
     "url": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/2.cd881d90.chunk.js"
   },
   {
-    "revision": "2009410ee46cf5a4e60d",
-    "url": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/main.b0543cf2.chunk.js"
+    "revision": "b09148881fd5c00fe7cc",
+    "url": "/modern-react-bootcamp-exercises/s19-dad-jokes/static/js/main.1bb4ef4c.chunk.js"
   },
   {
     "revision": "ce642e81103264741017",
